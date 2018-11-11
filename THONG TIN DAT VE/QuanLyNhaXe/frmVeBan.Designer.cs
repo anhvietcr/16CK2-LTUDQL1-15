@@ -33,8 +33,10 @@
             this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_navbar_title = new System.Windows.Forms.Panel();
+            this.ctr_navbar_title = new UserController.ctr_navbar_title();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel_navbar_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_open
@@ -60,27 +62,38 @@
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             // 
-            // panel1
+            // panel_navbar_title
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 40);
-            this.panel1.TabIndex = 1;
+            this.panel_navbar_title.Controls.Add(this.ctr_navbar_title);
+            this.panel_navbar_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_navbar_title.Location = new System.Drawing.Point(0, 0);
+            this.panel_navbar_title.Name = "panel_navbar_title";
+            this.panel_navbar_title.Size = new System.Drawing.Size(800, 40);
+            this.panel_navbar_title.TabIndex = 1;
+            // 
+            // ctr_navbar_title
+            // 
+            this.ctr_navbar_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.ctr_navbar_title.Location = new System.Drawing.Point(0, 0);
+            this.ctr_navbar_title.Name = "ctr_navbar_title";
+            this.ctr_navbar_title.Size = new System.Drawing.Size(800, 40);
+            this.ctr_navbar_title.TabIndex = 0;
             // 
             // frmVeBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 510);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_navbar_title);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVeBan";
             this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmVeBan";
             this.Load += new System.EventHandler(this.frmBanVe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel_navbar_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -90,7 +103,8 @@
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_navbar_title;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private UserController.ctr_navbar_title ctr_navbar_title;
     }
 }

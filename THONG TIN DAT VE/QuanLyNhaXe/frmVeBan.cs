@@ -18,12 +18,17 @@ namespace QuanLyNhaXe
             InitializeComponent();
             frmDB = frm;
 
+            //set position title and btn close
+            ctr_navbar_title.txt_title.Location = new Point(panel_navbar_title.Width / 2 - 80, panel_navbar_title.Height / 2 - 12);
+            ctr_navbar_title.btn_close.Location = new Point(panel_navbar_title.Width - 30, panel_navbar_title.Height / 2 - 12);
+
             // move form
-            ctr_navbar1.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
-            ctr_navbar1.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
+            ctr_navbar_title.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
+            ctr_navbar_title.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
 
             // button navbar clicked
-            ctr_navbar1.btn_close.Click += new EventHandler(btnClose_click);
+            ctr_navbar_title.btn_close.Click += new EventHandler(btnClose_click);
+
         }
 
         //move form with border less

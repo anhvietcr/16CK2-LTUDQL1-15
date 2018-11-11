@@ -58,8 +58,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_slider = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel_navbar_title = new System.Windows.Forms.Panel();
+            this.ctr_navbar_title = new UserController.ctr_navbar_title();
             this.imgListAvatar = new System.Windows.Forms.ImageList(this.components);
+            this.timer_open = new System.Windows.Forms.Timer(this.components);
+            this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.panel_menu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox_intro.SuspendLayout();
@@ -68,6 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel_navbar_title.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
@@ -473,13 +477,22 @@
             this.btn_slider.UseVisualStyleBackColor = false;
             this.btn_slider.Click += new System.EventHandler(this.btn_slider_Click);
             // 
-            // panel2
+            // panel_navbar_title
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(435, 40);
-            this.panel2.TabIndex = 3;
+            this.panel_navbar_title.Controls.Add(this.ctr_navbar_title);
+            this.panel_navbar_title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_navbar_title.Location = new System.Drawing.Point(0, 0);
+            this.panel_navbar_title.Name = "panel_navbar_title";
+            this.panel_navbar_title.Size = new System.Drawing.Size(435, 40);
+            this.panel_navbar_title.TabIndex = 3;
+            // 
+            // ctr_navbar_title
+            // 
+            this.ctr_navbar_title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.ctr_navbar_title.Location = new System.Drawing.Point(0, 0);
+            this.ctr_navbar_title.Name = "ctr_navbar_title";
+            this.ctr_navbar_title.Size = new System.Drawing.Size(435, 40);
+            this.ctr_navbar_title.TabIndex = 0;
             // 
             // imgListAvatar
             // 
@@ -490,19 +503,28 @@
             this.imgListAvatar.Images.SetKeyName(2, "viet.jpg");
             this.imgListAvatar.Images.SetKeyName(3, "vinh.jpg");
             // 
+            // timer_open
+            // 
+            this.timer_open.Tick += new System.EventHandler(this.timer_open_Tick);
+            // 
+            // timer_close
+            // 
+            this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 450);
             this.Controls.Add(this.btn_slider);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel_navbar_title);
             this.Controls.Add(this.panel_menu);
             this.Controls.Add(this.groupBox_infoteam);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.panel_menu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBox_intro.ResumeLayout(false);
@@ -513,6 +535,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel_navbar_title.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -524,7 +547,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox_intro;
         private System.Windows.Forms.Button btn_slider;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel_navbar_title;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -549,6 +572,9 @@
         private System.Windows.Forms.Button btn_menu_2;
         private System.Windows.Forms.Button btn_menu_3;
         private System.Windows.Forms.Button btn_menu_4;
+        private UserController.ctr_navbar_title ctr_navbar_title;
+        private System.Windows.Forms.Timer timer_open;
+        private System.Windows.Forms.Timer timer_close;
     }
 }
 

@@ -34,10 +34,15 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
+            this.ctr_menu = new UserController.ctr_menu();
+            this.ctr_navbar = new UserController.ctr_navbar();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ctr_navbar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -46,6 +51,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.ctr_menu);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
@@ -66,7 +72,24 @@
             // 
             // timer_close
             // 
-            this.timer_close.Tick += new System.EventHandler(this.time_close_Tick);
+            this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
+            // 
+            // ctr_menu
+            // 
+            this.ctr_menu.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_menu.ForeColor = System.Drawing.Color.White;
+            this.ctr_menu.Location = new System.Drawing.Point(0, -1);
+            this.ctr_menu.Name = "ctr_menu";
+            this.ctr_menu.Size = new System.Drawing.Size(200, 470);
+            this.ctr_menu.TabIndex = 0;
+            // 
+            // ctr_navbar
+            // 
+            this.ctr_navbar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_navbar.Location = new System.Drawing.Point(0, 0);
+            this.ctr_navbar.Name = "ctr_navbar";
+            this.ctr_navbar.Size = new System.Drawing.Size(800, 40);
+            this.ctr_navbar.TabIndex = 0;
             // 
             // frmDatVe
             // 
@@ -79,8 +102,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDatVe";
             this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DatVe";
             this.Load += new System.EventHandler(this.frmDatVe_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -92,5 +118,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
+        private UserController.ctr_navbar ctr_navbar;
+        private UserController.ctr_menu ctr_menu;
     }
 }

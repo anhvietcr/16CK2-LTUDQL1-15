@@ -44,7 +44,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UserController">
-      <HintPath>..\..\QuanLyXe\frmDatVe\UserController.dll</HintPath>
+      <HintPath>.\UserController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

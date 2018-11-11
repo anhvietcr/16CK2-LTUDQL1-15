@@ -10,3 +10,17 @@ D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\Qu
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmDatVe.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csprojAssemblyReference.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmDashboard.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmDatVe.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmVeBan.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Properties.Resources.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.GenerateResource.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CoreCompileInputs.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe.config
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\UserController.dll
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CopyComplete
