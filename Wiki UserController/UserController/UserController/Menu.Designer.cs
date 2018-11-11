@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctr_menu));
             this.btn_menu_4 = new System.Windows.Forms.Button();
+            this.imgListIconMenu = new System.Windows.Forms.ImageList(this.components);
             this.btn_menu_3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconMenu = new System.Windows.Forms.ImageList(this.components);
             this.btn_menu_2 = new System.Windows.Forms.Button();
             this.btn_menu_1 = new System.Windows.Forms.Button();
             this.btn_menu_info = new System.Windows.Forms.Button();
@@ -50,8 +50,8 @@
             this.btn_menu_4.ForeColor = System.Drawing.Color.Black;
             this.btn_menu_4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_4.ImageIndex = 4;
-            this.btn_menu_4.ImageList = this.iconMenu;
-            this.btn_menu_4.Location = new System.Drawing.Point(0, 265);
+            this.btn_menu_4.ImageList = this.imgListIconMenu;
+            this.btn_menu_4.Location = new System.Drawing.Point(0, 337);
             this.btn_menu_4.Name = "btn_menu_4";
             this.btn_menu_4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_menu_4.Size = new System.Drawing.Size(200, 70);
@@ -59,6 +59,21 @@
             this.btn_menu_4.Text = "      Tuyến xe";
             this.btn_menu_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_4.UseVisualStyleBackColor = false;
+            // 
+            // imgListIconMenu
+            // 
+            this.imgListIconMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgListIconMenu.ImageStream")));
+            this.imgListIconMenu.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgListIconMenu.Images.SetKeyName(0, "icons8_Add_45px.png");
+            this.imgListIconMenu.Images.SetKeyName(1, "icons8_Add_45px_1.png");
+            this.imgListIconMenu.Images.SetKeyName(2, "icons8_Sedan_45px.png");
+            this.imgListIconMenu.Images.SetKeyName(3, "icons8_Sedan_45px_1.png");
+            this.imgListIconMenu.Images.SetKeyName(4, "icons8_Ship_Wheel_45px_1.png");
+            this.imgListIconMenu.Images.SetKeyName(5, "icons8_Ship_Wheel_45px_3.png");
+            this.imgListIconMenu.Images.SetKeyName(6, "icons8_User_Account_45px.png");
+            this.imgListIconMenu.Images.SetKeyName(7, "icons8_User_Account_45px_1.png");
+            this.imgListIconMenu.Images.SetKeyName(8, "icons8_Home_45px_2.png");
+            this.imgListIconMenu.Images.SetKeyName(9, "icons8_Home_Page_45px.png");
             // 
             // btn_menu_3
             // 
@@ -70,8 +85,8 @@
             this.btn_menu_3.ForeColor = System.Drawing.Color.Black;
             this.btn_menu_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_3.ImageIndex = 2;
-            this.btn_menu_3.ImageList = this.iconMenu;
-            this.btn_menu_3.Location = new System.Drawing.Point(0, 194);
+            this.btn_menu_3.ImageList = this.imgListIconMenu;
+            this.btn_menu_3.Location = new System.Drawing.Point(0, 266);
             this.btn_menu_3.Name = "btn_menu_3";
             this.btn_menu_3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_menu_3.Size = new System.Drawing.Size(200, 70);
@@ -86,26 +101,11 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Courier New", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(2, 17);
+            this.label1.Location = new System.Drawing.Point(2, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ ";
-            // 
-            // iconMenu
-            // 
-            this.iconMenu.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("iconMenu.ImageStream")));
-            this.iconMenu.TransparentColor = System.Drawing.Color.Transparent;
-            this.iconMenu.Images.SetKeyName(0, "icons8_Add_File_45px.png");
-            this.iconMenu.Images.SetKeyName(1, "icons8_Add_File_45px_1.png");
-            this.iconMenu.Images.SetKeyName(2, "icons8_Sedan_45px.png");
-            this.iconMenu.Images.SetKeyName(3, "icons8_Sedan_45px_1.png");
-            this.iconMenu.Images.SetKeyName(4, "icons8_Ship_Wheel_45px_1.png");
-            this.iconMenu.Images.SetKeyName(5, "icons8_Ship_Wheel_45px_3.png");
-            this.iconMenu.Images.SetKeyName(6, "icons8_User_Account_45px.png");
-            this.iconMenu.Images.SetKeyName(7, "icons8_User_Account_45px_1.png");
-            this.iconMenu.Images.SetKeyName(8, "icons8_Bill_45px.png");
-            this.iconMenu.Images.SetKeyName(9, "icons8_Check_45px.png");
             // 
             // btn_menu_2
             // 
@@ -117,8 +117,8 @@
             this.btn_menu_2.ForeColor = System.Drawing.Color.Black;
             this.btn_menu_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_2.ImageIndex = 6;
-            this.btn_menu_2.ImageList = this.iconMenu;
-            this.btn_menu_2.Location = new System.Drawing.Point(0, 123);
+            this.btn_menu_2.ImageList = this.imgListIconMenu;
+            this.btn_menu_2.Location = new System.Drawing.Point(0, 195);
             this.btn_menu_2.Name = "btn_menu_2";
             this.btn_menu_2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_menu_2.Size = new System.Drawing.Size(200, 70);
@@ -137,8 +137,8 @@
             this.btn_menu_1.ForeColor = System.Drawing.Color.Black;
             this.btn_menu_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_1.ImageIndex = 0;
-            this.btn_menu_1.ImageList = this.iconMenu;
-            this.btn_menu_1.Location = new System.Drawing.Point(0, 52);
+            this.btn_menu_1.ImageList = this.imgListIconMenu;
+            this.btn_menu_1.Location = new System.Drawing.Point(0, 124);
             this.btn_menu_1.Name = "btn_menu_1";
             this.btn_menu_1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_menu_1.Size = new System.Drawing.Size(200, 70);
@@ -170,19 +170,19 @@
             // 
             this.btn_menu_5.BackColor = System.Drawing.Color.Transparent;
             this.btn_menu_5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_menu_5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_menu_5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.btn_menu_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu_5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_5.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menu_5.ForeColor = System.Drawing.Color.Black;
             this.btn_menu_5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_5.ImageIndex = 8;
-            this.btn_menu_5.ImageList = this.iconMenu;
-            this.btn_menu_5.Location = new System.Drawing.Point(0, 336);
+            this.btn_menu_5.ImageList = this.imgListIconMenu;
+            this.btn_menu_5.Location = new System.Drawing.Point(0, 0);
             this.btn_menu_5.Name = "btn_menu_5";
             this.btn_menu_5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btn_menu_5.Size = new System.Drawing.Size(200, 70);
             this.btn_menu_5.TabIndex = 0;
-            this.btn_menu_5.Text = "      Vé bán";
+            this.btn_menu_5.Text = "              Trang Chủ";
             this.btn_menu_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_menu_5.UseVisualStyleBackColor = false;
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
             this.Controls.Add(this.btn_menu_1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_menu_3);
@@ -209,7 +209,7 @@
         #endregion
 
         public System.Windows.Forms.Button btn_menu_4;
-        private System.Windows.Forms.ImageList iconMenu;
+        private System.Windows.Forms.ImageList imgListIconMenu;
         public System.Windows.Forms.Button btn_menu_3;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btn_menu_2;

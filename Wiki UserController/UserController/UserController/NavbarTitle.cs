@@ -7,37 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UserController;
-
 
 namespace UserController
 {
-    public partial class ctr_navbar : UserControl
+    public partial class ctr_navbar_title : UserControl
     {
-        public ctr_navbar()
+        public ctr_navbar_title()
         {
             InitializeComponent();
-
-            //button close
-            btn_close.MouseHover += new EventHandler(btnClose_hover);
-            btn_close.MouseLeave += new EventHandler(btnClose_leave);
 
             //set Location title
             txt_title.Location = new Point(this.Width / 2, this.Height / 2);
         }
-        
-        // effect Hover and Move buttons close
-        void btnClose_hover(object sender, EventArgs e)
+
+        //effect Hover and Move buttons close 
+        private void btn_close_MouseHover(object sender, EventArgs e)
         {
             btn_close.ImageIndex = 1;
         }
 
-        void btnClose_leave(object sender, EventArgs e)
+        private void btn_close_MouseLeave(object sender, EventArgs e)
         {
-            btn_close.ImageIndex = 2;
+            btn_close.ImageIndex = 0;
         }
 
-        //border control
+        //border control 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
