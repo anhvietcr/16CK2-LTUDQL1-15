@@ -18,6 +18,8 @@ namespace QuanLyNhaXe
             InitializeComponent();
             frmDB = frm;
 
+            ctr_navbar_title.txt_title.Text = "Danh Sách Vé Bán";
+
             //set position title and btn close
             ctr_navbar_title.txt_title.Location = new Point(panel_navbar_title.Width / 2 - 80, panel_navbar_title.Height / 2 - 12);
             ctr_navbar_title.btn_close.Location = new Point(panel_navbar_title.Width - 30, panel_navbar_title.Height / 2 - 12);

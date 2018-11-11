@@ -18,6 +18,7 @@ namespace QuanLyNhaXe
             InitializeComponent();
             frmDB = frm;
             ctr_menu.btn_menu_1.Enabled = false;
+            ctr_navbar.txt_title.Text = "Đặt Vé";
 
             // button menu clicked
             ctr_menu.btn_menu_2.Click += new EventHandler(btnMenu2_click);
