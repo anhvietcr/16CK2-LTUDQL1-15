@@ -12,3 +12,16 @@ D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\Qu
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Release\QuanLyNhaXe.csproj.CopyComplete
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Release\QuanLyNhaXe.exe
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\QuanLyNhaXe\obj\Release\QuanLyNhaXe.pdb
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Release\QuanLyNhaXe.exe.config
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Release\QuanLyNhaXe.exe
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Release\QuanLyNhaXe.pdb
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.csprojAssemblyReference.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.frmDashboard.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.frmDatVe.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.frmVeBan.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.Properties.Resources.resources
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.csproj.GenerateResource.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.csproj.CoreCompileInputs.cache
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.csproj.CopyComplete
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.exe
+D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Release\QuanLyNhaXe.pdb

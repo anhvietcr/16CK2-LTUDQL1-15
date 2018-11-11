@@ -32,11 +32,9 @@
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ctr_navbar1 = new UserController.ctr_navbar();
-            this.btn_menu_1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_open
@@ -50,44 +48,31 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 74);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 38);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(730, 305);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 472);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ctr_navbar1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 40);
             this.panel1.TabIndex = 1;
             // 
-            // ctr_navbar1
-            // 
-            this.ctr_navbar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ctr_navbar1.Location = new System.Drawing.Point(0, 0);
-            this.ctr_navbar1.Name = "ctr_navbar1";
-            this.ctr_navbar1.Size = new System.Drawing.Size(800, 40);
-            this.ctr_navbar1.TabIndex = 0;
-            // 
-            // btn_menu_1
-            // 
-            this.btn_menu_1.Location = new System.Drawing.Point(156, 47);
-            this.btn_menu_1.Name = "btn_menu_1";
-            this.btn_menu_1.Size = new System.Drawing.Size(75, 23);
-            this.btn_menu_1.TabIndex = 2;
-            this.btn_menu_1.Text = "open dat ve";
-            this.btn_menu_1.UseVisualStyleBackColor = true;
-            this.btn_menu_1.Click += new System.EventHandler(this.btn_menu_1_Click);
-            // 
             // frmVeBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 470);
-            this.Controls.Add(this.btn_menu_1);
+            this.ClientSize = new System.Drawing.Size(800, 510);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -96,7 +81,6 @@
             this.Text = "frmVeBan";
             this.Load += new System.EventHandler(this.frmBanVe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -107,7 +91,6 @@
         private System.Windows.Forms.Timer timer_close;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private UserController.ctr_navbar ctr_navbar1;
-        private System.Windows.Forms.Button btn_menu_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }
