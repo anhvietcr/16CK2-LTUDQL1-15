@@ -15,9 +15,6 @@ namespace UserController
         public ctr_navbar_title()
         {
             InitializeComponent();
-
-            //set Location title
-            txt_title.Location = new Point(this.Width / 2, this.Height / 2);
         }
 
         //effect Hover and Move buttons close 

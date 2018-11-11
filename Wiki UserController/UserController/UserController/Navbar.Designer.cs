@@ -54,7 +54,7 @@
             this.btn_toggle_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_toggle_menu.ImageIndex = 0;
             this.btn_toggle_menu.ImageList = this.imgListNavIcon;
-            this.btn_toggle_menu.Location = new System.Drawing.Point(13, 0);
+            this.btn_toggle_menu.Location = new System.Drawing.Point(19, 0);
             this.btn_toggle_menu.Name = "btn_toggle_menu";
             this.btn_toggle_menu.Size = new System.Drawing.Size(42, 41);
             this.btn_toggle_menu.TabIndex = 1;

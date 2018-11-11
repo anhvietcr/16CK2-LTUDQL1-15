@@ -170,7 +170,8 @@
             // 
             this.btn_menu_5.BackColor = System.Drawing.Color.Transparent;
             this.btn_menu_5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_menu_5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.btn_menu_5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_menu_5.FlatAppearance.BorderSize = 2;
             this.btn_menu_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_menu_5.Font = new System.Drawing.Font("Bell MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_menu_5.ForeColor = System.Drawing.Color.Black;

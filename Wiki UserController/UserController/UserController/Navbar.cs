@@ -21,9 +21,6 @@ namespace UserController
             //button close
             btn_close.MouseHover += new EventHandler(btnClose_hover);
             btn_close.MouseLeave += new EventHandler(btnClose_leave);
-
-            //set Location title
-            txt_title.Location = new Point(this.Width / 2, this.Height / 2);
         }
         
         // effect Hover and Move buttons close
