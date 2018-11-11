@@ -4,7 +4,7 @@ Nhóm 15 - Đồ án Cuối Kỳ - LTUDQL1
 > **Quản lý công việc**
 - Trello: [Project in Trello](https://trello.com/b/Bw23Zqh1/lt-udql1-nhom-15)
 
-> **Workfollow**
+> **Workflow**
 ![workflow](workflow.jpg)
 
 > **Thành viên**
