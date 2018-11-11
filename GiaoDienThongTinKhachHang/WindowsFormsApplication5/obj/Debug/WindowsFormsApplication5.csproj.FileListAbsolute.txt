@@ -1,0 +1,10 @@
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe.config
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.exe
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\bin\Debug\WindowsFormsApplication5.pdb
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\bin\Debug\UserController.dll
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.csprojResolveAssemblyReference.cache
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Form1.resources
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.Properties.Resources.resources
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.csproj.GenerateResource.Cache
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.exe
+c:\users\lqv11\documents\visual studio 2012\Projects\do_an_2\WindowsFormsApplication5\obj\Debug\WindowsFormsApplication5.pdb
