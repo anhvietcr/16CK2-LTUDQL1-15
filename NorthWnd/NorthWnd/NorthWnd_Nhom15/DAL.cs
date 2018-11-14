@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -12,7 +13,7 @@ namespace NorthWnd_Nhom15
     class DAL
     {
         // connect string
-        string strConnect = @"Server=ROOT\SQLEXPRESS;Database=NORTHWND;Integrated Security=SSPI";
+        private string strConnect = "";
         SqlConnection conn = null;
 
         // connect to database
@@ -22,6 +23,7 @@ namespace NorthWnd_Nhom15
             {
                 if (conn == null)
                 {
+                    strConnect = ConfigurationManager.ConnectionStrings["NORTHWND"].ConnectionString;
                     conn = new SqlConnection(strConnect);
                 }
 
