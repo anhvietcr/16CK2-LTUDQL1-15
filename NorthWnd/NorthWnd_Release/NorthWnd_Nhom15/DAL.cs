@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 
 
-namespace NorthWnd_Nhom15_Show
+namespace NorthWnd_Nhom15
 {
     //connect SQL and execute Query
     class DAL
