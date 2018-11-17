@@ -13,7 +13,7 @@ namespace NorthWnd_Nhom15
     class DAL
     {
         // connect string
-        private string strConnect = @"Server=DESKTOP-U3SFONS\SQLEXPRESS; Database=db_hethongbanve;  Trusted_Connection=True;";
+        private string strConnect = "";
         SqlConnection conn = null;
 
         // connect to database
