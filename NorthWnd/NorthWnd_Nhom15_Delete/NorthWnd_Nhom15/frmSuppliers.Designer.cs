@@ -1,6 +1,6 @@
 ﻿namespace NorthWnd_Nhom15
 {
-    partial class frmEdit
+    partial class frmSuppliers
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 449);
             this.Controls.Add(this.gridView);
             this.Name = "frmEdit";
-            this.Text = "Edit - Suppliers - NorthWnd";
+            this.Text = "Suppliers - NorthWnd";
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).EndInit();
             this.ResumeLayout(false);
 

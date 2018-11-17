@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace NorthWnd_Nhom15
 {
-    public partial class frmEditDetail : Form
+    public partial class frmDeleteDetail : Form
     {
         public delegate void pointer();
         public event pointer closeEvent;
 
-        private frmEdit frmParent;
-        public frmEditDetail(frmEdit frmSender)
+        private frmSuppliers frmParent;
+        public frmDeleteDetail(frmSuppliers frmSender)
         {
             frmParent = frmSender;
             InitializeComponent();

@@ -1,6 +1,6 @@
 ﻿namespace NorthWnd_Nhom15
 {
-    partial class frmEditDetail
+    partial class frmDeleteDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.groupBox1.Size = new System.Drawing.Size(788, 457);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Edit Supplier";
+            this.groupBox1.Text = "Delete Supplier";
             // 
             // btnDelete
             // 
@@ -317,7 +317,7 @@
             this.MaximumSize = new System.Drawing.Size(820, 513);
             this.MinimumSize = new System.Drawing.Size(820, 513);
             this.Name = "frmEditDetail";
-            this.Text = "Edit Detai - Supplier - NortWnd";
+            this.Text = "Delete Detai - Supplier - NortWnd";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditDetail_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

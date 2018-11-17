@@ -16,7 +16,7 @@ namespace NorthWnd_Nhom15
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEdit());
+            Application.Run(new frmSuppliers());
         }
     }
 }

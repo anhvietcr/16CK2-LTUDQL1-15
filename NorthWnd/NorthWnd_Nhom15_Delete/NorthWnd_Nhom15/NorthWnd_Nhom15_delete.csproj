@@ -51,25 +51,25 @@
   <ItemGroup>
     <Compile Include="BLL\Delete.cs" />
     <Compile Include="DAL.cs" />
-    <Compile Include="frmEdit.cs">
+    <Compile Include="frmSuppliers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEdit.Designer.cs">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <Compile Include="frmSuppliers.Designer.cs">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditDetail.cs">
+    <Compile Include="frmDeleteDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditDetail.Designer.cs">
-      <DependentUpon>frmEditDetail.cs</DependentUpon>
+    <Compile Include="frmDeleteDetail.Designer.cs">
+      <DependentUpon>frmDeleteDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmEdit.resx">
-      <DependentUpon>frmEdit.cs</DependentUpon>
+    <EmbeddedResource Include="frmSuppliers.resx">
+      <DependentUpon>frmSuppliers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditDetail.resx">
-      <DependentUpon>frmEditDetail.cs</DependentUpon>
+    <EmbeddedResource Include="frmDeleteDetail.resx">
+      <DependentUpon>frmDeleteDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

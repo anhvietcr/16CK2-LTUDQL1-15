@@ -11,12 +11,12 @@ using System.Data.SqlClient;
 
 namespace NorthWnd_Nhom15
 {
-    public partial class frmEdit : Form
+    public partial class frmSuppliers : Form
     {
         public delegate void pointer(List<string> data);
         public event pointer sendDataSelected;
 
-        public frmEdit()
+        public frmSuppliers()
         {
             InitializeComponent();
 
@@ -72,7 +72,7 @@ namespace NorthWnd_Nhom15
             }
 
             // using delegate send data to another form
-            frmEditDetail frm = new frmEditDetail(this);
+            frmDeleteDetail frm = new frmDeleteDetail(this);
             sendDataSelected += new pointer(frm.getDataSender);
             sendDataSelected(data);
 
