@@ -7,6 +7,13 @@ Nhóm 15 - Đồ án Cuối Kỳ - LTUDQL1
 > **Workflow**
 ![workflow](workflow.jpg)
 
+> **ERD**
+![erd](QuanLyVeXe_Diagram.png)
+
+> **Phân công Database**
+![task database](phan_cong.png)
+
+
 > **Thành viên**
 - Đặng Thị Thanh Tuyền  - 1660699
 - Dương Hoàng Trung 	- 1660661
