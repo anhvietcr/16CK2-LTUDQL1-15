@@ -8,10 +8,10 @@ Nhóm 15 - Đồ án Cuối Kỳ - LTUDQL1
 ![workflow](workflow.jpg)
 
 > **ERD**
-![erd](QuanLyVeXe_Diagram.png)
+![erd](Database/QuanLyVeXe_Diagram.png)
 
 > **Phân công Database**
-![task database](phan_cong.png)
+![task database](Database/phan_cong.png)
 
 
 > **Thành viên**
