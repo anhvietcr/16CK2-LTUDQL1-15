@@ -24,3 +24,15 @@ D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\Qu
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\UserController.dll
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.CopyComplete
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe.config
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.exe
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.pdb
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.exe
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\QuanLyNhaXe.pdb
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\bin\Debug\UserController.dll
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csprojResolveAssemblyReference.cache
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmDashboard.resources
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmDatVe.resources
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.frmVeBan.resources
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.Properties.Resources.resources
+D:\ptud\LTUDQL1-1819-Nhom15-DACK\THONG TIN DAT VE\QuanLyNhaXe\obj\Debug\QuanLyNhaXe.csproj.GenerateResource.Cache
