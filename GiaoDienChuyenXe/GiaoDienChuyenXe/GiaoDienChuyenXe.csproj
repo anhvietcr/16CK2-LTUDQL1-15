@@ -45,10 +45,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UserController">
-      <HintPath>..\..\16CK2-LTUDQL1-15-master\Wiki UserController\UserController.dll</HintPath>
+      <HintPath>..\..\Wiki UserController\UserController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL.cs" />
     <Compile Include="frmXe.cs">
       <SubType>Form</SubType>
     </Compile>

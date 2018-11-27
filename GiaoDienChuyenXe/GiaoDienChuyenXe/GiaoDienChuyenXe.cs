@@ -106,6 +106,8 @@ namespace GiaoDienChuyenXe
         void fnChuyenXe_Load(object sender, EventArgs e)
         {
             timer_open.Start();
+
+
         }
 
         private void timer_open_Tick(object sender, EventArgs e)
