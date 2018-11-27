@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace GiaoDienChuyenXe
 {
     public partial class fnChuyenXe : Form
     {
+
+        BUS_Chuyen c;
         public fnChuyenXe()
         {
             InitializeComponent();
@@ -105,9 +108,11 @@ namespace GiaoDienChuyenXe
         // effect load form
         void fnChuyenXe_Load(object sender, EventArgs e)
         {
-            timer_open.Start();
-
-
+            timer_open.Start();            
+            loadcbbChuyen();
+            loadcbbLoai();
+            loadcbbTuyen();
+            LoaddgvChuyen();
         }
 
         private void timer_open_Tick(object sender, EventArgs e)
@@ -225,6 +230,109 @@ namespace GiaoDienChuyenXe
             frmX.ShowDialog();
         }
 
+        //Xử lý dgvChuyen
+        void LoaddgvChuyen()
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+
+            dt = c.ListChuyen();
+            dgvChuyenXe.DataSource = dt;
+        }
+        void loadcbbChuyen()
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+
+            dt = c.ListcbbChuyen();
+            cbbChuyenXe.Items.Add("All");
+            foreach(DataRow r in dt.Rows)
+            {
+                cbbChuyenXe.Items.Add(r["ID_Chuyen"]);
+            }
+            cbbChuyenXe.SelectedIndex = 0;
+        }
+        void loadcbbLoai()
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+
+            dt = c.ListcbbLoai();
+            foreach (DataRow r in dt.Rows)
+            {
+                cbbLoaiXe.Items.Add(r["TenLoai"]);
+            }
+            cbbLoaiXe.SelectedIndex = 0;
+        }
+        void loadcbbTuyen()
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+
+            dt = c.ListcbbTuyen();
+            cbbTuyenXe.Items.Add("All");
+            foreach (DataRow r in dt.Rows)
+            {
+               cbbTuyenXe.Items.Add(r["ID_Tuyen"]);
+            }
+            cbbTuyenXe.SelectedIndex = 0;
+        }
+        void XulyTimKiemTCL()
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+            int Tuyen = -1;
+            int Chuyen = -1;
+            if (cbbTuyenXe.SelectedIndex != 0)
+            {
+                if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
+                {
+                    Tuyen = x;
+                }
+            }
+            if (cbbChuyenXe.SelectedIndex != 0)
+            {
+                if (Int32.TryParse(cbbChuyenXe.Text.ToString(), out int x))
+                {
+                    Chuyen = x;
+                }
+            }
+            string Loai = cbbLoaiXe.Text.ToString();
+            if(cbbChuyenXe.Text.ToString()=="All" && cbbLoaiXe.Text.ToString()=="All" && cbbTuyenXe.Text.ToString()=="All")
+            {
+                LoaddgvChuyen();
+            }
+
+            dt = c.ListChuyenDK(Tuyen, Chuyen, Loai);
+            dgvChuyenXe.DataSource = dt;
+        }
+        private void cbbChuyenXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XulyTimKiemTCL();
+            if(cbbChuyenXe.SelectedIndex!=0)
+            {
+                cbbLoaiXe.Enabled = false;
+                cbbTuyenXe.Enabled = false;
+                cbbTuyenXe.SelectedIndex = 0;
+                cbbLoaiXe.SelectedIndex = 0;
+            }
+            else
+            {
+                cbbLoaiXe.Enabled = true;
+                cbbTuyenXe.Enabled = true;
+            }
+
+        }
+
+        private void cbbTuyenXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XulyTimKiemTCL();
+                    }
+
+        private void cbbLoaiXe_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            XulyTimKiemTCL();
+        }
     }
 }
 
