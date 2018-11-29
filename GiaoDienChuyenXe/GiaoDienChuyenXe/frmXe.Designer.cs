@@ -37,6 +37,8 @@
             // 
             // dgvXe
             // 
+            this.dgvXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvXe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.dgvXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvXe.Location = new System.Drawing.Point(1, 108);
@@ -64,7 +66,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(98)))), ((int)(((byte)(255)))));
             this.label1.Location = new System.Drawing.Point(260, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 51);
+            this.label1.Size = new System.Drawing.Size(260, 49);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông Tin Xe";
             // 
@@ -76,7 +78,8 @@
             this.Controls.Add(this.grXe);
             this.Controls.Add(this.dgvXe);
             this.Name = "frmXe";
-            this.Text = "frmXe";
+            this.Text = "Xe";
+            this.Load += new System.EventHandler(this.frmXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvXe)).EndInit();
             this.grXe.ResumeLayout(false);
             this.grXe.PerformLayout();

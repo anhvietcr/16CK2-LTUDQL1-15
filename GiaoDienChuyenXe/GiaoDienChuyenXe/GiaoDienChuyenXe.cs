@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using DTO;
 
 namespace GiaoDienChuyenXe
 {
@@ -15,6 +16,7 @@ namespace GiaoDienChuyenXe
     {
 
         BUS_Chuyen c;
+        DTO_Chuyen dto_c = new DTO_Chuyen();
         public fnChuyenXe()
         {
             InitializeComponent();
@@ -281,8 +283,10 @@ namespace GiaoDienChuyenXe
         {
             c = new BUS_Chuyen();
             DataTable dt = new DataTable();
+
+            dto_c = new DTO_Chuyen();
             int Tuyen = -1;
-            int Chuyen = -1;
+            dto_c.ID_Chuyen = -1;
             if (cbbTuyenXe.SelectedIndex != 0)
             {
                 if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
@@ -294,7 +298,7 @@ namespace GiaoDienChuyenXe
             {
                 if (Int32.TryParse(cbbChuyenXe.Text.ToString(), out int x))
                 {
-                    Chuyen = x;
+                    dto_c.ID_Chuyen = x;
                 }
             }
             string Loai = cbbLoaiXe.Text.ToString();
@@ -303,12 +307,13 @@ namespace GiaoDienChuyenXe
                 LoaddgvChuyen();
             }
 
-            dt = c.ListChuyenDK(Tuyen, Chuyen, Loai);
+            dt = c.ListChuyenDK(Tuyen, dto_c.ID_Chuyen, Loai);
             dgvChuyenXe.DataSource = dt;
         }
         private void cbbChuyenXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             XulyTimKiemTCL();
+
             if(cbbChuyenXe.SelectedIndex!=0)
             {
                 cbbLoaiXe.Enabled = false;
@@ -323,15 +328,83 @@ namespace GiaoDienChuyenXe
             }
 
         }
-
         private void cbbTuyenXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             XulyTimKiemTCL();
-                    }
-
+        }
         private void cbbLoaiXe_SelectedIndexChanged(object sender, EventArgs e)
         {
             XulyTimKiemTCL();
+        }
+        private void btnSearchChuyenXe_Click(object sender, EventArgs e)
+        {
+            c = new BUS_Chuyen();
+            DataTable dt = new DataTable();
+
+            string tu,den;
+            tu = "%"+tbTu.Text.ToString()+"%";
+            den = "%" + tbDen.Text.ToString() + "%";
+
+            dt = c.ListChuyenSearch(tu, den);
+            dgvChuyenXe.DataSource = dt;
+        }
+        private void dgvChuyenXe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells[0].Value.ToString(), out int x))
+            {
+                dto_c.ID_Chuyen = x;
+            }
+
+            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tuyen_ID_Tuyen"].Value.ToString(), out int y))
+            {
+                dto_c.Tuyen_ID_Tuyen = y;
+            }
+
+            if (DateTime.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Gio_khoi_hanh"].Value.ToString(), out DateTime z))
+            {
+                dto_c.Gio_khoi_hanh = z;
+            }
+
+            dto_c.Ghi_chu = dgvChuyenXe.SelectedRows[0].Cells["Ghi_chu"].Value.ToString();
+            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Xe_XeID"].Value.ToString(), out int c))
+            {
+                dto_c.Xe_XeID = c;
+            }
+
+            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tai_xe_ID_TaiXe"].Value.ToString(), out int d))
+            {
+                dto_c.Tai_xe_ID_TaiXe = d;
+            }
+        }
+        private void btnXoaChuyenXe_Click(object sender, EventArgs e)
+        {
+            c = new BUS_Chuyen();
+            DialogResult dlr = MessageBox.Show("Are you sure you want to DLETE ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dlr == DialogResult.Yes)
+            {
+                c.DeleteChuyen(dto_c.ID_Chuyen);
+
+            }
+            LoaddgvChuyen();
+
+        }
+        private void btnUpdateChuyenXe_Click(object sender, EventArgs e)
+        {
+            frmIUChuyen frm = new frmIUChuyen(dto_c,1);
+            frm.ShowDialog();
+            LoaddgvChuyen();
+        }
+
+        private void btnThemChuyenXe_Click(object sender, EventArgs e)
+        {
+            frmIUChuyen frm = new frmIUChuyen(dto_c, 2);
+            frm.ShowDialog();
+            LoaddgvChuyen();
+        }
+
+        private void btnExecl_Click(object sender, EventArgs e)
+        {
+            c.execl((DataTable)dgvChuyenXe.DataSource);
         }
     }
 }
