@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UserController">
-      <HintPath>C:\Users\dtttu\Desktop\Wiki UserController\UserController.dll</HintPath>
+      <HintPath>..\..\Wiki UserController\UserController\UserController\bin\Release\UserController.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
@@ -94,6 +94,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{b3bc9819-b862-41fb-acca-ce9a062a55a2}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{b9fedf87-4aae-4fb2-8ca5-b7163664d00b}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

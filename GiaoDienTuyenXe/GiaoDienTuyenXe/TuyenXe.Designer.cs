@@ -39,28 +39,32 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cbTramDi = new System.Windows.Forms.ComboBox();
+            this.dgrv_TuyenXe = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtThoiGianChay = new System.Windows.Forms.TextBox();
+            this.txtKhoangCach = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTramDen = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
+            this.cbIdTuyen = new System.Windows.Forms.ComboBox();
+            this.cbIDTramDi = new System.Windows.Forms.ComboBox();
+            this.cbIDTramDen = new System.Windows.Forms.ComboBox();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlFill.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrv_TuyenXe)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -74,7 +78,7 @@
             // 
             // ctr_navbar1
             // 
-            this.ctr_navbar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_navbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.ctr_navbar1.Location = new System.Drawing.Point(0, 0);
             this.ctr_navbar1.Name = "ctr_navbar1";
             this.ctr_navbar1.Size = new System.Drawing.Size(800, 40);
@@ -91,7 +95,7 @@
             // 
             // ctr_menu1
             // 
-            this.ctr_menu1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
             this.ctr_menu1.ForeColor = System.Drawing.Color.White;
             this.ctr_menu1.Location = new System.Drawing.Point(0, 0);
             this.ctr_menu1.Name = "ctr_menu1";
@@ -151,40 +155,53 @@
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.AutoSize = true;
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.cbIDTramDen);
+            this.groupBox2.Controls.Add(this.cbIDTramDi);
+            this.groupBox2.Controls.Add(this.cbIdTuyen);
+            this.groupBox2.Controls.Add(this.cbTramDi);
+            this.groupBox2.Controls.Add(this.dgrv_TuyenXe);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtThoiGianChay);
+            this.groupBox2.Controls.Add(this.txtKhoangCach);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cbTramDen);
             this.groupBox2.Controls.Add(this.comboBox1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 86);
+            this.groupBox2.Location = new System.Drawing.Point(9, 105);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(588, 396);
+            this.groupBox2.Size = new System.Drawing.Size(590, 360);
             this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             // 
-            // dataGridView1
+            // cbTramDi
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbTramDi.FormattingEnabled = true;
+            this.cbTramDi.Location = new System.Drawing.Point(198, 127);
+            this.cbTramDi.Name = "cbTramDi";
+            this.cbTramDi.Size = new System.Drawing.Size(170, 26);
+            this.cbTramDi.TabIndex = 65;
+            this.cbTramDi.SelectedIndexChanged += new System.EventHandler(this.cbTramDi_SelectedIndexChanged);
+            // 
+            // dgrv_TuyenXe
+            // 
+            this.dgrv_TuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 224);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(526, 148);
-            this.dataGridView1.TabIndex = 64;
+            this.dgrv_TuyenXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgrv_TuyenXe.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgrv_TuyenXe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgrv_TuyenXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrv_TuyenXe.GridColor = System.Drawing.Color.White;
+            this.dgrv_TuyenXe.Location = new System.Drawing.Point(33, 224);
+            this.dgrv_TuyenXe.Name = "dgrv_TuyenXe";
+            this.dgrv_TuyenXe.Size = new System.Drawing.Size(531, 148);
+            this.dgrv_TuyenXe.TabIndex = 64;
+            this.dgrv_TuyenXe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrv_TuyenXe_CellContentClick);
             // 
             // label7
             // 
@@ -195,9 +212,9 @@
             this.label7.Location = new System.Drawing.Point(29, 29);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(3);
-            this.label7.Size = new System.Drawing.Size(97, 28);
+            this.label7.Size = new System.Drawing.Size(131, 28);
             this.label7.TabIndex = 59;
-            this.label7.Text = "Mã tuyến:";
+            this.label7.Text = "Khoảng cách: ";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -209,9 +226,9 @@
             this.label6.Location = new System.Drawing.Point(29, 77);
             this.label6.Name = "label6";
             this.label6.Padding = new System.Windows.Forms.Padding(3);
-            this.label6.Size = new System.Drawing.Size(101, 28);
+            this.label6.Size = new System.Drawing.Size(143, 28);
             this.label6.TabIndex = 58;
-            this.label6.Text = "Tên tuyến:";
+            this.label6.Text = "Thời gian chạy:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnXoa
@@ -268,20 +285,22 @@
             this.btnThem.TabIndex = 55;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // textBox2
+            // txtThoiGianChay
             // 
-            this.textBox2.Location = new System.Drawing.Point(198, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 25);
-            this.textBox2.TabIndex = 54;
+            this.txtThoiGianChay.Location = new System.Drawing.Point(198, 80);
+            this.txtThoiGianChay.Name = "txtThoiGianChay";
+            this.txtThoiGianChay.Size = new System.Drawing.Size(170, 25);
+            this.txtThoiGianChay.TabIndex = 54;
+            this.txtThoiGianChay.TextChanged += new System.EventHandler(this.txtThoiGianChay_TextChanged);
             // 
-            // textBox1
+            // txtKhoangCach
             // 
-            this.textBox1.Location = new System.Drawing.Point(198, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 25);
-            this.textBox1.TabIndex = 53;
+            this.txtKhoangCach.Location = new System.Drawing.Point(198, 31);
+            this.txtKhoangCach.Name = "txtKhoangCach";
+            this.txtKhoangCach.Size = new System.Drawing.Size(170, 25);
+            this.txtKhoangCach.TabIndex = 53;
             // 
             // label3
             // 
@@ -297,13 +316,14 @@
             this.label3.Text = "Điểm đưa đến:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // cbTramDen
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(198, 178);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(170, 26);
-            this.comboBox2.TabIndex = 52;
+            this.cbTramDen.FormattingEnabled = true;
+            this.cbTramDen.Location = new System.Drawing.Point(198, 178);
+            this.cbTramDen.Name = "cbTramDen";
+            this.cbTramDen.Size = new System.Drawing.Size(170, 26);
+            this.cbTramDen.TabIndex = 52;
+            this.cbTramDen.SelectedIndexChanged += new System.EventHandler(this.cbTramDen_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -314,7 +334,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(198, 127);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 26);
+            this.comboBox1.Size = new System.Drawing.Size(0, 26);
             this.comboBox1.TabIndex = 51;
             // 
             // label2
@@ -330,6 +350,7 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Điểm khởi hành:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // timer_open
             // 
@@ -338,6 +359,34 @@
             // timer_close
             // 
             this.timer_close.Tick += new System.EventHandler(this.time_close_Tick);
+            // 
+            // cbIdTuyen
+            // 
+            this.cbIdTuyen.FormattingEnabled = true;
+            this.cbIdTuyen.Location = new System.Drawing.Point(383, 29);
+            this.cbIdTuyen.Name = "cbIdTuyen";
+            this.cbIdTuyen.Size = new System.Drawing.Size(49, 26);
+            this.cbIdTuyen.TabIndex = 65;
+            this.cbIdTuyen.Visible = false;
+            this.cbIdTuyen.SelectedIndexChanged += new System.EventHandler(this.cbIdTuyen_SelectedIndexChanged);
+            // 
+            // cbIDTramDi
+            // 
+            this.cbIDTramDi.FormattingEnabled = true;
+            this.cbIDTramDi.Location = new System.Drawing.Point(383, 80);
+            this.cbIDTramDi.Name = "cbIDTramDi";
+            this.cbIDTramDi.Size = new System.Drawing.Size(49, 26);
+            this.cbIDTramDi.TabIndex = 66;
+            this.cbIDTramDi.Visible = false;
+            // 
+            // cbIDTramDen
+            // 
+            this.cbIDTramDen.FormattingEnabled = true;
+            this.cbIDTramDen.Location = new System.Drawing.Point(383, 127);
+            this.cbIDTramDen.Name = "cbIDTramDen";
+            this.cbIDTramDen.Size = new System.Drawing.Size(49, 26);
+            this.cbIDTramDen.TabIndex = 67;
+            this.cbIDTramDen.Visible = false;
             // 
             // frmTuyenXe
             // 
@@ -361,7 +410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrv_TuyenXe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,9 +419,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTop;
-        private UserController.ctr_navbar ctr_navbar1;
         private System.Windows.Forms.Panel pnlLeft;
-        private UserController.ctr_menu ctr_menu1;
         private System.Windows.Forms.Panel pnlFill;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -381,17 +428,23 @@
         private System.Windows.Forms.Timer timer_close;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgrv_TuyenXe;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtThoiGianChay;
+        private System.Windows.Forms.TextBox txtKhoangCach;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbTramDen;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
+        private UserController.ctr_navbar ctr_navbar1;
+        private UserController.ctr_menu ctr_menu1;
+        private System.Windows.Forms.ComboBox cbTramDi;
+        private System.Windows.Forms.ComboBox cbIdTuyen;
+        private System.Windows.Forms.ComboBox cbIDTramDen;
+        private System.Windows.Forms.ComboBox cbIDTramDi;
     }
 }
