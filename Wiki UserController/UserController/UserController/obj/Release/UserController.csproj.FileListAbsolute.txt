@@ -19,3 +19,14 @@ D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\Wiki UserController
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.dll
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.pdb
 D:\Anhvietcr\Coding\CSharp\Deadline\LTUDQL1\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.csprojAssemblyReference.cache
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\bin\Release\UserController.dll
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\bin\Release\UserController.pdb
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.csprojAssemblyReference.cache
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.ctr_menu.resources
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.ctr_navbar.resources
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.ctr_navbar_title.resources
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.Properties.Resources.resources
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.csproj.GenerateResource.cache
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.csproj.CoreCompileInputs.cache
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.dll
+F:\HoàngTrung\LTUDQL\16CK2-LTUDQL1-15\Wiki UserController\UserController\UserController\obj\Release\UserController.pdb

@@ -35,8 +35,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvChuyenXe = new System.Windows.Forms.DataGridView();
-            this.tbTimeCuoi = new System.Windows.Forms.TextBox();
-            this.tbTimeDau = new System.Windows.Forms.TextBox();
+            this.tbDen = new System.Windows.Forms.TextBox();
+            this.tbTu = new System.Windows.Forms.TextBox();
             this.lbTimeCuoi = new System.Windows.Forms.Label();
             this.lbTimeDau = new System.Windows.Forms.Label();
             this.lbTuyenXe = new System.Windows.Forms.Label();
@@ -81,24 +81,24 @@
             // 
             // ctr_navbar1
             // 
-            this.ctr_navbar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_navbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.ctr_navbar1.Location = new System.Drawing.Point(0, 0);
             this.ctr_navbar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctr_navbar1.Name = "ctr_navbar1";
-            this.ctr_navbar1.Size = new System.Drawing.Size(1065, 49);
-            this.ctr_navbar1.TabIndex = 0;
+            this.ctr_navbar1.Size = new System.Drawing.Size(1067, 49);
+            this.ctr_navbar1.TabIndex = 1;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.dgvChuyenXe);
             this.panel3.Controls.Add(this.btnExecl);
             this.panel3.Controls.Add(this.btnViewXe);
-            this.panel3.Controls.Add(this.dgvChuyenXe);
             this.panel3.Controls.Add(this.btnThemChuyenXe);
             this.panel3.Controls.Add(this.btnUpdateChuyenXe);
             this.panel3.Controls.Add(this.btnXoaChuyenXe);
             this.panel3.Controls.Add(this.btnSearchChuyenXe);
-            this.panel3.Controls.Add(this.tbTimeCuoi);
-            this.panel3.Controls.Add(this.tbTimeDau);
+            this.panel3.Controls.Add(this.tbDen);
+            this.panel3.Controls.Add(this.tbTu);
             this.panel3.Controls.Add(this.lbTimeCuoi);
             this.panel3.Controls.Add(this.lbTimeDau);
             this.panel3.Controls.Add(this.lbTuyenXe);
@@ -122,7 +122,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(795, 578);
             this.panel3.TabIndex = 0;
-
             // 
             // imageList1
             // 
@@ -158,31 +157,32 @@
             this.dgvChuyenXe.RowTemplate.Height = 24;
             this.dgvChuyenXe.Size = new System.Drawing.Size(759, 334);
             this.dgvChuyenXe.TabIndex = 74;
+            this.dgvChuyenXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenXe_CellClick);
             // 
-            // tbTimeCuoi
+            // tbDen
             // 
-            this.tbTimeCuoi.AllowDrop = true;
-            this.tbTimeCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbDen.AllowDrop = true;
+            this.tbDen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTimeCuoi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tbTimeCuoi.Location = new System.Drawing.Point(656, 61);
-            this.tbTimeCuoi.MaximumSize = new System.Drawing.Size(121, 22);
-            this.tbTimeCuoi.MinimumSize = new System.Drawing.Size(121, 22);
-            this.tbTimeCuoi.Name = "tbTimeCuoi";
-            this.tbTimeCuoi.Size = new System.Drawing.Size(121, 22);
-            this.tbTimeCuoi.TabIndex = 64;
+            this.tbDen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbDen.Location = new System.Drawing.Point(656, 61);
+            this.tbDen.MaximumSize = new System.Drawing.Size(121, 22);
+            this.tbDen.MinimumSize = new System.Drawing.Size(121, 22);
+            this.tbDen.Name = "tbDen";
+            this.tbDen.Size = new System.Drawing.Size(121, 22);
+            this.tbDen.TabIndex = 64;
             // 
-            // tbTimeDau
+            // tbTu
             // 
-            this.tbTimeDau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tbTu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTimeDau.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tbTimeDau.Location = new System.Drawing.Point(656, 18);
-            this.tbTimeDau.MaximumSize = new System.Drawing.Size(121, 22);
-            this.tbTimeDau.MinimumSize = new System.Drawing.Size(121, 22);
-            this.tbTimeDau.Name = "tbTimeDau";
-            this.tbTimeDau.Size = new System.Drawing.Size(121, 22);
-            this.tbTimeDau.TabIndex = 62;
+            this.tbTu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbTu.Location = new System.Drawing.Point(656, 18);
+            this.tbTu.MaximumSize = new System.Drawing.Size(121, 22);
+            this.tbTu.MinimumSize = new System.Drawing.Size(121, 22);
+            this.tbTu.Name = "tbTu";
+            this.tbTu.Size = new System.Drawing.Size(121, 22);
+            this.tbTu.TabIndex = 62;
             // 
             // lbTimeCuoi
             // 
@@ -265,6 +265,7 @@
             this.cbbTuyenXe.Name = "cbbTuyenXe";
             this.cbbTuyenXe.Size = new System.Drawing.Size(121, 24);
             this.cbbTuyenXe.TabIndex = 50;
+            this.cbbTuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbTuyenXe_SelectedIndexChanged);
             // 
             // cbbChuyenXe
             // 
@@ -277,6 +278,7 @@
             this.cbbChuyenXe.Name = "cbbChuyenXe";
             this.cbbChuyenXe.Size = new System.Drawing.Size(121, 24);
             this.cbbChuyenXe.TabIndex = 49;
+            this.cbbChuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbChuyenXe_SelectedIndexChanged);
             // 
             // cbbLoaiXe
             // 
@@ -291,6 +293,7 @@
             this.cbbLoaiXe.Name = "cbbLoaiXe";
             this.cbbLoaiXe.Size = new System.Drawing.Size(121, 24);
             this.cbbLoaiXe.TabIndex = 46;
+            this.cbbLoaiXe.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiXe_SelectedIndexChanged);
             // 
             // button12
             // 
@@ -449,12 +452,12 @@
             // 
             // ctr_menu1
             // 
-            this.ctr_menu1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr_menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
             this.ctr_menu1.ForeColor = System.Drawing.Color.White;
             this.ctr_menu1.Location = new System.Drawing.Point(0, 0);
             this.ctr_menu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ctr_menu1.Name = "ctr_menu1";
-            this.ctr_menu1.Size = new System.Drawing.Size(267, 581);
+            this.ctr_menu1.Size = new System.Drawing.Size(267, 578);
             this.ctr_menu1.TabIndex = 0;
             // 
             // timer_open
@@ -487,6 +490,7 @@
             this.btnExecl.TabIndex = 78;
             this.btnExecl.Text = "Excel";
             this.btnExecl.UseVisualStyleBackColor = false;
+            this.btnExecl.Click += new System.EventHandler(this.btnExecl_Click);
             this.btnExecl.MouseLeave += new System.EventHandler(this.btnExecl_MouseLeave);
             this.btnExecl.MouseHover += new System.EventHandler(this.btnExecl_MouseHover);
             // 
@@ -528,6 +532,7 @@
             this.btnThemChuyenXe.TabIndex = 68;
             this.btnThemChuyenXe.Text = "Insert";
             this.btnThemChuyenXe.UseVisualStyleBackColor = false;
+            this.btnThemChuyenXe.Click += new System.EventHandler(this.btnThemChuyenXe_Click);
             this.btnThemChuyenXe.MouseLeave += new System.EventHandler(this.btnThemChuyenXe_MouseLeave);
             this.btnThemChuyenXe.MouseHover += new System.EventHandler(this.btnThemChuyenXe_MouseHover);
             // 
@@ -551,6 +556,7 @@
             this.btnUpdateChuyenXe.TabIndex = 70;
             this.btnUpdateChuyenXe.Text = "Update";
             this.btnUpdateChuyenXe.UseVisualStyleBackColor = false;
+            this.btnUpdateChuyenXe.Click += new System.EventHandler(this.btnUpdateChuyenXe_Click);
             this.btnUpdateChuyenXe.MouseLeave += new System.EventHandler(this.btnUpdateChuyenXe_MouseLeave);
             this.btnUpdateChuyenXe.MouseHover += new System.EventHandler(this.btnUpdateChuyenXe_MouseHover);
             // 
@@ -574,6 +580,7 @@
             this.btnXoaChuyenXe.TabIndex = 72;
             this.btnXoaChuyenXe.Text = "Delete";
             this.btnXoaChuyenXe.UseVisualStyleBackColor = false;
+            this.btnXoaChuyenXe.Click += new System.EventHandler(this.btnXoaChuyenXe_Click);
             this.btnXoaChuyenXe.MouseLeave += new System.EventHandler(this.btnXoaChuyenXe_MouseLeave);
             this.btnXoaChuyenXe.MouseHover += new System.EventHandler(this.btnXoaChuyenXe_MouseHover);
             // 
@@ -592,11 +599,12 @@
             this.btnSearchChuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
             this.btnSearchChuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
             this.btnSearchChuyenXe.Name = "btnSearchChuyenXe";
-            this.btnSearchChuyenXe.Size = new System.Drawing.Size(121, 0);
+            this.btnSearchChuyenXe.Size = new System.Drawing.Size(121, 27);
             this.btnSearchChuyenXe.TabIndex = 67;
             this.btnSearchChuyenXe.Tag = "Search";
             this.btnSearchChuyenXe.Text = "Search";
             this.btnSearchChuyenXe.UseVisualStyleBackColor = false;
+            this.btnSearchChuyenXe.Click += new System.EventHandler(this.btnSearchChuyenXe_Click);
             this.btnSearchChuyenXe.MouseLeave += new System.EventHandler(this.btnSearchChuyenXe_MouseLeave);
             this.btnSearchChuyenXe.MouseHover += new System.EventHandler(this.btnSearchChuyenXe_MouseHover);
             // 
@@ -630,8 +638,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
-        private UserController.ctr_navbar ctr_navbar1;
-        private UserController.ctr_menu ctr_menu1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnExecl;
         private System.Windows.Forms.Button btnViewXe;
@@ -640,8 +646,8 @@
         private System.Windows.Forms.Button btnUpdateChuyenXe;
         private System.Windows.Forms.Button btnXoaChuyenXe;
         private System.Windows.Forms.Button btnSearchChuyenXe;
-        private System.Windows.Forms.TextBox tbTimeCuoi;
-        private System.Windows.Forms.TextBox tbTimeDau;
+        private System.Windows.Forms.TextBox tbDen;
+        private System.Windows.Forms.TextBox tbTu;
         private System.Windows.Forms.Label lbTimeCuoi;
         private System.Windows.Forms.Label lbTimeDau;
         private System.Windows.Forms.Label lbTuyenXe;
@@ -659,6 +665,8 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button8;
+        private UserController.ctr_menu ctr_menu1;
+        private UserController.ctr_navbar ctr_navbar1;
     }
 }
 

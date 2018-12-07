@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,11 +46,16 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UserController">
-      <HintPath>..\..\Wiki UserController\UserController.dll</HintPath>
+      <HintPath>..\..\Wiki UserController\UserController\UserController\bin\Release\UserController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL.cs" />
+    <Compile Include="frmIUChuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIUChuyen.Designer.cs">
+      <DependentUpon>frmIUChuyen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmIUChuyen.resx">
+      <DependentUpon>frmIUChuyen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXe.resx">
       <DependentUpon>frmXe.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +112,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{7761c187-44a9-4f38-be07-ea60689adf03}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{77b2f858-1cab-4329-ba81-3ab41cb0706f}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
