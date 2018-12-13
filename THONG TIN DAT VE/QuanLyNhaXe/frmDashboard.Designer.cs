@@ -61,6 +61,7 @@
             this.imgListAvatar = new System.Windows.Forms.ImageList(this.components);
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
+            this.tooltip_info = new System.Windows.Forms.ToolTip(this.components);
             this.panel_menu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox_intro.SuspendLayout();
@@ -116,6 +117,7 @@
             this.btn_menu_1.Size = new System.Drawing.Size(200, 100);
             this.btn_menu_1.TabIndex = 1;
             this.btn_menu_1.Text = "   Đặt Vé";
+            this.tooltip_info.SetToolTip(this.btn_menu_1, "Quản lý Đặt vé");
             this.btn_menu_1.UseVisualStyleBackColor = false;
             this.btn_menu_1.Click += new System.EventHandler(this.btn_menu_1_Click);
             this.btn_menu_1.MouseLeave += new System.EventHandler(this.btn_menu_1_MouseLeave);
@@ -156,6 +158,7 @@
             this.btn_menu_2.Size = new System.Drawing.Size(200, 100);
             this.btn_menu_2.TabIndex = 2;
             this.btn_menu_2.Text = "    Khách Hàng";
+            this.tooltip_info.SetToolTip(this.btn_menu_2, "Quản lý Khách hàng");
             this.btn_menu_2.UseVisualStyleBackColor = false;
             this.btn_menu_2.Click += new System.EventHandler(this.btn_menu_2_Click);
             this.btn_menu_2.MouseLeave += new System.EventHandler(this.btn_menu_2_MouseLeave);
@@ -181,6 +184,7 @@
             this.btn_menu_3.Size = new System.Drawing.Size(200, 100);
             this.btn_menu_3.TabIndex = 3;
             this.btn_menu_3.Text = "    Chuyến Xe";
+            this.tooltip_info.SetToolTip(this.btn_menu_3, "Quản lý Chuyến xe");
             this.btn_menu_3.UseVisualStyleBackColor = false;
             this.btn_menu_3.Click += new System.EventHandler(this.btn_menu_3_Click);
             this.btn_menu_3.MouseLeave += new System.EventHandler(this.btn_menu_3_MouseLeave);
@@ -206,6 +210,7 @@
             this.btn_menu_4.Size = new System.Drawing.Size(200, 100);
             this.btn_menu_4.TabIndex = 4;
             this.btn_menu_4.Text = "    Tuyến Xe";
+            this.tooltip_info.SetToolTip(this.btn_menu_4, "Quản lý Chuyến xe");
             this.btn_menu_4.UseVisualStyleBackColor = false;
             this.btn_menu_4.Click += new System.EventHandler(this.btn_menu_4_Click);
             this.btn_menu_4.MouseLeave += new System.EventHandler(this.btn_menu_4_MouseLeave);
@@ -450,6 +455,7 @@
             this.btn_slider.Name = "btn_slider";
             this.btn_slider.Size = new System.Drawing.Size(45, 30);
             this.btn_slider.TabIndex = 2;
+            this.tooltip_info.SetToolTip(this.btn_slider, "Thông tin nhóm");
             this.btn_slider.UseVisualStyleBackColor = false;
             this.btn_slider.Click += new System.EventHandler(this.btn_slider_Click);
             // 
@@ -549,6 +555,7 @@
         private UserController.ctr_navbar_title ctr_navbar_title;
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
+        private System.Windows.Forms.ToolTip tooltip_info;
     }
 }
 
