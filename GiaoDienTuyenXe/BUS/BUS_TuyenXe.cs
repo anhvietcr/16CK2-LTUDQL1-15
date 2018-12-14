@@ -23,11 +23,21 @@ namespace BUS
         {
             return dal_tuyenxe.getTenTrambyTuyen();
         }
-        public bool Them(DTO_TuyenXe tx)
+        public DataTable GetTuyenById(DTO_TuyenXe tx)
         {
-            return dal_tuyenxe.Them(tx);
+            return dal_tuyenxe.GetTuyenById(tx);
         }
- 
+        public bool Insert(DTO_TuyenXe tx)
+        {
+            return dal_tuyenxe.Insert(tx);
+        }
+        public bool Delete(DTO_TuyenXe tx)
+        {
+            return dal_tuyenxe.Delete(tx);
+        }
+        
+        
+
 
 
 

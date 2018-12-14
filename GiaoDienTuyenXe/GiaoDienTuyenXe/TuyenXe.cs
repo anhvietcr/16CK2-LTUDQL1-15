@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BUS;
+using DTO;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUS;
-using DTO;
 
 namespace GiaoDienTuyenXe
 {
@@ -136,16 +131,32 @@ namespace GiaoDienTuyenXe
             loadGridTuyenXe();
             getTenTrambyTuyen();
         }
-        private void loadGridTuyenXe()
+
+        public void loadGridTuyenXe()
         {
+            dgrv_TuyenXe.Rows.Clear();
+
             BUS_TuyenXe bus_tuyenxe = new BUS_TuyenXe();
 
             DataTable dt = new DataTable();
             //dt sẽ hứng dữ liệu đổ vào từ bus_tuyenxe.ListTuyenXe()
             dt = bus_tuyenxe.ListTuyenXe();
             //gán dữ liệu vào datagridview
-            dgrv_TuyenXe.DataSource = dt;
-            
+
+            int i = 0;
+            foreach (DataRow r in dt.Rows)
+            {
+                DataRow row = dt.Rows[i++];
+                string id_tuyen = row["ID_Tuyen"].ToString();
+                string khoangCach = row["KhoangCach"].ToString();
+                string thoiGianChay = row["ThoiGianChay"].ToString();
+                string tramDi = row["Tram_ID_Tram1"].ToString();
+                string tramDen = row["Tram_ID_Tram"].ToString();
+
+
+                dgrv_TuyenXe.Rows.Add(id_tuyen, khoangCach, thoiGianChay, tramDi, tramDen);
+            }
+
         }
 
         void getTenTrambyTuyen()
@@ -169,40 +180,59 @@ namespace GiaoDienTuyenXe
                 cbTramDen.SelectedIndex = 0;
                 cbIdTuyen.SelectedIndex = 0;
             }
-
-        }
-       
-
-  
-
-
-        
-
-        private void dgrv_TuyenXe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        } 
+        void getTuyenbyId(string idTuyen)
         {
-           
+            BUS_TuyenXe bus = new BUS_TuyenXe();
+            DataTable dt = new DataTable();
+
+            DTO_TuyenXe tx = new DTO_TuyenXe();
+            tx.ID_Tuyen = Convert.ToInt32(idTuyen);
+
+            dt = bus.GetTuyenById(tx);
+
+            //MessageBox.Show(dt.Rows[0]["TramBatDau"].ToString());
+            //MessageBox.Show(dt.Rows[0]["TramKetThuc"].ToString());
+
+
+            int i = 0;
+            foreach (var id in cbIDTramDen.Items)
+            {
+                if (dt.Rows[0]["IDTramKetThuc"].ToString() == id.ToString())
+                {
+                    cbIDTramDen.SelectedIndex = i;
+                    cbIDTramDi.SelectedIndex = i;
+                    cbTramDen.SelectedIndex = i;
+                    cbTramDi.SelectedIndex = i;
+                    cbIdTuyen.SelectedIndex = i;
+                }
+                i++;
+            }
+
         }
+
+        private void dgrv_TuyenXe_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int iRow = dgrv_TuyenXe.CurrentCell.RowIndex;
+            //dòng click vào=dòng cuối thì return
+            if (dgrv_TuyenXe.Rows.Count - 1 == iRow) return;
+
+            cbIdTuyen.Text = dgrv_TuyenXe.Rows[iRow].Cells[0].Value.ToString();
+            txtKhoangCach.Text = dgrv_TuyenXe.Rows[iRow].Cells[1].Value.ToString();
+            txtThoiGianChay.Text = dgrv_TuyenXe.Rows[iRow].Cells[2].Value.ToString();
+
+            if (string.IsNullOrEmpty(cbIdTuyen.Text)) return; 
+            //lấy được thông tin tuyến thông qua id để truyền vào cb
+            getTuyenbyId(cbIdTuyen.Text);
+    }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            BUS_TuyenXe bus = new BUS_TuyenXe();
-            DTO_TuyenXe dto_tx = new DTO_TuyenXe();
+            //khi mở form mới thì truyền vào form hiện tại
+            ThemTuyenXe frm = new ThemTuyenXe(this);
 
-            dto_tx.ID_Tuyen = Convert.ToInt32(cbIdTuyen.Text);
-            dto_tx.KhoangCach =Convert.ToDouble(txtKhoangCach.Text);
-            dto_tx.ThoiGianChay = Convert.ToInt32(txtThoiGianChay.Text);
-            dto_tx.Tram_ID_Tram1 = Convert.ToInt32(cbTramDi.Text);
-            dto_tx.Tram_ID_Tram = Convert.ToInt32(cbTramDen.Text);
-
-            if(bus.Them(dto_tx))
-            {
-                MessageBox.Show("Thêm thành công!");
-                loadGridTuyenXe();
-            }
-            else
-            {
-                MessageBox.Show("Thêm không thành công!");
-            }
+            frm.ShowDialog();
 
         }
 
@@ -231,17 +261,26 @@ namespace GiaoDienTuyenXe
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnXoa_Click(object sender, EventArgs e)
         {
+            BUS_TuyenXe bus = new BUS_TuyenXe();
+            DTO_TuyenXe tx = new DTO_TuyenXe();
 
+            if (string.IsNullOrEmpty(cbIdTuyen.Text)) return;
+             
+            tx.ID_Tuyen = Convert.ToInt32(cbIdTuyen.Text);
+            if (bus.Delete(tx))
+            {
+                MessageBox.Show("Xoa thanh cong");
+                loadGridTuyenXe();
+            }
+            else
+            {
+                MessageBox.Show("Khong xoa duoc");
+            }
         }
-
-        private void cbIdTuyen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtThoiGianChay_TextChanged(object sender, EventArgs e)
+    
+        private void btnSua_Click(object sender, EventArgs e)
         {
 
         }

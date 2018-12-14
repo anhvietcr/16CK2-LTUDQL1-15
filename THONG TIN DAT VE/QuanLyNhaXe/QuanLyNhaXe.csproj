@@ -60,6 +60,12 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGhe.Designer.cs">
+      <DependentUpon>frmGhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVeBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDatVe.resx">
       <DependentUpon>frmDatVe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGhe.resx">
+      <DependentUpon>frmGhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVeBan.resx">
       <DependentUpon>frmVeBan.cs</DependentUpon>
@@ -98,6 +107,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{f4172225-c37f-4316-a62b-dafac6fd5140}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{7c018c22-8f41-4b7e-9628-67026b19dde6}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

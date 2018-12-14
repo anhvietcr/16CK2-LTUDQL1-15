@@ -118,6 +118,11 @@ namespace QuanLyNhaXe
                         //this.Hide();
                     }
                     break;
+                case 5:
+                    {
+                        btn_slider_Click(this, new EventArgs { });
+                    }
+                    break;
                 default:
                     {
 

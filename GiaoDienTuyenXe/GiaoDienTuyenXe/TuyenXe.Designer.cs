@@ -39,6 +39,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbIDTramDen = new System.Windows.Forms.ComboBox();
+            this.cbIDTramDi = new System.Windows.Forms.ComboBox();
+            this.cbIdTuyen = new System.Windows.Forms.ComboBox();
             this.cbTramDi = new System.Windows.Forms.ComboBox();
             this.dgrv_TuyenXe = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,9 +58,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
-            this.cbIdTuyen = new System.Windows.Forms.ComboBox();
-            this.cbIDTramDi = new System.Windows.Forms.ComboBox();
-            this.cbIDTramDen = new System.Windows.Forms.ComboBox();
+            this.ID_Tuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KhoangCach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianChay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTramDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTramDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlFill.SuspendLayout();
@@ -179,6 +184,33 @@
             this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             // 
+            // cbIDTramDen
+            // 
+            this.cbIDTramDen.FormattingEnabled = true;
+            this.cbIDTramDen.Location = new System.Drawing.Point(383, 127);
+            this.cbIDTramDen.Name = "cbIDTramDen";
+            this.cbIDTramDen.Size = new System.Drawing.Size(49, 26);
+            this.cbIDTramDen.TabIndex = 67;
+            this.cbIDTramDen.Visible = false;
+            // 
+            // cbIDTramDi
+            // 
+            this.cbIDTramDi.FormattingEnabled = true;
+            this.cbIDTramDi.Location = new System.Drawing.Point(383, 80);
+            this.cbIDTramDi.Name = "cbIDTramDi";
+            this.cbIDTramDi.Size = new System.Drawing.Size(49, 26);
+            this.cbIDTramDi.TabIndex = 66;
+            this.cbIDTramDi.Visible = false;
+            // 
+            // cbIdTuyen
+            // 
+            this.cbIdTuyen.FormattingEnabled = true;
+            this.cbIdTuyen.Location = new System.Drawing.Point(383, 29);
+            this.cbIdTuyen.Name = "cbIdTuyen";
+            this.cbIdTuyen.Size = new System.Drawing.Size(49, 26);
+            this.cbIdTuyen.TabIndex = 65;
+            this.cbIdTuyen.Visible = false;
+            // 
             // cbTramDi
             // 
             this.cbTramDi.FormattingEnabled = true;
@@ -192,16 +224,23 @@
             // 
             this.dgrv_TuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgrv_TuyenXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgrv_TuyenXe.BackgroundColor = System.Drawing.Color.White;
             this.dgrv_TuyenXe.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgrv_TuyenXe.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgrv_TuyenXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrv_TuyenXe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Tuyen,
+            this.KhoangCach,
+            this.ThoiGianChay,
+            this.TenTramDi,
+            this.TenTramDen});
             this.dgrv_TuyenXe.GridColor = System.Drawing.Color.White;
-            this.dgrv_TuyenXe.Location = new System.Drawing.Point(33, 224);
+            this.dgrv_TuyenXe.Location = new System.Drawing.Point(0, 225);
+            this.dgrv_TuyenXe.MultiSelect = false;
             this.dgrv_TuyenXe.Name = "dgrv_TuyenXe";
-            this.dgrv_TuyenXe.Size = new System.Drawing.Size(531, 148);
+            this.dgrv_TuyenXe.Size = new System.Drawing.Size(588, 137);
             this.dgrv_TuyenXe.TabIndex = 64;
-            this.dgrv_TuyenXe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrv_TuyenXe_CellContentClick);
+            this.dgrv_TuyenXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrv_TuyenXe_CellClick);
             // 
             // label7
             // 
@@ -245,6 +284,7 @@
             this.btnXoa.TabIndex = 57;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // imageList1
             // 
@@ -270,6 +310,7 @@
             this.btnSua.TabIndex = 56;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -293,7 +334,6 @@
             this.txtThoiGianChay.Name = "txtThoiGianChay";
             this.txtThoiGianChay.Size = new System.Drawing.Size(170, 25);
             this.txtThoiGianChay.TabIndex = 54;
-            this.txtThoiGianChay.TextChanged += new System.EventHandler(this.txtThoiGianChay_TextChanged);
             // 
             // txtKhoangCach
             // 
@@ -350,7 +390,6 @@
             this.label2.TabIndex = 49;
             this.label2.Text = "Điểm khởi hành:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // timer_open
             // 
@@ -360,33 +399,35 @@
             // 
             this.timer_close.Tick += new System.EventHandler(this.time_close_Tick);
             // 
-            // cbIdTuyen
+            // ID_Tuyen
             // 
-            this.cbIdTuyen.FormattingEnabled = true;
-            this.cbIdTuyen.Location = new System.Drawing.Point(383, 29);
-            this.cbIdTuyen.Name = "cbIdTuyen";
-            this.cbIdTuyen.Size = new System.Drawing.Size(49, 26);
-            this.cbIdTuyen.TabIndex = 65;
-            this.cbIdTuyen.Visible = false;
-            this.cbIdTuyen.SelectedIndexChanged += new System.EventHandler(this.cbIdTuyen_SelectedIndexChanged);
+            this.ID_Tuyen.Frozen = true;
+            this.ID_Tuyen.HeaderText = "Tuyến";
+            this.ID_Tuyen.Name = "ID_Tuyen";
+            this.ID_Tuyen.Width = 55;
             // 
-            // cbIDTramDi
+            // KhoangCach
             // 
-            this.cbIDTramDi.FormattingEnabled = true;
-            this.cbIDTramDi.Location = new System.Drawing.Point(383, 80);
-            this.cbIDTramDi.Name = "cbIDTramDi";
-            this.cbIDTramDi.Size = new System.Drawing.Size(49, 26);
-            this.cbIDTramDi.TabIndex = 66;
-            this.cbIDTramDi.Visible = false;
+            this.KhoangCach.HeaderText = "Khoảng Cách";
+            this.KhoangCach.Name = "KhoangCach";
+            this.KhoangCach.Width = 120;
             // 
-            // cbIDTramDen
+            // ThoiGianChay
             // 
-            this.cbIDTramDen.FormattingEnabled = true;
-            this.cbIDTramDen.Location = new System.Drawing.Point(383, 127);
-            this.cbIDTramDen.Name = "cbIDTramDen";
-            this.cbIDTramDen.Size = new System.Drawing.Size(49, 26);
-            this.cbIDTramDen.TabIndex = 67;
-            this.cbIDTramDen.Visible = false;
+            this.ThoiGianChay.HeaderText = "Thời Gian";
+            this.ThoiGianChay.Name = "ThoiGianChay";
+            // 
+            // TenTramDi
+            // 
+            this.TenTramDi.HeaderText = "Trạm Đi";
+            this.TenTramDi.Name = "TenTramDi";
+            this.TenTramDi.Width = 135;
+            // 
+            // TenTramDen
+            // 
+            this.TenTramDen.HeaderText = "Trạm Đến";
+            this.TenTramDen.Name = "TenTramDen";
+            this.TenTramDen.Width = 135;
             // 
             // frmTuyenXe
             // 
@@ -446,5 +487,10 @@
         private System.Windows.Forms.ComboBox cbIdTuyen;
         private System.Windows.Forms.ComboBox cbIDTramDen;
         private System.Windows.Forms.ComboBox cbIDTramDi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Tuyen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KhoangCach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianChay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTramDi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenTramDen;
     }
 }
