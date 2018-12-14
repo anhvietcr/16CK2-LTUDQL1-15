@@ -42,8 +42,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UserController">
-      <HintPath>..\..\..\..\..\Desktop\UserController.dll</HintPath>
+    <Reference Include="UserController, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\UserController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

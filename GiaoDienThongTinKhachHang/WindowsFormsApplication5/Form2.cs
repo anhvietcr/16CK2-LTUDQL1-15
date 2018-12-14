@@ -15,6 +15,7 @@ namespace WindowsFormsApplication5
         public Form2()
         {
             InitializeComponent();
+            //ctr_navbar_title1.txt_title.Text = "Quan Ly Khach Hang";
         }
 
         
