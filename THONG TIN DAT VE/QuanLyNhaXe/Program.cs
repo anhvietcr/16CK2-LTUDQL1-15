@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +18,11 @@ namespace QuanLyNhaXe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDashboard());
+            GenericIdentity genericIdentity = new GenericIdentity("Ứng Dụng Quản Lý Vé Xe");
+            GenericPrincipal genericPrincipal = new GenericPrincipal(genericIdentity, new string[] { "admin", "client", "guest" });
+            Thread.CurrentPrincipal = genericPrincipal;
+
+            Application.Run(new FrmLogin());
         }
     }
 }

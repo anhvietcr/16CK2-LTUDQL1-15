@@ -66,6 +66,12 @@
     <Compile Include="frmGhe.Designer.cs">
       <DependentUpon>frmGhe.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVeBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGhe.resx">
       <DependentUpon>frmGhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVeBan.resx">
       <DependentUpon>frmVeBan.cs</DependentUpon>
@@ -116,6 +125,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{7c018c22-8f41-4b7e-9628-67026b19dde6}</Project>
       <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Security\Security.csproj">
+      <Project>{9ff3bc4d-21f5-4e50-9a71-9255b55ecb52}</Project>
+      <Name>Security</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

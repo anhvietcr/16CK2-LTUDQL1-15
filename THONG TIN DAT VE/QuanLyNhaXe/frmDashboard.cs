@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +18,17 @@ namespace QuanLyNhaXe
         {
             InitializeComponent();
             settingControlerNavbarTitle();
+
+            GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
+            MessageBox.Show("Chào mừng: " + principal.Identity.Name + ".");
+            string role = "";
+            if (principal.IsInRole("client  "))
+            {
+                MessageBox.Show("Bạn là nhân vên");
+                //tbnxoa.Enabled = false;
+                //btnxoa.Enabled = false;
+                //btnxoa.e
+            }
         }
 
         private void settingControlerNavbarTitle()

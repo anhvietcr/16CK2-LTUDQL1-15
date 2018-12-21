@@ -61,6 +61,8 @@
             this.groupBox_ttVe = new System.Windows.Forms.GroupBox();
             this.chbx_thanhtoan = new System.Windows.Forms.CheckBox();
             this.so_luong_ve = new System.Windows.Forms.NumericUpDown();
+            this.cbx_id_location_start = new System.Windows.Forms.ComboBox();
+            this.cbx_id_location_end = new System.Windows.Forms.ComboBox();
             this.cbx_id_tuyen = new System.Windows.Forms.ComboBox();
             this.cbx_location_start = new System.Windows.Forms.ComboBox();
             this.cbx_location_end = new System.Windows.Forms.ComboBox();
@@ -72,8 +74,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
-            this.cbx_id_location_end = new System.Windows.Forms.ComboBox();
-            this.cbx_id_location_start = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -350,6 +350,7 @@
             // 
             this.btn_select_ghe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_select_ghe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_select_ghe.Enabled = false;
             this.btn_select_ghe.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_select_ghe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_select_ghe.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -496,6 +497,32 @@
             0,
             0});
             // 
+            // cbx_id_location_start
+            // 
+            this.cbx_id_location_start.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_id_location_start.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbx_id_location_start.FormattingEnabled = true;
+            this.cbx_id_location_start.Location = new System.Drawing.Point(283, 17);
+            this.cbx_id_location_start.Name = "cbx_id_location_start";
+            this.cbx_id_location_start.Size = new System.Drawing.Size(17, 26);
+            this.cbx_id_location_start.TabIndex = 0;
+            this.cbx_id_location_start.Visible = false;
+            this.cbx_id_location_start.SelectedIndexChanged += new System.EventHandler(this.cbx_location_start_SelectedIndexChanged);
+            // 
+            // cbx_id_location_end
+            // 
+            this.cbx_id_location_end.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_id_location_end.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbx_id_location_end.FormattingEnabled = true;
+            this.cbx_id_location_end.Location = new System.Drawing.Point(260, 16);
+            this.cbx_id_location_end.Name = "cbx_id_location_end";
+            this.cbx_id_location_end.Size = new System.Drawing.Size(17, 26);
+            this.cbx_id_location_end.TabIndex = 0;
+            this.cbx_id_location_end.Visible = false;
+            this.cbx_id_location_end.SelectedIndexChanged += new System.EventHandler(this.cbx_location_start_SelectedIndexChanged);
+            // 
             // cbx_id_tuyen
             // 
             this.cbx_id_tuyen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -606,32 +633,6 @@
             // timer_close
             // 
             this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
-            // 
-            // cbx_id_location_end
-            // 
-            this.cbx_id_location_end.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbx_id_location_end.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbx_id_location_end.FormattingEnabled = true;
-            this.cbx_id_location_end.Location = new System.Drawing.Point(260, 16);
-            this.cbx_id_location_end.Name = "cbx_id_location_end";
-            this.cbx_id_location_end.Size = new System.Drawing.Size(17, 26);
-            this.cbx_id_location_end.TabIndex = 0;
-            this.cbx_id_location_end.Visible = false;
-            this.cbx_id_location_end.SelectedIndexChanged += new System.EventHandler(this.cbx_location_start_SelectedIndexChanged);
-            // 
-            // cbx_id_location_start
-            // 
-            this.cbx_id_location_start.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbx_id_location_start.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbx_id_location_start.FormattingEnabled = true;
-            this.cbx_id_location_start.Location = new System.Drawing.Point(283, 17);
-            this.cbx_id_location_start.Name = "cbx_id_location_start";
-            this.cbx_id_location_start.Size = new System.Drawing.Size(17, 26);
-            this.cbx_id_location_start.TabIndex = 0;
-            this.cbx_id_location_start.Visible = false;
-            this.cbx_id_location_start.SelectedIndexChanged += new System.EventHandler(this.cbx_location_start_SelectedIndexChanged);
             // 
             // frmDatVe
             // 

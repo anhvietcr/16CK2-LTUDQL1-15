@@ -10,6 +10,9 @@ namespace QuanLyNhaXe
     public partial class frmDatVe : Form
     {
         public frmDashboard frmDB;
+        private Ghe _ghe;
+        private DatVe _ve;
+
         public frmDatVe(frmDashboard frm)
         {
             InitializeComponent();
@@ -171,11 +174,22 @@ namespace QuanLyNhaXe
         private void cbx_location_start_SelectedIndexChanged(object sender, EventArgs e)
         {
             EnableBtnChonGhe();
+
+            int index = (sender as ComboBox).SelectedIndex;
+            cbx_location_end.SelectedIndex = index;
+            cbx_id_location_end.SelectedIndex = index;
+            cbx_id_location_start.SelectedIndex = index;
+            cbx_id_tuyen.SelectedIndex = index;
         }
 
         private void cbx_location_end_SelectedIndexChanged(object sender, EventArgs e)
         {
             EnableBtnChonGhe();
+            int index = (sender as ComboBox).SelectedIndex;
+            cbx_location_end.SelectedIndex = index;
+            cbx_id_location_end.SelectedIndex = index;
+            cbx_id_location_start.SelectedIndex = index;
+            cbx_id_tuyen.SelectedIndex = index;
         }
 
         void EnableBtnChonGhe()
@@ -247,12 +261,23 @@ namespace QuanLyNhaXe
                 return;
             }
 
-//            int iTuyen = Convert.ToInt32(cbx_id_tuyen.Text);
-            int iTuyen = 1;
-            string ngayDi = dpk_ngay_di.Value.Date.ToString();
+            int iTuyen = Convert.ToInt32(cbx_id_tuyen.Text);
+            string ngayDi = dpk_ngay_di.Value.Date.ToString("yyyy-MM-dd");
 
-            frmGhe frm = new frmGhe(iTuyen, ngayDi);
-            frm.ShowDialog();
+            BUS_Ghe bus_ghe = new BUS_Ghe();
+            DataTable dt = new DataTable();
+
+            // Lấy thông tin chuyến xe dể chọn loại ghế
+            dt = bus_ghe.listChonGhe(iTuyen, ngayDi);
+            if (dt.Rows.Count < 1)
+            {
+                MessageBox.Show("Không tìm thấy chuyến xe \n+ Đi từ : " + cbx_location_start.Text +  "\n+ Đi đến: " + cbx_location_end.Text +"\nTrong ngày: " + dpk_ngay_di.Value.Date.ToString("dd / MM / yyyy"));
+                return;
+            } else
+            {
+                frmGhe frm = new frmGhe(dt, this);
+                frm.ShowDialog();
+            }
         }
 
         /// <summary>
@@ -272,10 +297,24 @@ namespace QuanLyNhaXe
              || string.IsNullOrEmpty(cbx_type.Text))
             {
                 MessageBox.Show("Điền đầy đủ thông tin");
-                return;
+                //return;
             }
 
+            this._ve.GhiChu = txt_ghichu.Text;
+            this._ve.TinhTrang = chbx_thanhtoan.Checked ? 1 : 0;
+            this._ve.NgayXuatVe = dpk_ngay_di.Value.Date.ToString();
+            this._ve.GiaTien = Convert.ToInt32(txt_gia_tien.Text);
+
             MessageBox.Show("Đặt vé thành công");
+        }
+
+        public void getInfoChonGhe(Ghe ghe, DatVe ve)
+        {
+            txt_gia_tien.Text = ve.GiaTien.ToString();
+
+
+            this._ve.IDChuyen = ve.IDChuyen;
+            this._ve.NgayXuatVe = dpk_ngay_di.Value.Date.ToString();
         }
     }
 }

@@ -15,6 +15,13 @@ namespace DTO
         private string _ngayXuatVe;
         private double _giaTien;
         private int _tinhTrang;
+        private string _ghiChu;
+
+        public string GhiChu
+        {
+            get { return _ghiChu; }
+            set { _ghiChu = value; }
+        }
 
         public int TinhTrang
         {

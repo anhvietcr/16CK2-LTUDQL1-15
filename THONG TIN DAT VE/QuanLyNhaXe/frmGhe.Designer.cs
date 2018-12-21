@@ -77,6 +77,13 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbx_giatien = new System.Windows.Forms.ComboBox();
+            this.btn_chon_ghe = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbx_id_loaixe = new System.Windows.Forms.ComboBox();
+            this.cbx_id_xe = new System.Windows.Forms.ComboBox();
+            this.cbx_id_chuyen = new System.Windows.Forms.ComboBox();
             this.cbx_ten_xe = new System.Windows.Forms.ComboBox();
             this.cbx_ten_loaixe = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -162,13 +169,6 @@
             this.button113 = new System.Windows.Forms.Button();
             this.button117 = new System.Windows.Forms.Button();
             this.button118 = new System.Windows.Forms.Button();
-            this.cbx_id_chuyen = new System.Windows.Forms.ComboBox();
-            this.cbx_id_xe = new System.Windows.Forms.ComboBox();
-            this.cbx_id_loaixe = new System.Windows.Forms.ComboBox();
-            this.btn_chon_ghe = new System.Windows.Forms.Button();
-            this.cbx_giatien = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.map45_tang1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.map46_tang2.SuspendLayout();
@@ -736,6 +736,91 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(84, 312);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(137, 22);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "selectedGhe";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // cbx_giatien
+            // 
+            this.cbx_giatien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_giatien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbx_giatien.FormattingEnabled = true;
+            this.cbx_giatien.Items.AddRange(new object[] {
+            "130000",
+            "180000",
+            "200000",
+            "250000",
+            "400000",
+            "450000",
+            "500000",
+            "1000000"});
+            this.cbx_giatien.Location = new System.Drawing.Point(110, 162);
+            this.cbx_giatien.Name = "cbx_giatien";
+            this.cbx_giatien.Size = new System.Drawing.Size(144, 26);
+            this.cbx_giatien.TabIndex = 8;
+            this.cbx_giatien.Text = "1000000";
+            // 
+            // btn_chon_ghe
+            // 
+            this.btn_chon_ghe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_chon_ghe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_chon_ghe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_chon_ghe.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_chon_ghe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_chon_ghe.Location = new System.Drawing.Point(6, 359);
+            this.btn_chon_ghe.Name = "btn_chon_ghe";
+            this.btn_chon_ghe.Size = new System.Drawing.Size(248, 48);
+            this.btn_chon_ghe.TabIndex = 2;
+            this.btn_chon_ghe.Text = "Chọn Ghế";
+            this.btn_chon_ghe.UseVisualStyleBackColor = false;
+            this.btn_chon_ghe.Click += new System.EventHandler(this.btn_chon_ghe_Click);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(16, 170);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 18);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Giá:";
+            // 
+            // cbx_id_loaixe
+            // 
+            this.cbx_id_loaixe.FormattingEnabled = true;
+            this.cbx_id_loaixe.Location = new System.Drawing.Point(0, 309);
+            this.cbx_id_loaixe.Name = "cbx_id_loaixe";
+            this.cbx_id_loaixe.Size = new System.Drawing.Size(20, 26);
+            this.cbx_id_loaixe.TabIndex = 1;
+            this.cbx_id_loaixe.Visible = false;
+            // 
+            // cbx_id_xe
+            // 
+            this.cbx_id_xe.FormattingEnabled = true;
+            this.cbx_id_xe.Location = new System.Drawing.Point(20, 309);
+            this.cbx_id_xe.Name = "cbx_id_xe";
+            this.cbx_id_xe.Size = new System.Drawing.Size(20, 26);
+            this.cbx_id_xe.TabIndex = 1;
+            this.cbx_id_xe.Visible = false;
+            // 
+            // cbx_id_chuyen
+            // 
+            this.cbx_id_chuyen.FormattingEnabled = true;
+            this.cbx_id_chuyen.Location = new System.Drawing.Point(40, 309);
+            this.cbx_id_chuyen.Name = "cbx_id_chuyen";
+            this.cbx_id_chuyen.Size = new System.Drawing.Size(20, 26);
+            this.cbx_id_chuyen.TabIndex = 1;
+            this.cbx_id_chuyen.Visible = false;
+            // 
             // cbx_ten_xe
             // 
             this.cbx_ten_xe.FormattingEnabled = true;
@@ -743,6 +828,7 @@
             this.cbx_ten_xe.Name = "cbx_ten_xe";
             this.cbx_ten_xe.Size = new System.Drawing.Size(144, 26);
             this.cbx_ten_xe.TabIndex = 1;
+            this.cbx_ten_xe.SelectedIndexChanged += new System.EventHandler(this.cbx_ten_xe_SelectedIndexChanged);
             // 
             // cbx_ten_loaixe
             // 
@@ -751,6 +837,7 @@
             this.cbx_ten_loaixe.Name = "cbx_ten_loaixe";
             this.cbx_ten_loaixe.Size = new System.Drawing.Size(144, 26);
             this.cbx_ten_loaixe.TabIndex = 1;
+            this.cbx_ten_loaixe.SelectedIndexChanged += new System.EventHandler(this.cbx_ten_loaixe_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -1687,90 +1774,6 @@
             this.button118.Tag = "27";
             this.button118.Text = "27";
             this.button118.UseVisualStyleBackColor = true;
-            // 
-            // cbx_id_chuyen
-            // 
-            this.cbx_id_chuyen.FormattingEnabled = true;
-            this.cbx_id_chuyen.Location = new System.Drawing.Point(40, 309);
-            this.cbx_id_chuyen.Name = "cbx_id_chuyen";
-            this.cbx_id_chuyen.Size = new System.Drawing.Size(20, 26);
-            this.cbx_id_chuyen.TabIndex = 1;
-            this.cbx_id_chuyen.Visible = false;
-            // 
-            // cbx_id_xe
-            // 
-            this.cbx_id_xe.FormattingEnabled = true;
-            this.cbx_id_xe.Location = new System.Drawing.Point(20, 309);
-            this.cbx_id_xe.Name = "cbx_id_xe";
-            this.cbx_id_xe.Size = new System.Drawing.Size(20, 26);
-            this.cbx_id_xe.TabIndex = 1;
-            this.cbx_id_xe.Visible = false;
-            // 
-            // cbx_id_loaixe
-            // 
-            this.cbx_id_loaixe.FormattingEnabled = true;
-            this.cbx_id_loaixe.Location = new System.Drawing.Point(0, 309);
-            this.cbx_id_loaixe.Name = "cbx_id_loaixe";
-            this.cbx_id_loaixe.Size = new System.Drawing.Size(20, 26);
-            this.cbx_id_loaixe.TabIndex = 1;
-            this.cbx_id_loaixe.Visible = false;
-            // 
-            // btn_chon_ghe
-            // 
-            this.btn_chon_ghe.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btn_chon_ghe.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn_chon_ghe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_chon_ghe.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_chon_ghe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_chon_ghe.Location = new System.Drawing.Point(6, 359);
-            this.btn_chon_ghe.Name = "btn_chon_ghe";
-            this.btn_chon_ghe.Size = new System.Drawing.Size(248, 48);
-            this.btn_chon_ghe.TabIndex = 2;
-            this.btn_chon_ghe.Text = "Chọn Ghế";
-            this.btn_chon_ghe.UseVisualStyleBackColor = false;
-            // 
-            // cbx_giatien
-            // 
-            this.cbx_giatien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbx_giatien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbx_giatien.FormattingEnabled = true;
-            this.cbx_giatien.Items.AddRange(new object[] {
-            "130000",
-            "180000",
-            "200000",
-            "250000",
-            "400000",
-            "450000",
-            "500000",
-            "1000000"});
-            this.cbx_giatien.Location = new System.Drawing.Point(110, 162);
-            this.cbx_giatien.Name = "cbx_giatien";
-            this.cbx_giatien.Size = new System.Drawing.Size(144, 26);
-            this.cbx_giatien.TabIndex = 8;
-            this.cbx_giatien.Text = "1000000";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 170);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 18);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Giá:";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(84, 312);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(137, 22);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "selectedGhe";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // frmGhe
             // 

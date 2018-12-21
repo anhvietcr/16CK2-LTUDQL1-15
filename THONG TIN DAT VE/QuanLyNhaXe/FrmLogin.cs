@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
-using LTUDQL1_BAOMAT;
+using Security;
 
-namespace LTUDQL1_ADONET
+namespace QuanLyNhaXe
 {
     public partial class FrmLogin : Form
     {
@@ -23,13 +23,12 @@ namespace LTUDQL1_ADONET
                 Close();
                 return;
             }
-            //if (principal.IsInRole("x"))
-            //{
-            //    MessageBox.Show("Bạn không có quyền sử dụng chức năng này.");
-            //    Close();
-            //    return;
-            //}
-            MessageBox.Show("Chào mừng " + principal.Identity.Name + ".");
+            if (principal.IsInRole("x"))
+            {
+                MessageBox.Show("Bạn không có quyền sử dụng chức năng này.");
+                Close();
+                return;
+            }
             InitializeComponent();
             
         }
@@ -49,11 +48,12 @@ namespace LTUDQL1_ADONET
                 {
                     role += row.RoleName + "  ";
                 }
-                GenericIdentity genericIdentity = new GenericIdentity("myapp");
+                GenericIdentity genericIdentity = new GenericIdentity("Ứng Dụng Quản Lý Vé Xe");
                 GenericPrincipal genericPrincipal = new GenericPrincipal(genericIdentity, new string[] { role });
                 Thread.CurrentPrincipal = genericPrincipal;     
-                FrmKhachHang k = new FrmKhachHang();
-                k.Show();
+
+                frmDashboard frm = new frmDashboard();
+                frm.Show();
                 //MessageBox.Show("Đăng nhập thành công.\n" +
                   //  "UserID là "+user.UserName);
             }
