@@ -74,5 +74,11 @@ namespace QuanLyNhaXe
 
             frmParent.getInfoChonGhe(ghe, ve);
         }
+
+        private void btnGhe_cliked(object sender, EventArgs e)
+        {
+            MessageBox.Show((sender as Button).Text);
+            MessageBox.Show(((sender as Button).Tag.ToString()));
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace QuanLyNhaXe
             settingControlerNavbarTitle();
 
             GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
-            MessageBox.Show("Chào mừng: " + principal.Identity.Name + ".");
+            MessageBox.Show("Chào mừng đến với " + principal.Identity.Name + ".");
             string role = "";
             if (principal.IsInRole("client  "))
             {
