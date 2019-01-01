@@ -1,3 +1,0 @@
-C:\Users\lqv11\Desktop\do_an_2\WindowsFormsApplication5\bin\Release\WindowsFormsApplication5.exe.config
-C:\Users\lqv11\Desktop\do_an_2\WindowsFormsApplication5\obj\Release\WindowsFormsApplication5.exe
-C:\Users\lqv11\Desktop\do_an_2\WindowsFormsApplication5\obj\Release\WindowsFormsApplication5.pdb

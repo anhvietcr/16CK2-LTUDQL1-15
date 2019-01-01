@@ -15,5 +15,10 @@ namespace BUS
         {
             return dal_ghe.listChonGhe(idTuyen, ngayDi);
         }
+
+        public DataTable getGheById(int id)
+        {
+            return dal_ghe.getGheById(id);
+        }
     }
 }

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="BUS_DatVe.cs" />
     <Compile Include="BUS_Ghe.cs" />
+    <Compile Include="BUS_Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
