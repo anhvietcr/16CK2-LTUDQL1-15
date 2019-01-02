@@ -20,5 +20,10 @@ namespace BUS
         {
             return dal_ghe.getGheById(id);
         }
+
+        public List<int> getGheByChuyenAndXe(int id_chuyen, int id_xe)
+        {
+            return dal_ghe.getGheByChuyenAndXe(id_chuyen, id_xe);
+        }
     }
 }

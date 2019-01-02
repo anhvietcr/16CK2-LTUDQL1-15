@@ -60,5 +60,31 @@ namespace DAL
                 throw new Exception(ex.Message);
             }
         }
+
+        public List<int> getGheByChuyenAndXe(int id_chuyen, int id_xe)
+        {
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "getGheByChuyenAndXe";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "id_chuyen", Value = id_chuyen });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "id_xe", Value = id_xe });
+
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                List<int> IDsGhe = new List<int>();
+                while(dr.Read())
+                {
+                    IDsGhe.Add(Convert.ToInt32(dr["ID_Ghe"]));
+                }
+
+                return IDsGhe;
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

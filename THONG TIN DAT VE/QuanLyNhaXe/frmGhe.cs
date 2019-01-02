@@ -3,6 +3,8 @@ using System.Data;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace QuanLyNhaXe
 {
@@ -10,6 +12,8 @@ namespace QuanLyNhaXe
     {
         protected frmDatVe frmParent;
         protected int _idGhe = -1;
+        private Button _prevBtn = null;
+        private Button _curBtn = null;
 
         public frmGhe(DataTable dt_ChuyenXe, frmDatVe frm)
         {
@@ -52,6 +56,7 @@ namespace QuanLyNhaXe
             cbx_id_xe.SelectedIndex = index;
             cbx_ten_loaixe.SelectedIndex = index;
 
+            DisableGheSelected();
             DisplayMapGhe();
         }
 
@@ -103,16 +108,121 @@ namespace QuanLyNhaXe
 
         private void btnGhe_cliked(object sender, EventArgs e)
         {
+            // get tag => ID ghe
             this._idGhe = Convert.ToInt32((sender as Button).Tag);
+            this._curBtn = (sender as Button);
 
-            MessageBox.Show((sender as Button).Text);
-            MessageBox.Show(this._idGhe.ToString());
+            // set color for button selected
+            this._curBtn.BackColor = Color.FromArgb(255, 255, 255);
+            if (this._prevBtn == null)
+            {
+                this._prevBtn = (sender as Button);
+            } else
+            {
+                this._prevBtn.BackColor = Color.Gainsboro;
+                this._prevBtn = (sender as Button);
+            }
         }
 
         // Disable những ghế đã được đặt dựa theo ID chuyến và ngày đi
         private void DisableGheSelected()
         {
+            List<int> IDsGhe = new List<int>();
+            BUS_Ghe bus_ghe = new BUS_Ghe();
 
+            int id_chuyen = Convert.ToInt32(cbx_id_chuyen.Text);
+            int id_xe = Convert.ToInt32(cbx_id_xe.Text);
+            IDsGhe = bus_ghe.getGheByChuyenAndXe(id_chuyen, id_xe);
+
+            // show button Ghe is selected
+            switch (id_xe)
+            {
+                case 1:
+                    foreach (Control button in xe1_map28_tang1.Controls)
+                    {
+                        if (button is Button)
+                        {
+                            Button btn = button as Button;
+                            foreach (int id in IDsGhe)
+                            {
+                                if (Convert.ToInt32(btn.Tag) == id)
+                                {
+                                    btn.Enabled = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 2:
+                    foreach (Control button in xe2_map28_tang1.Controls)
+                    {
+                        if (button is Button)
+                        {
+                            Button btn = button as Button;
+                            foreach (int id in IDsGhe)
+                            {
+                                if (Convert.ToInt32(btn.Tag) == id)
+                                {
+                                    btn.Enabled = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 3:
+                    foreach (Control button in xe3_map45_tang1.Controls)
+                    {
+                        if (button is Button)
+                        {
+                            Button btn = button as Button;
+                            foreach (int id in IDsGhe)
+                            {
+                                if (Convert.ToInt32(btn.Tag) == id)
+                                {
+                                    btn.Enabled = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                case 4:
+                    foreach (Control button in xe4_map46_tang1.Controls)
+                    {
+                        if (button is Button)
+                        {
+                            Button btn = button as Button;
+                            foreach (int id in IDsGhe)
+                            {
+                                if (Convert.ToInt32(btn.Tag) == id)
+                                {
+                                    btn.Enabled = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    foreach (Control button in xe4_map46_tang2.Controls)
+                    {
+                        if (button is Button)
+                        {
+                            Button btn = button as Button;
+                            foreach (int id in IDsGhe)
+                            {
+                                if (Convert.ToInt32(btn.Tag) == id)
+                                {
+                                    btn.Enabled = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
         
         // Show/Hide map ghế dựa trên ID Xe và loại xe
@@ -124,21 +234,48 @@ namespace QuanLyNhaXe
             {
                 case 1:
                     xe1_map28_tang1.Visible = true;
+
+                    // hide all other maps
+                    xe2_map28_tang1.Visible = false;
+                    xe3_map45_tang1.Visible = false;
+                    xe4_map46_tang1.Visible = false;
+                    xe4_map46_tang2.Visible = false;
                     break;
                 case 2:
                     xe2_map28_tang1.Visible = true;
+
+                    // hide all other maps
+                    xe1_map28_tang1.Visible = false;
+                    xe3_map45_tang1.Visible = false;
+                    xe4_map46_tang1.Visible = false;
+                    xe4_map46_tang2.Visible = false;
                     break;
                 case 3:
+                    xe3_map45_tang1.Visible = true;
+
+                    // hide all other maps
+                    xe1_map28_tang1.Visible = false;
+                    xe2_map28_tang1.Visible = false;
+                    xe4_map46_tang1.Visible = false;
+                    xe4_map46_tang2.Visible = false;
                     break;
                 case 4:
+                    xe4_map46_tang1.Visible = true;
+                    xe4_map46_tang2.Visible = true;
+
+                    // hide all other maps
+                    xe1_map28_tang1.Visible = false;
+                    xe2_map28_tang1.Visible = false;
+                    xe3_map45_tang1.Visible = false;
                     break;
                 default:
+                    xe1_map28_tang1.Visible = false;
+                    xe2_map28_tang1.Visible = false;
+                    xe3_map45_tang1.Visible = false;
+                    xe4_map46_tang1.Visible = false;
+                    xe4_map46_tang2.Visible = false;
                     break;
             }
-
-
-            // hide all other maps
-
         }
     }
 }

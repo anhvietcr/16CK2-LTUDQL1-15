@@ -12,6 +12,7 @@ namespace QuanLyNhaXe
         public frmDashboard frmDB;
         private DatVe _datve;
         private int _idKH;
+        private bool _isKhachHang;
 
         public frmDatVe(frmDashboard frm)
         {
@@ -234,17 +235,18 @@ namespace QuanLyNhaXe
                 {
                     MessageBox.Show("tim thay");
                     EnableBtnKhachHang(false);
+                    this._isKhachHang = true;
 
                     // Load value textbox Khách hàng
 
 
-                } else
+                }
+                else
                 {
-                    MessageBox.Show("Khong tim thay");
                     EnableBtnKhachHang(true);
 
                     // Create Khách hàng and get id
-
+                    this._isKhachHang = false;
 
                 }
             }
@@ -315,6 +317,19 @@ namespace QuanLyNhaXe
             this._datve.TinhTrang   = chbx_thanhtoan.Checked ? 1 : 0;
             this._datve.NgayXuatVe  = dpk_ngay_di.Value.Date.ToString();
             this._datve.GiaTien     = Convert.ToInt32(txt_gia_tien.Text);
+
+
+            // Nếu chưa là Khách hàng thì tại mới
+            if (!this._isKhachHang)
+            {
+                // Create new Khách hàng và lấy ra new ID
+
+
+
+            }
+
+            // Tạo mới Vé xe
+            
 
             MessageBox.Show("Đặt vé thành công");
         }
