@@ -37,5 +37,28 @@ namespace DAL
             }
 
         }
+
+        public DataTable getGheById(int id)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "getGheById";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "id", Value = id });
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                DBConnect.Close(conn);
+                return dt;
+            } catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

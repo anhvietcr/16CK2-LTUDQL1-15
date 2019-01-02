@@ -136,6 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_submit_datve.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_submit_datve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_submit_datve.Enabled = false;
             this.btn_submit_datve.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_submit_datve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_submit_datve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

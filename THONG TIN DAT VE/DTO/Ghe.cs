@@ -13,6 +13,13 @@ namespace DTO
         private int _cot;
         private int _tang;
         private int _idXe;
+        private int _soGhe;
+
+        public int SoGhe
+        {
+            get { return _soGhe; }
+            set { _soGhe = value; }
+        }
 
         public int IDXe
         {

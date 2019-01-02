@@ -10,8 +10,8 @@ namespace QuanLyNhaXe
     public partial class frmDatVe : Form
     {
         public frmDashboard frmDB;
-        private Ghe _ghe;
-        private DatVe _ve;
+        private DatVe _datve;
+        private int _idKH;
 
         public frmDatVe(frmDashboard frm)
         {
@@ -234,16 +234,27 @@ namespace QuanLyNhaXe
                 {
                     MessageBox.Show("tim thay");
                     EnableBtnKhachHang(false);
+
+                    // Load value textbox Khách hàng
+
+
                 } else
                 {
                     MessageBox.Show("Khong tim thay");
                     EnableBtnKhachHang(true);
+
+                    // Create Khách hàng and get id
+
+
                 }
             }
         }
 
         private bool findKhachHangByPhone(string phone)
         {
+            // find Khách hàng by phone number
+
+
             return false;
         }
 
@@ -297,24 +308,39 @@ namespace QuanLyNhaXe
              || string.IsNullOrEmpty(cbx_type.Text))
             {
                 MessageBox.Show("Điền đầy đủ thông tin");
-                //return;
+                return;
             }
 
-            this._ve.GhiChu = txt_ghichu.Text;
-            this._ve.TinhTrang = chbx_thanhtoan.Checked ? 1 : 0;
-            this._ve.NgayXuatVe = dpk_ngay_di.Value.Date.ToString();
-            this._ve.GiaTien = Convert.ToInt32(txt_gia_tien.Text);
+            this._datve.GhiChu      = txt_ghichu.Text;
+            this._datve.TinhTrang   = chbx_thanhtoan.Checked ? 1 : 0;
+            this._datve.NgayXuatVe  = dpk_ngay_di.Value.Date.ToString();
+            this._datve.GiaTien     = Convert.ToInt32(txt_gia_tien.Text);
 
             MessageBox.Show("Đặt vé thành công");
         }
 
         public void getInfoChonGhe(Ghe ghe, DatVe ve)
         {
-            txt_gia_tien.Text = ve.GiaTien.ToString();
+            // Get ID Ghe & ID Chuyen from frmGhe;
+            BUS_Xe bus_xe = new BUS_Xe();
+            DataTable dt = new DataTable();
+            dt = bus_xe.getXeById(ghe.IDXe);
+            if (dt == null)
+            {
+                MessageBox.Show("Không tìm thấy ID xe");
+                return;
+            }
+            DataRow r = dt.Rows[0];
+            txt_id_xe.Text      = r["So_dang_ky"].ToString();
+            txt_gia_tien.Text   = ve.GiaTien.ToString();
+            txt_so_ghe.Text     = ghe.SoGhe.ToString();
+            txt_tang.Text       = ghe.Tang.ToString();
 
+            _datve = new DatVe();
+            this._datve.IDGhe       = ghe.IDGhe;
+            this._datve.IDChuyen    = ve.IDChuyen;
 
-            this._ve.IDChuyen = ve.IDChuyen;
-            this._ve.NgayXuatVe = dpk_ngay_di.Value.Date.ToString();
+            btn_submit_datve.Enabled = true;
         }
     }
 }
