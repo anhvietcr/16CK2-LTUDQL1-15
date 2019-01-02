@@ -318,20 +318,31 @@ namespace QuanLyNhaXe
             this._datve.NgayXuatVe  = dpk_ngay_di.Value.Date.ToString();
             this._datve.GiaTien     = Convert.ToInt32(txt_gia_tien.Text);
 
-
             // Nếu chưa là Khách hàng thì tại mới
             if (!this._isKhachHang)
             {
                 // Create new Khách hàng và lấy ra new ID
-
+                //this._idKH = ...
 
 
             }
-
-            // Tạo mới Vé xe
             
+            // Tạo mới Vé xe
+            DatVe ve        = new DatVe();
+            ve.IDGhe        = this._datve.IDGhe;
+            ve.IDChuyen     = this._datve.IDChuyen;
+            ve.TinhTrang    = this._datve.TinhTrang;
+            ve.GiaTien      = this._datve.GiaTien;
+            ve.IDKhachHang  = this._idKH;
+            ve.NgayXuatVe   = this._datve.NgayXuatVe;
+            ve.GhiChu       = this._datve.GhiChu;
 
-            MessageBox.Show("Đặt vé thành công");
+            BUS_DatVe bus_ve = new BUS_DatVe();
+            if (bus_ve.newVe(ve))
+            {
+                MessageBox.Show("Đặt vé thành công");
+            }
+            MessageBox.Show("Đặt vé thất bại, có lỗi xảy ra");
         }
 
         public void getInfoChonGhe(Ghe ghe, DatVe ve)
