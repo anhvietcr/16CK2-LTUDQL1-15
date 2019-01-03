@@ -203,7 +203,7 @@ namespace QuanLyNhaXe
             else
                 kh.LOAI = 0;
             BUS_KhachHang k = new BUS_KhachHang();
-            k.ThemKhachHang(kh);
+            int ID = k.ThemKhachHang(kh);
             loadGridKhachHangByTenKH();
         }
 

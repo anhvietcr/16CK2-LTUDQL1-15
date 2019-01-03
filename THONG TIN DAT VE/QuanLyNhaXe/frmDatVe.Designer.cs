@@ -198,6 +198,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbx_type.Enabled = false;
             this.cbx_type.FormattingEnabled = true;
+            this.cbx_type.Items.AddRange(new object[] {
+            "Thường",
+            "Vip"});
             this.cbx_type.Location = new System.Drawing.Point(431, 82);
             this.cbx_type.Name = "cbx_type";
             this.cbx_type.Size = new System.Drawing.Size(139, 26);

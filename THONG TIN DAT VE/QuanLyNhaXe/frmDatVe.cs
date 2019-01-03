@@ -13,6 +13,7 @@ namespace QuanLyNhaXe
         private DatVe _datve;
         private int _idKH;
         private bool _isKhachHang;
+        private DTO_KhachHang _khachHang;
 
         public frmDatVe(frmDashboard frm)
         {
@@ -20,6 +21,7 @@ namespace QuanLyNhaXe
             frmDB = frm;
             ctr_menu.btn_menu_1.Enabled = false;
             ctr_navbar.txt_title.Text = "Đặt Vé";
+            this._khachHang = new DTO_KhachHang();
 
             // button menu clicked
             ctr_menu.btn_menu_2.Click += new EventHandler(btnMenu2_click);
@@ -233,13 +235,19 @@ namespace QuanLyNhaXe
             {
                 if (findKhachHangByPhone(txt_phone.Text))
                 {
-                    MessageBox.Show("tim thay");
                     EnableBtnKhachHang(false);
                     this._isKhachHang = true;
 
                     // Load value textbox Khách hàng
-
-
+                    txt_name.Text = this._khachHang.HOTEN;
+                    txt_email.Text = this._khachHang.EMAIL;
+                    if (this._khachHang.LOAI == 1)
+                    {
+                        cbx_type.SelectedIndex = 1;
+                    } else
+                    {
+                        cbx_type.SelectedIndex = 0;
+                    }
                 }
                 else
                 {
@@ -247,6 +255,7 @@ namespace QuanLyNhaXe
 
                     // Create Khách hàng and get id
                     this._isKhachHang = false;
+                    cbx_type.SelectedIndex = 0;
 
                 }
             }
@@ -255,9 +264,20 @@ namespace QuanLyNhaXe
         private bool findKhachHangByPhone(string phone)
         {
             // find Khách hàng by phone number
+            this._khachHang.DIENTHOAI = phone;
 
+            BUS_KhachHang bus_kh = new BUS_KhachHang();
+            DataTable dt = bus_kh.ListKhachHangTheoSDT(this._khachHang);
+            if (dt.Rows.Count <= 0) return false;
 
-            return false;
+            // co khach Hang
+            DataRow r = dt.Rows[0];
+            this._idKH = Convert.ToInt32(r["ID_KhachHang"]);
+            this._khachHang.HOTEN = r["HoTen"].ToString();
+            this._khachHang.EMAIL = r["Email"].ToString();
+            this._khachHang.LOAI = Convert.ToInt32(r["Loai"]);
+
+            return true;
         }
 
         /// <summary>
@@ -322,11 +342,24 @@ namespace QuanLyNhaXe
             if (!this._isKhachHang)
             {
                 // Create new Khách hàng và lấy ra new ID
-                //this._idKH = ...
+                this._khachHang.DIENTHOAI = txt_phone.Text;
+                this._khachHang.HOTEN = txt_name.Text;
+                this._khachHang.EMAIL = txt_email.Text;
+                if (cbx_type.SelectedIndex == 1)
+                {
+                    this._khachHang.LOAI = 1;
+                }
+                else
+                {
+                    this._khachHang.LOAI = 0;
+                }
 
+                BUS_KhachHang bus_kh = new BUS_KhachHang();
+                this._idKH = bus_kh.ThemKhachHang(this._khachHang);
+                MessageBox.Show("new ID Khach Hang: " + this._idKH.ToString());
 
             }
-            
+
             // Tạo mới Vé xe
             DatVe ve        = new DatVe();
             ve.IDGhe        = this._datve.IDGhe;
@@ -337,12 +370,34 @@ namespace QuanLyNhaXe
             ve.NgayXuatVe   = this._datve.NgayXuatVe;
             ve.GhiChu       = this._datve.GhiChu;
 
+            // valid id Ghế
+            if (this._datve.IDGhe <= 0)
+            {
+                MessageBox.Show("ID Ghế không hợp lệ: " + this._datve.IDGhe.ToString());
+                return;
+            }
+
+            // valid id khách hàng
+            if (this._idKH <= 0)
+            {
+                MessageBox.Show("ID khách hàng không hợp lệ: " + this._idKH.ToString());
+                return;
+            }
+
             BUS_DatVe bus_ve = new BUS_DatVe();
             if (bus_ve.newVe(ve))
             {
                 MessageBox.Show("Đặt vé thành công");
+                this._datve.IDGhe        = 0;
+                this._datve.IDChuyen     = 0;
+                this._datve.GiaTien      = 0;
+                this._idKH               = 0;
+                this._datve.GhiChu       = "";
+                btn_submit_datve.Enabled = false;
+
+                return;
             }
-            MessageBox.Show("Đặt vé thất bại, có lỗi xảy ra");
+            MessageBox.Show("Đặt vé thất bại, có lỗi xảy ra !!!");
         }
 
         public void getInfoChonGhe(Ghe ghe, DatVe ve)
