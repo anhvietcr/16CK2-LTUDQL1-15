@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatVe.cs" />
+    <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="Ghe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

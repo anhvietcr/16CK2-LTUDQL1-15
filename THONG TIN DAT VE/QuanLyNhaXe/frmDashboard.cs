@@ -113,7 +113,7 @@ namespace QuanLyNhaXe
                     }break;
                 case 2:
                     {
-                        frmVeBan frm = new frmVeBan(this);
+                        frmKhachhang frm = new frmKhachhang(this);
                         frm.Show();
                         this.Hide();
                     }break;
