@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-namespace WindowsFormsApplication5
+using System.Security;
+using System.Security.Principal;
+using System.Threading;
+namespace QuanLyNhaXe
 {
     static class Program
     {
@@ -16,7 +18,10 @@ namespace WindowsFormsApplication5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            GenericIdentity genericIdentity = new GenericIdentity("Ứng Dụng Quản Lý Vé Xe");
+            GenericPrincipal genericPrincipal = new GenericPrincipal(genericIdentity, new string[] { "admin", "client", "guest" });
+            Thread.CurrentPrincipal = genericPrincipal;
+            Application.Run(new frmKhachhang());
         }
     }
 }
