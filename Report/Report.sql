@@ -1,4 +1,4 @@
-create proc ReportTruyen
+create proc ReportTuyen
 		@NgayBD datetime,
 		@NgayKT datetime
 as

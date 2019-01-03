@@ -1,6 +1,6 @@
 ﻿namespace QuanLyNhaXe
 {
-    partial class FrmLogin
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.

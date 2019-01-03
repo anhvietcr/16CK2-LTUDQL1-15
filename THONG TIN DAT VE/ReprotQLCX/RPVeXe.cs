@@ -16,14 +16,14 @@ namespace ReprotQLCX {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RPTuyen : ReportClass {
+    public class RPVeXe : ReportClass {
         
-        public RPTuyen() {
+        public RPVeXe() {
         }
         
         public override string ResourceName {
             get {
-                return "RPTuyen.rpt";
+                return "RPVeXe.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ReprotQLCX {
         
         public override string FullResourceName {
             get {
-                return "ReprotQLCX.RPTuyen.rpt";
+                return "ReprotQLCX.RPVeXe.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,49 +82,17 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NgayBD {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NgayKT {
-            get {
-                return this.DataDefinition.ParameterFields[1];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRPTuyen : Component, ICachedReport {
+    public class CachedRPVeXe : Component, ICachedReport {
         
-        public CachedRPTuyen() {
+        public CachedRPVeXe() {
         }
         
         [Browsable(false)]
@@ -161,7 +129,7 @@ namespace ReprotQLCX {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RPTuyen rpt = new RPTuyen();
+            RPVeXe rpt = new RPVeXe();
             rpt.Site = this.Site;
             return rpt;
         }

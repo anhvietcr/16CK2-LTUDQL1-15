@@ -13,9 +13,9 @@ using Security;
 
 namespace QuanLyNhaXe
 {
-    public partial class FrmLogin : Form
+    public partial class frmLogin : Form
     {
-        public FrmLogin()
+        public frmLogin()
         {
             GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
             if (principal == null)

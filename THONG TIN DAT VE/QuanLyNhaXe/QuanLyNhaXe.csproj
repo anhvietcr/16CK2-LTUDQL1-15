@@ -126,6 +126,10 @@
       <Project>{7c018c22-8f41-4b7e-9628-67026b19dde6}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ReprotQLCX\Report.csproj">
+      <Project>{233f9930-23dd-4716-98bd-62fbfbb9316e}</Project>
+      <Name>Report</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Security\Security.csproj">
       <Project>{9ff3bc4d-21f5-4e50-9a71-9255b55ecb52}</Project>
       <Name>Security</Name>

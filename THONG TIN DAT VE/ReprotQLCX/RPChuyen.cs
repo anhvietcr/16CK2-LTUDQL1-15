@@ -16,14 +16,14 @@ namespace ReprotQLCX {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RPTuyen : ReportClass {
+    public class RPChuyen : ReportClass {
         
-        public RPTuyen() {
+        public RPChuyen() {
         }
         
         public override string ResourceName {
             get {
-                return "RPTuyen.rpt";
+                return "RPChuyen.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace ReprotQLCX {
         
         public override string FullResourceName {
             get {
-                return "ReprotQLCX.RPTuyen.rpt";
+                return "ReprotQLCX.RPChuyen.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace ReprotQLCX {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -122,9 +106,9 @@ namespace ReprotQLCX {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRPTuyen : Component, ICachedReport {
+    public class CachedRPChuyen : Component, ICachedReport {
         
-        public CachedRPTuyen() {
+        public CachedRPChuyen() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace ReprotQLCX {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RPTuyen rpt = new RPTuyen();
+            RPChuyen rpt = new RPChuyen();
             rpt.Site = this.Site;
             return rpt;
         }

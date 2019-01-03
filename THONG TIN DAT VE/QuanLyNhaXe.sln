@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{9FF3BC4D-21F5-4E50-9A71-9255B55ECB52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report", "ReprotQLCX\Report.csproj", "{233F9930-23DD-4716-98BD-62FBFBB9316E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9FF3BC4D-21F5-4E50-9A71-9255B55ECB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FF3BC4D-21F5-4E50-9A71-9255B55ECB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FF3BC4D-21F5-4E50-9A71-9255B55ECB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233F9930-23DD-4716-98BD-62FBFBB9316E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233F9930-23DD-4716-98BD-62FBFBB9316E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233F9930-23DD-4716-98BD-62FBFBB9316E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233F9930-23DD-4716-98BD-62FBFBB9316E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
