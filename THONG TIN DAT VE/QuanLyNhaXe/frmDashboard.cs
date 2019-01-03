@@ -29,8 +29,6 @@ namespace QuanLyNhaXe
                 //btnxoa.Enabled = false;
                 //btnxoa.e
             }
-
-            frm_Report frm = new frm_Report(1);
         }
 
         private void settingControlerNavbarTitle()
