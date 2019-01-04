@@ -43,7 +43,6 @@
             this.crvQLCX.Size = new System.Drawing.Size(588, 391);
             this.crvQLCX.TabIndex = 0;
             this.crvQLCX.ToolPanelWidth = 150;
-            this.crvQLCX.Load += new System.EventHandler(this.frm_Report_Load);
             // 
             // frm_Report
             // 
@@ -53,8 +52,8 @@
             this.Controls.Add(this.crvQLCX);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_Report";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frm_Report_Load);
+            this.Text = "Báo cáo thống kê";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

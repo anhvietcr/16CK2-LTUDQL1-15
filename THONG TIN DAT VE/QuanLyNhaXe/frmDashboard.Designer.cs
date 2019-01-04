@@ -62,6 +62,7 @@
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.tooltip_info = new System.Windows.Forms.ToolTip(this.components);
+            this.cbx_report = new System.Windows.Forms.ComboBox();
             this.panel_menu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox_intro.SuspendLayout();
@@ -89,6 +90,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btn_menu_2);
             this.flowLayoutPanel1.Controls.Add(this.btn_menu_3);
             this.flowLayoutPanel1.Controls.Add(this.btn_menu_4);
+            this.flowLayoutPanel1.Controls.Add(this.cbx_report);
             this.flowLayoutPanel1.Controls.Add(this.groupBox_intro);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -228,10 +230,10 @@
             this.groupBox_intro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox_intro.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_intro.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox_intro.Location = new System.Drawing.Point(6, 218);
+            this.groupBox_intro.Location = new System.Drawing.Point(6, 249);
             this.groupBox_intro.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.groupBox_intro.Name = "groupBox_intro";
-            this.groupBox_intro.Size = new System.Drawing.Size(394, 185);
+            this.groupBox_intro.Size = new System.Drawing.Size(394, 150);
             this.groupBox_intro.TabIndex = 5;
             this.groupBox_intro.TabStop = false;
             this.groupBox_intro.Text = "Quản Lý Nhà Xe";
@@ -242,12 +244,12 @@
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox3.Enabled = false;
-            this.checkBox3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.checkBox3.Location = new System.Drawing.Point(57, 28);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Padding = new System.Windows.Forms.Padding(5);
-            this.checkBox3.Size = new System.Drawing.Size(127, 35);
+            this.checkBox3.Size = new System.Drawing.Size(117, 32);
             this.checkBox3.TabIndex = 4;
             this.checkBox3.Text = "Tiện Lợi";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -258,12 +260,12 @@
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox2.Enabled = false;
-            this.checkBox2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.checkBox2.Location = new System.Drawing.Point(57, 69);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.checkBox2.Size = new System.Drawing.Size(116, 35);
+            this.checkBox2.Size = new System.Drawing.Size(107, 32);
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "An Toàn";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -274,12 +276,12 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.checkBox1.Location = new System.Drawing.Point(57, 111);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.checkBox1.Size = new System.Drawing.Size(127, 35);
+            this.checkBox1.Size = new System.Drawing.Size(117, 32);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Hiệu Qủa";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -289,7 +291,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(213, 162);
+            this.label1.Location = new System.Drawing.Point(212, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 18);
             this.label1.TabIndex = 0;
@@ -493,6 +495,30 @@
             // 
             this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
             // 
+            // cbx_report
+            // 
+            this.cbx_report.AllowDrop = true;
+            this.cbx_report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
+            this.cbx_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_report.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbx_report.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbx_report.FormattingEnabled = true;
+            this.cbx_report.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.cbx_report.ItemHeight = 24;
+            this.cbx_report.Items.AddRange(new object[] {
+            "      Thống kê theo Chuyến",
+            "      Thống kê theo Tuyến",
+            "      Thống kê theo Ngày",
+            "      Thống kê Vé"});
+            this.cbx_report.Location = new System.Drawing.Point(3, 213);
+            this.cbx_report.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.cbx_report.Name = "cbx_report";
+            this.cbx_report.Size = new System.Drawing.Size(397, 32);
+            this.cbx_report.TabIndex = 6;
+            this.cbx_report.Text = "        Báo cáo thống kê";
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +582,7 @@
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
         private System.Windows.Forms.ToolTip tooltip_info;
+        private System.Windows.Forms.ComboBox cbx_report;
     }
 }
 
