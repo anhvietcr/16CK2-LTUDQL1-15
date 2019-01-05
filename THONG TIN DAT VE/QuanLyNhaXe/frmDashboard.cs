@@ -222,5 +222,15 @@ namespace QuanLyNhaXe
         {
             btn_menu_4.ImageIndex = 6;
         }
+
+        private void cbx_report_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // get index of item changed
+            int index = (sender as ComboBox).SelectedIndex;
+
+            // open form report correct
+            frm_Report frm = new frm_Report(index+1);
+            frm.Show();
+        }
     }
 }

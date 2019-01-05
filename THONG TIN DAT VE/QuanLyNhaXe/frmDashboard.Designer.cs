@@ -37,6 +37,7 @@
             this.btn_menu_2 = new System.Windows.Forms.Button();
             this.btn_menu_3 = new System.Windows.Forms.Button();
             this.btn_menu_4 = new System.Windows.Forms.Button();
+            this.cbx_report = new System.Windows.Forms.ComboBox();
             this.groupBox_intro = new System.Windows.Forms.GroupBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -62,7 +63,6 @@
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.tooltip_info = new System.Windows.Forms.ToolTip(this.components);
-            this.cbx_report = new System.Windows.Forms.ComboBox();
             this.panel_menu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox_intro.SuspendLayout();
@@ -218,6 +218,31 @@
             this.btn_menu_4.MouseLeave += new System.EventHandler(this.btn_menu_4_MouseLeave);
             this.btn_menu_4.MouseHover += new System.EventHandler(this.btn_menu_4_MouseHover);
             // 
+            // cbx_report
+            // 
+            this.cbx_report.AllowDrop = true;
+            this.cbx_report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbx_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(225)))), ((int)(((byte)(245)))));
+            this.cbx_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbx_report.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbx_report.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.cbx_report.FormattingEnabled = true;
+            this.cbx_report.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.cbx_report.ItemHeight = 24;
+            this.cbx_report.Items.AddRange(new object[] {
+            "      Thống kê theo Chuyến      ",
+            "      Thống kê theo Tuyến      ",
+            "      Thống kê theo Ngày      ",
+            "      Thống kê Vé      "});
+            this.cbx_report.Location = new System.Drawing.Point(3, 213);
+            this.cbx_report.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.cbx_report.Name = "cbx_report";
+            this.cbx_report.Size = new System.Drawing.Size(397, 32);
+            this.cbx_report.TabIndex = 6;
+            this.cbx_report.Text = "        Báo cáo thống kê";
+            this.cbx_report.SelectedIndexChanged += new System.EventHandler(this.cbx_report_SelectedIndexChanged);
+            // 
             // groupBox_intro
             // 
             this.groupBox_intro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
@@ -230,7 +255,7 @@
             this.groupBox_intro.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox_intro.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_intro.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.groupBox_intro.Location = new System.Drawing.Point(6, 249);
+            this.groupBox_intro.Location = new System.Drawing.Point(6, 260);
             this.groupBox_intro.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
             this.groupBox_intro.Name = "groupBox_intro";
             this.groupBox_intro.Size = new System.Drawing.Size(394, 150);
@@ -494,30 +519,6 @@
             // timer_close
             // 
             this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
-            // 
-            // cbx_report
-            // 
-            this.cbx_report.AllowDrop = true;
-            this.cbx_report.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbx_report.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
-            this.cbx_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbx_report.Font = new System.Drawing.Font("Courier New", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbx_report.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.cbx_report.FormattingEnabled = true;
-            this.cbx_report.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.cbx_report.ItemHeight = 24;
-            this.cbx_report.Items.AddRange(new object[] {
-            "      Thống kê theo Chuyến",
-            "      Thống kê theo Tuyến",
-            "      Thống kê theo Ngày",
-            "      Thống kê Vé"});
-            this.cbx_report.Location = new System.Drawing.Point(3, 213);
-            this.cbx_report.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.cbx_report.Name = "cbx_report";
-            this.cbx_report.Size = new System.Drawing.Size(397, 32);
-            this.cbx_report.TabIndex = 6;
-            this.cbx_report.Text = "        Báo cáo thống kê";
             // 
             // frmDashboard
             // 
