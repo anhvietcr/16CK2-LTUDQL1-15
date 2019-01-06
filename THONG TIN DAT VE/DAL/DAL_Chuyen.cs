@@ -101,40 +101,73 @@ namespace DAL
 
             return dt;
         }
-        public void DeleteChuyen(int ID_Chuyen)
-        {    
-            DAL dal = new DAL();
-            dal.Connect();
+        public bool DeleteChuyen(int ID_Chuyen)
+        {
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "deleteChuyen";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "ID_Chuyen", Value = ID_Chuyen });
+                int row = cmd.ExecuteNonQuery();
+                DBConnect.Close(conn);
+                if (row > 0) return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
 
-            dal.ExecuteNonQuery(CommandType.StoredProcedure,"deleteChuyen",
-                                            new SqlParameter { ParameterName = "ID_Chuyen", Value = ID_Chuyen });
-            dal.DisConnected();
         }
-        public void UpdateChuyen(DTO_Chuyen c)
+        public bool UpdateChuyen(DTO_Chuyen c)
         {
-            DAL dal = new DAL();
-            dal.Connect();
-            dal.ExecuteNonQuery(CommandType.StoredProcedure, "updateChuyen", 
-                        new SqlParameter { ParameterName = "ID_Chuyen", Value = c.ID_Chuyen },
-                         new SqlParameter { ParameterName = "Tuyen", Value = c.Tuyen_ID_Tuyen },
-                          new SqlParameter { ParameterName = "GKH", Value = c.Gio_khoi_hanh },
-                           new SqlParameter { ParameterName = "Ghichu", Value = c.Ghi_chu },
-                            new SqlParameter { ParameterName = "Xe", Value = c.Xe_XeID },
-                             new SqlParameter { ParameterName = "TaiXe", Value = c.Tai_xe_ID_TaiXe });
-            dal.DisConnected();
+            try { 
+
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "updateChuyen";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "ID_Chuyen", Value = c.ID_Chuyen });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Tuyen", Value = c.Tuyen_ID_Tuyen });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "GKH", Value = c.Gio_khoi_hanh });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Ghichu", Value = c.Ghi_chu });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Xe", Value = c.Xe_XeID });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "TaiXe", Value = c.Tai_xe_ID_TaiXe });
+                int row = cmd.ExecuteNonQuery();
+                DBConnect.Close(conn);
+
+                if (row > 0) return true;
+                return false;
+                 }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
         }
-        public void InsertChuyen(DTO_Chuyen c)
+        public bool InsertChuyen(DTO_Chuyen c)
         {
-            DAL dal = new DAL();
-            dal.Connect();
-            dal.ExecuteNonQuery(CommandType.StoredProcedure, "insertChuyen",
-                        new SqlParameter { ParameterName = "ID_Chuyen", Value = c.ID_Chuyen },
-                         new SqlParameter { ParameterName = "Tuyen", Value = c.Tuyen_ID_Tuyen },
-                          new SqlParameter { ParameterName = "GKH", Value = c.Gio_khoi_hanh },
-                           new SqlParameter { ParameterName = "Ghichu", Value = c.Ghi_chu },
-                            new SqlParameter { ParameterName = "Xe", Value = c.Xe_XeID },
-                             new SqlParameter { ParameterName = "TaiXe", Value = c.Tai_xe_ID_TaiXe });
-            dal.DisConnected();
+            try { 
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "insertChuyen";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Tuyen", Value = c.Tuyen_ID_Tuyen });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "GKH", Value = c.Gio_khoi_hanh });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Ghichu", Value = c.Ghi_chu });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "Xe", Value = c.Xe_XeID });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "TaiXe", Value = c.Tai_xe_ID_TaiXe });
+                int row = cmd.ExecuteNonQuery();
+                DBConnect.Close(conn);
+
+                if (row> 0) return true;
+            return false;
+            }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
         }
         public void execl(DataTable dt)
         {
