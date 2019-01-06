@@ -22,5 +22,20 @@ namespace BUS
         {
             return dal_ve.newVe(ve);
         }
+
+        public DataTable listVe()
+        {
+            return dal_ve.listVe();
+        }
+
+        public bool updateTinhtrangVe(int idVe, int tinhtrang)
+        {
+            return dal_ve.updateTinhtrangVe(idVe, tinhtrang);
+        }
+
+        public bool deleteVe(int idVe)
+        {
+            return dal_ve.deleteVe(idVe);
+        }
     }
 }

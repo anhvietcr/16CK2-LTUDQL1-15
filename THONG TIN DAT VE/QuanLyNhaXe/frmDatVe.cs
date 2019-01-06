@@ -423,5 +423,11 @@ namespace QuanLyNhaXe
 
             btn_submit_datve.Enabled = true;
         }
+
+        private void btn_danhsach_ve_Click(object sender, EventArgs e)
+        {
+            frmVeBan frm = new frmVeBan(this.frmDB);
+            frm.ShowDialog();
+        }
     }
 }

@@ -74,6 +74,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
+            this.btn_danhsach_ve = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_danhsach_ve);
             this.panel3.Controls.Add(this.btn_submit_datve);
             this.panel3.Controls.Add(this.groupBox_ttKhachHang);
             this.panel3.Controls.Add(this.groupBox_ttGhe);
@@ -638,6 +640,16 @@
             // 
             this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
             // 
+            // btn_danhsach_ve
+            // 
+            this.btn_danhsach_ve.Location = new System.Drawing.Point(522, 443);
+            this.btn_danhsach_ve.Name = "btn_danhsach_ve";
+            this.btn_danhsach_ve.Size = new System.Drawing.Size(75, 23);
+            this.btn_danhsach_ve.TabIndex = 13;
+            this.btn_danhsach_ve.Text = "Danh Sách";
+            this.btn_danhsach_ve.UseVisualStyleBackColor = true;
+            this.btn_danhsach_ve.Click += new System.EventHandler(this.btn_danhsach_ve_Click);
+            // 
             // frmDatVe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -712,5 +724,6 @@
         private System.Windows.Forms.Label txt_gia_tien;
         private System.Windows.Forms.ComboBox cbx_id_location_start;
         private System.Windows.Forms.ComboBox cbx_id_location_end;
+        private System.Windows.Forms.Button btn_danhsach_ve;
     }
 }

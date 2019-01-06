@@ -61,5 +61,75 @@ namespace DAL
                 throw new Exception(ex.Message);
             }
         }
+
+        public DataTable listVe()
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "listVe";
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                DBConnect.Close(conn);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool updateTinhtrangVe(int idVe, int tinhtrang)
+        {
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "updateTinhtrangVe";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "tinhTrang", Value = tinhtrang });
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "id", Value = idVe });
+
+                int row = Convert.ToInt32(cmd.ExecuteNonQuery());
+                DBConnect.Close(conn);
+
+                if (row >= 1)
+                    return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public bool deleteVe(int idVe)
+        {
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "deleteVe";
+                cmd.Parameters.Add(new SqlParameter{ ParameterName = "id", Value = idVe});
+
+                int row = Convert.ToInt32(cmd.ExecuteNonQuery());
+                DBConnect.Close(conn);
+
+                if (row >= 1)
+                    return true;
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
