@@ -50,6 +50,7 @@ namespace QuanLyNhaXe
                 tbGhichu.Text = dto_c.Ghi_chu;
                 btUpdate.Visible = true;
                 btInsert.Dispose();
+                tbIDTuyen.Enabled = false;
             }
             else
                 if(xet==2)
@@ -116,7 +117,7 @@ namespace QuanLyNhaXe
         private void btInsert_Click(object sender, EventArgs e)
         {
             c = new BUS_Chuyen();
-            DialogResult dlr = MessageBox.Show("Are you sure you want to UPDATE ?", "UPDATE", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+            DialogResult dlr = MessageBox.Show("Are you sure you want to Insert ?", "INSERT", MessageBoxButtons.YesNo, MessageBoxIcon.None);
             if (dlr == DialogResult.Yes)
             {
                 c.InsertChuyen(dto_c);

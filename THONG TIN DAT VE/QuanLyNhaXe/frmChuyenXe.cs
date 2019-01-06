@@ -288,11 +288,10 @@ namespace QuanLyNhaXe
             dto_c.ID_Chuyen = -1;
             if (cbbTuyenXe.SelectedIndex != 0)
             {
-                //if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
-                //{
-                //    Tuyen = x;
-                //}
-
+                if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
+                {
+                    Tuyen = x;
+                }
             }
             if (cbbChuyenXe.SelectedIndex != 0)
             {
@@ -349,28 +348,30 @@ namespace QuanLyNhaXe
         }
         private void dgvChuyenXe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells[0].Value.ToString(), out int x))
+
+            int iRow = dgvChuyenXe.CurrentCell.RowIndex;
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells[0].Value.ToString(), out int x))
             {
                 dto_c.ID_Chuyen = x;
             }
 
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tuyen_ID_Tuyen"].Value.ToString(), out int y))
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Tuyen_ID_Tuyen"].Value.ToString(), out int y))
             {
                 dto_c.Tuyen_ID_Tuyen = y;
             }
 
-            if (DateTime.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Gio_khoi_hanh"].Value.ToString(), out DateTime z))
+            if (DateTime.TryParse(dgvChuyenXe.Rows[iRow].Cells["Gio_khoi_hanh"].Value.ToString(), out DateTime z))
             {
                 dto_c.Gio_khoi_hanh = z;
             }
 
-            dto_c.Ghi_chu = dgvChuyenXe.SelectedRows[0].Cells["Ghi_chu"].Value.ToString();
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Xe_XeID"].Value.ToString(), out int c))
+            dto_c.Ghi_chu = dgvChuyenXe.Rows[iRow].Cells["Ghi_chu"].Value.ToString();
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Xe_XeID"].Value.ToString(), out int c))
             {
                 dto_c.Xe_XeID = c;
             }
 
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tai_xe_ID_TaiXe"].Value.ToString(), out int d))
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Tai_xe_ID_TaiXe"].Value.ToString(), out int d))
             {
                 dto_c.Tai_xe_ID_TaiXe = d;
             }

@@ -21,9 +21,9 @@ namespace BUS
         {
             return dal_kh.ListKhachHangTheoTen(khachhang);
         }
-        public void ThemKhachHang(DTO_KhachHang kh)
+        public int ThemKhachHang(DTO_KhachHang kh)
         {
-            dal_kh.insertKhachHang(kh);
+            return dal_kh.insertKhachHang(kh);
         }
         public void XoaKhachHang(int id)
         {
@@ -32,6 +32,14 @@ namespace BUS
         public void SuaKhachHang(DTO_KhachHang kh)
         {
             dal_kh.updateKhachHang(kh);
+        }
+        public DataTable ListKhachHangTheoSDT(DTO_KhachHang khachhang)
+        {
+            return dal_kh.ListKhachHangTheoSDT(khachhang);
+        }
+        public DataTable timKhachHangTheoSDTVaTen(string ma)
+        {
+            return dal_kh.timKhachHangTheoSDTVaTen(ma);
         }
     }
 }

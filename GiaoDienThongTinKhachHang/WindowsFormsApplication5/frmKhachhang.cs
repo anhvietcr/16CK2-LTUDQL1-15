@@ -18,8 +18,9 @@ namespace QuanLyNhaXe
         public frmKhachhang()
         {
             InitializeComponent();
-            //frmDB = frm;
+            //this.frmDB = frm;
             ctr_navbar1.txt_title.Text = "Quản lí khách hàng";
+            ctr_menu1.btn_menu_2.Enabled = false;
             // button menu clicked
             /*ctr_menu1.btn_menu_1.Click += new EventHandler(btnMenu1_click);
             ctr_menu1.btn_menu_2.Click += new EventHandler(btnMenu2_click);
@@ -67,7 +68,13 @@ namespace QuanLyNhaXe
 
             bus_kh = new BUS_KhachHang();
             dt = bus_kh.ListKhachHang();
-            dgrv_kh.DataSource = dt;
+
+            for (int i = 0; i < dgrv_kh.ColumnCount; i++)
+            {
+                dgrv_kh.Columns[i].DataPropertyName = dgrv_kh.Columns[i].Name;
+            }
+
+                dgrv_kh.DataSource = dt;
         }
         //button menu clicked -> show Forms
         //void btnMenu1_click(object sender, EventArgs e)
@@ -151,7 +158,7 @@ namespace QuanLyNhaXe
         {
             if (this.Opacity < 1)
             {
-                this.Opacity += 0.15;
+                this.Opacity += 0.45;
             }
             else
             {
@@ -163,15 +170,18 @@ namespace QuanLyNhaXe
         {
             if (this.Opacity > 0.0)
             {
-                this.Opacity -= 0.15;
+                this.Opacity -= 0.45;
             }
             else
             {
                 timer2.Stop();
+
+                //close this form and show dashboard form
+                //frmDB.Show();
                 this.Close();
             }
         }
-       
+
 
         private void btnsua_Click(object sender, EventArgs e)
         {
@@ -200,7 +210,7 @@ namespace QuanLyNhaXe
             else
                 kh.LOAI = 0;
             BUS_KhachHang k = new BUS_KhachHang();
-            k.ThemKhachHang(kh);
+            int ID = k.ThemKhachHang(kh);
             loadGridKhachHangByTenKH();
         }
 
@@ -210,5 +220,53 @@ namespace QuanLyNhaXe
             kh.XoaKhachHang(int.Parse(txtma.Text));
             loadGridKhachHangByTenKH();
         }
+
+        private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                BUS_KhachHang kh = new BUS_KhachHang();
+                DataTable dt = new DataTable();
+                dt = kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    dgrv_kh.DataSource = dt;
+                }
+                else
+                {
+                    if (txttimkiem.Text != "")
+                    {
+                        MessageBox.Show("không tìm thấy khách hàng!");
+                    }
+                    loadGridKhachHangByTenKH();
+                }
+            }
+        }
+
+        private void txttimkiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                BUS_KhachHang kh = new BUS_KhachHang();
+                DataTable dt = new DataTable();
+                dt = kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    dgrv_kh.DataSource = dt;
+                }
+                else
+                {
+                    if (txttimkiem.Text != "")
+                    {
+                        MessageBox.Show("không tìm thấy khách hàng!");
+                    }
+                    loadGridKhachHangByTenKH();
+                }
+            }
+        }
+
+       
     }
 }
