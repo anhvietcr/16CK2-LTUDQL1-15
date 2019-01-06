@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDatVe));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ctr_navbar = new UserController.ctr_navbar();
+            this.ctr = new UserController.ctr_navbar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ctr_menu = new UserController.ctr_menu();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,20 +85,20 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ctr_navbar);
+            this.panel1.Controls.Add(this.ctr);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 40);
             this.panel1.TabIndex = 0;
             // 
-            // ctr_navbar
+            // ctr
             // 
-            this.ctr_navbar.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ctr_navbar.Location = new System.Drawing.Point(0, 0);
-            this.ctr_navbar.Name = "ctr_navbar";
-            this.ctr_navbar.Size = new System.Drawing.Size(800, 40);
-            this.ctr_navbar.TabIndex = 0;
+            this.ctr.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ctr.Location = new System.Drawing.Point(0, 0);
+            this.ctr.Name = "ctr";
+            this.ctr.Size = new System.Drawing.Size(800, 40);
+            this.ctr.TabIndex = 0;
             // 
             // panel2
             // 
@@ -140,7 +140,7 @@
             this.btn_submit_datve.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_submit_datve.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_submit_datve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_submit_datve.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_submit_datve.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit_datve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_submit_datve.ImageKey = "datve_hover.png";
             this.btn_submit_datve.ImageList = this.imageList_datve;
@@ -673,7 +673,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Timer timer_open;
         private System.Windows.Forms.Timer timer_close;
-        private UserController.ctr_navbar ctr_navbar;
+        private UserController.ctr_navbar ctr;
         private UserController.ctr_menu ctr_menu;
         private System.Windows.Forms.GroupBox groupBox_ttVe;
         private System.Windows.Forms.NumericUpDown so_luong_ve;

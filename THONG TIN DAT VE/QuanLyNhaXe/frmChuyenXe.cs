@@ -20,38 +20,37 @@ namespace QuanLyNhaXe
         public frmChuyenXe(frmDashboard frm)
         {
             InitializeComponent();
-
+            //
+            frmDB = frm;
+            //
+            ctr_menu.btn_menu_3.Enabled = false;
             // button menu clicked
-            ctr_menu1.btn_menu_1.Click += new EventHandler(btnMenu1_click);
-            ctr_menu1.btn_menu_2.Click += new EventHandler(btnMenu2_click);
-            ctr_menu1.btn_menu_3.Click += new EventHandler(btnMenu3_click);
-            ctr_menu1.btn_menu_4.Click += new EventHandler(btnMenu4_click);
-            ctr_menu1.btn_menu_5.Click += new EventHandler(btnMenu5_click);
-            ctr_menu1.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
+            ctr_menu.btn_menu_2.Click += new EventHandler(btnMenu2_click);
+            ctr_menu.btn_menu_1.Click += new EventHandler(btnMenu1_click);
+            ctr_menu.btn_menu_4.Click += new EventHandler(btnMenu4_click);
+            ctr_menu.btn_menu_5.Click += new EventHandler(btnMenu5_click);
+            ctr_menu.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
 
             // button navbar clicked
-            ctr_navbar1.btn_close.Click += new EventHandler(btnClose_click);
-            ctr_navbar1.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
+            ctr_navbar.btn_close.Click += new EventHandler(btnClose_click);
+            ctr_navbar.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
 
             // move form
-            ctr_navbar1.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
-            ctr_navbar1.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
+            ctr_navbar.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
+            ctr_navbar.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
         }
 
         //button menu clicked -> show Forms
-        void btnMenu1_click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Đặt vé clicked");
-        }
-
         void btnMenu2_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Khách hàng clicked");
+            frmDB.openFormById(2);
+            this.Close();
         }
 
-        void btnMenu3_click(object sender, EventArgs e)
+        void btnMenu1_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chuyến xe clicked");
+            frmDB.openFormById(1);
+            this.Close();
         }
 
         void btnMenu4_click(object sender, EventArgs e)
@@ -61,12 +60,14 @@ namespace QuanLyNhaXe
 
         void btnMenu5_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vé bán clicked");
+            timer_close.Start();
         }
 
         void btnMenuInfo_click(object sender, EventArgs e)
         {
-            MessageBox.Show("button info team clicked");
+            frmDB.Show();
+            frmDB.openFormById(5);
+            this.Close();
         }
 
         //button navbar clicked
@@ -77,15 +78,17 @@ namespace QuanLyNhaXe
 
         void btnToggleMenu_click(object sender, EventArgs e)
         {
-            if (ctr_menu1.Width <= 85)
+            if (ctr_menu.Width <= 85)
             {
-                ctr_menu1.Width = 200;
+                ctr_menu.Width = 200;
                 panel2.Width = 200;
+                ctr_navbar.btn_toggle_menu.ImageIndex = 0;
             }
             else
             {
-                ctr_menu1.Width = 85;
+                ctr_menu.Width = 85;
                 panel2.Width = 85;
+                ctr_navbar.btn_toggle_menu.ImageIndex = 2;
             }
         }
 
@@ -93,18 +96,40 @@ namespace QuanLyNhaXe
         public Point mouseLocation;
         void ctr_navbar1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
-            {
-                Point mousePos = Control.MousePosition;
-                mousePos.Offset(-mouseLocation.X, -mouseLocation.Y);
-                Location = mousePos;
-                Console.WriteLine(Location.X + ", " + Location.Y);
-            }
+
         }
 
         void ctr_navbar1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseLocation = new Point(e.X, e.Y);
+        }
+
+        private void timer_open_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity < 1)
+            {
+                this.Opacity += 0.45;
+            }
+            else
+            {
+                timer_open.Stop();
+            }
+        }
+
+        private void timer_close_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0.0)
+            {
+                this.Opacity -= 0.45;
+            }
+            else
+            {
+                timer_close.Stop();
+
+                //close this form and show dashboard form
+                frmDB.Show();
+                this.Close();
+            }
         }
 
         // effect load form
@@ -116,32 +141,6 @@ namespace QuanLyNhaXe
             loadcbbTuyen();
             LoaddgvChuyen();
         }
-
-        private void timer_open_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity < 1)
-            {
-                this.Opacity += 0.15;
-            }
-            else
-            {
-                timer_open.Stop();
-            }
-        }
-
-        private void time_close_Tick(object sender, EventArgs e)
-        {
-            if (this.Opacity > 0.0)
-            {
-                this.Opacity -= 0.15;
-            }
-            else
-            {
-                timer_close.Stop();
-                this.Close();
-            }
-        }
-
         private void btnSearchChuyenXe_MouseHover(object sender, EventArgs e)
         {
             btnSearchChuyenXe.ImageIndex = 6;
@@ -344,7 +343,6 @@ namespace QuanLyNhaXe
             string tu,den;
             tu = "%"+tbTu.Text.ToString()+"%";
             den = "%" + tbDen.Text.ToString() + "%";
-
             dt = c.ListChuyenSearch(tu, den);
             dgvChuyenXe.DataSource = dt;
         }

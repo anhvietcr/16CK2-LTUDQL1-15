@@ -31,10 +31,16 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChuyenXe));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ctr_navbar1 = new UserController.ctr_navbar();
+            this.ctr_navbar = new UserController.ctr_navbar();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dgvChuyenXe = new System.Windows.Forms.DataGridView();
+            this.btnExecl = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnViewXe = new System.Windows.Forms.Button();
+            this.btnThemChuyenXe = new System.Windows.Forms.Button();
+            this.btnUpdateChuyenXe = new System.Windows.Forms.Button();
+            this.btnXoaChuyenXe = new System.Windows.Forms.Button();
+            this.btnSearchChuyenXe = new System.Windows.Forms.Button();
             this.tbDen = new System.Windows.Forms.TextBox();
             this.tbTu = new System.Windows.Forms.TextBox();
             this.lbTimeCuoi = new System.Windows.Forms.Label();
@@ -55,52 +61,44 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ctr_menu1 = new UserController.ctr_menu();
+            this.ctr_menu = new UserController.ctr_menu();
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
-            this.btnExecl = new System.Windows.Forms.Button();
-            this.btnViewXe = new System.Windows.Forms.Button();
-            this.btnThemChuyenXe = new System.Windows.Forms.Button();
-            this.btnUpdateChuyenXe = new System.Windows.Forms.Button();
-            this.btnXoaChuyenXe = new System.Windows.Forms.Button();
-            this.btnSearchChuyenXe = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenXe)).BeginInit();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.ctr_navbar1);
+            this.panel1.Controls.Add(this.ctr_navbar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1066, 51);
+            this.panel1.Size = new System.Drawing.Size(800, 41);
             this.panel1.TabIndex = 0;
             // 
-            // ctr_navbar1
+            // ctr_navbar
             // 
-            this.ctr_navbar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.ctr_navbar1.Location = new System.Drawing.Point(0, 0);
-            this.ctr_navbar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctr_navbar1.Name = "ctr_navbar1";
-            this.ctr_navbar1.Size = new System.Drawing.Size(1067, 49);
-            this.ctr_navbar1.TabIndex = 1;
+            this.ctr_navbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.ctr_navbar.Location = new System.Drawing.Point(0, 0);
+            this.ctr_navbar.Name = "ctr_navbar";
+            this.ctr_navbar.Size = new System.Drawing.Size(800, 40);
+            this.ctr_navbar.TabIndex = 1;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dgvChuyenXe);
             this.panel3.Controls.Add(this.btnExecl);
             this.panel3.Controls.Add(this.btnViewXe);
             this.panel3.Controls.Add(this.btnThemChuyenXe);
             this.panel3.Controls.Add(this.btnUpdateChuyenXe);
             this.panel3.Controls.Add(this.btnXoaChuyenXe);
-            this.panel3.Controls.Add(this.btnSearchChuyenXe);
-            this.panel3.Controls.Add(this.tbDen);
-            this.panel3.Controls.Add(this.tbTu);
-            this.panel3.Controls.Add(this.lbTimeCuoi);
-            this.panel3.Controls.Add(this.lbTimeDau);
             this.panel3.Controls.Add(this.lbTuyenXe);
             this.panel3.Controls.Add(this.lbChuyenXe);
             this.panel3.Controls.Add(this.lbLoaiXe);
@@ -118,10 +116,56 @@
             this.panel3.Controls.Add(this.button8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.panel3.Location = new System.Drawing.Point(271, 51);
+            this.panel3.Location = new System.Drawing.Point(203, 41);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(795, 578);
+            this.panel3.Size = new System.Drawing.Size(597, 470);
             this.panel3.TabIndex = 0;
+            // 
+            // dgvChuyenXe
+            // 
+            this.dgvChuyenXe.AllowUserToAddRows = false;
+            this.dgvChuyenXe.AllowUserToDeleteRows = false;
+            this.dgvChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvChuyenXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChuyenXe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvChuyenXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.dgvChuyenXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvChuyenXe.Location = new System.Drawing.Point(14, 138);
+            this.dgvChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvChuyenXe.Name = "dgvChuyenXe";
+            this.dgvChuyenXe.ReadOnly = true;
+            this.dgvChuyenXe.RowTemplate.Height = 24;
+            this.dgvChuyenXe.Size = new System.Drawing.Size(570, 271);
+            this.dgvChuyenXe.TabIndex = 74;
+            this.dgvChuyenXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenXe_CellClick);
+            // 
+            // btnExecl
+            // 
+            this.btnExecl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExecl.AutoSize = true;
+            this.btnExecl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.btnExecl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExecl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnExecl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExecl.ImageIndex = 0;
+            this.btnExecl.ImageList = this.imageList1;
+            this.btnExecl.Location = new System.Drawing.Point(69, 423);
+            this.btnExecl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExecl.MaximumSize = new System.Drawing.Size(105, 28);
+            this.btnExecl.MinimumSize = new System.Drawing.Size(105, 28);
+            this.btnExecl.Name = "btnExecl";
+            this.btnExecl.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnExecl.Size = new System.Drawing.Size(105, 28);
+            this.btnExecl.TabIndex = 78;
+            this.btnExecl.Text = "Excel";
+            this.btnExecl.UseVisualStyleBackColor = false;
+            this.btnExecl.Click += new System.EventHandler(this.btnExecl_Click);
+            this.btnExecl.MouseLeave += new System.EventHandler(this.btnExecl_MouseLeave);
+            this.btnExecl.MouseHover += new System.EventHandler(this.btnExecl_MouseHover);
             // 
             // imageList1
             // 
@@ -140,360 +184,6 @@
             this.imageList1.Images.SetKeyName(10, "20_delivery-package-box-trolley-24-128.png");
             this.imageList1.Images.SetKeyName(11, "Untitled-2-67-128.png");
             // 
-            // dgvChuyenXe
-            // 
-            this.dgvChuyenXe.AllowUserToAddRows = false;
-            this.dgvChuyenXe.AllowUserToDeleteRows = false;
-            this.dgvChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvChuyenXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvChuyenXe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvChuyenXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.dgvChuyenXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvChuyenXe.Location = new System.Drawing.Point(18, 170);
-            this.dgvChuyenXe.Name = "dgvChuyenXe";
-            this.dgvChuyenXe.ReadOnly = true;
-            this.dgvChuyenXe.RowTemplate.Height = 24;
-            this.dgvChuyenXe.Size = new System.Drawing.Size(759, 334);
-            this.dgvChuyenXe.TabIndex = 74;
-            this.dgvChuyenXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuyenXe_CellClick);
-            // 
-            // tbDen
-            // 
-            this.tbDen.AllowDrop = true;
-            this.tbDen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tbDen.Location = new System.Drawing.Point(656, 61);
-            this.tbDen.MaximumSize = new System.Drawing.Size(121, 22);
-            this.tbDen.MinimumSize = new System.Drawing.Size(121, 22);
-            this.tbDen.Name = "tbDen";
-            this.tbDen.Size = new System.Drawing.Size(121, 22);
-            this.tbDen.TabIndex = 64;
-            // 
-            // tbTu
-            // 
-            this.tbTu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tbTu.Location = new System.Drawing.Point(656, 18);
-            this.tbTu.MaximumSize = new System.Drawing.Size(121, 22);
-            this.tbTu.MinimumSize = new System.Drawing.Size(121, 22);
-            this.tbTu.Name = "tbTu";
-            this.tbTu.Size = new System.Drawing.Size(121, 22);
-            this.tbTu.TabIndex = 62;
-            // 
-            // lbTimeCuoi
-            // 
-            this.lbTimeCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTimeCuoi.AutoSize = true;
-            this.lbTimeCuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.lbTimeCuoi.Location = new System.Drawing.Point(601, 61);
-            this.lbTimeCuoi.MaximumSize = new System.Drawing.Size(121, 0);
-            this.lbTimeCuoi.MinimumSize = new System.Drawing.Size(60, 0);
-            this.lbTimeCuoi.Name = "lbTimeCuoi";
-            this.lbTimeCuoi.Size = new System.Drawing.Size(60, 17);
-            this.lbTimeCuoi.TabIndex = 60;
-            this.lbTimeCuoi.Text = "Đến";
-            // 
-            // lbTimeDau
-            // 
-            this.lbTimeDau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTimeDau.AutoSize = true;
-            this.lbTimeDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.lbTimeDau.Location = new System.Drawing.Point(601, 18);
-            this.lbTimeDau.MaximumSize = new System.Drawing.Size(121, 0);
-            this.lbTimeDau.MinimumSize = new System.Drawing.Size(60, 0);
-            this.lbTimeDau.Name = "lbTimeDau";
-            this.lbTimeDau.Size = new System.Drawing.Size(60, 17);
-            this.lbTimeDau.TabIndex = 58;
-            this.lbTimeDau.Text = "Từ";
-            // 
-            // lbTuyenXe
-            // 
-            this.lbTuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbTuyenXe.AutoSize = true;
-            this.lbTuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.lbTuyenXe.Location = new System.Drawing.Point(333, 25);
-            this.lbTuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.lbTuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.lbTuyenXe.Name = "lbTuyenXe";
-            this.lbTuyenXe.Size = new System.Drawing.Size(69, 17);
-            this.lbTuyenXe.TabIndex = 55;
-            this.lbTuyenXe.Text = "Tuyến Xe";
-            // 
-            // lbChuyenXe
-            // 
-            this.lbChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbChuyenXe.AutoSize = true;
-            this.lbChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.lbChuyenXe.Location = new System.Drawing.Point(333, 55);
-            this.lbChuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.lbChuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.lbChuyenXe.Name = "lbChuyenXe";
-            this.lbChuyenXe.Size = new System.Drawing.Size(77, 17);
-            this.lbChuyenXe.TabIndex = 56;
-            this.lbChuyenXe.Text = "Chuyến Xe";
-            // 
-            // lbLoaiXe
-            // 
-            this.lbLoaiXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbLoaiXe.AutoSize = true;
-            this.lbLoaiXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.lbLoaiXe.Location = new System.Drawing.Point(333, 85);
-            this.lbLoaiXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.lbLoaiXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.lbLoaiXe.Name = "lbLoaiXe";
-            this.lbLoaiXe.Size = new System.Drawing.Size(60, 17);
-            this.lbLoaiXe.TabIndex = 52;
-            this.lbLoaiXe.Text = "Loại Xe";
-            // 
-            // cbbTuyenXe
-            // 
-            this.cbbTuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbTuyenXe.FormattingEnabled = true;
-            this.cbbTuyenXe.Location = new System.Drawing.Point(454, 18);
-            this.cbbTuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.cbbTuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.cbbTuyenXe.Name = "cbbTuyenXe";
-            this.cbbTuyenXe.Size = new System.Drawing.Size(121, 24);
-            this.cbbTuyenXe.TabIndex = 50;
-            this.cbbTuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbTuyenXe_SelectedIndexChanged);
-            // 
-            // cbbChuyenXe
-            // 
-            this.cbbChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbChuyenXe.FormattingEnabled = true;
-            this.cbbChuyenXe.Location = new System.Drawing.Point(454, 48);
-            this.cbbChuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.cbbChuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.cbbChuyenXe.Name = "cbbChuyenXe";
-            this.cbbChuyenXe.Size = new System.Drawing.Size(121, 24);
-            this.cbbChuyenXe.TabIndex = 49;
-            this.cbbChuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbChuyenXe_SelectedIndexChanged);
-            // 
-            // cbbLoaiXe
-            // 
-            this.cbbLoaiXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbLoaiXe.FormattingEnabled = true;
-            this.cbbLoaiXe.Items.AddRange(new object[] {
-            "All"});
-            this.cbbLoaiXe.Location = new System.Drawing.Point(454, 78);
-            this.cbbLoaiXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.cbbLoaiXe.MinimumSize = new System.Drawing.Size(60, 0);
-            this.cbbLoaiXe.Name = "cbbLoaiXe";
-            this.cbbLoaiXe.Size = new System.Drawing.Size(121, 24);
-            this.cbbLoaiXe.TabIndex = 46;
-            this.cbbLoaiXe.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiXe_SelectedIndexChanged);
-            // 
-            // button12
-            // 
-            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button12.AutoSize = true;
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.ImageIndex = 0;
-            this.button12.Location = new System.Drawing.Point(-611, 478);
-            this.button12.MaximumSize = new System.Drawing.Size(140, 35);
-            this.button12.MinimumSize = new System.Drawing.Size(140, 35);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(140, 35);
-            this.button12.TabIndex = 45;
-            this.button12.Text = "Excel";
-            this.button12.UseVisualStyleBackColor = false;
-            this.button12.MouseLeave += new System.EventHandler(this.btnExecl_MouseLeave);
-            this.button12.MouseHover += new System.EventHandler(this.btnExecl_MouseHover);
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.ImageIndex = 10;
-            this.button11.Location = new System.Drawing.Point(-415, 4);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(158, 34);
-            this.button11.TabIndex = 44;
-            this.button11.Text = "Thông Tin Xe";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.MouseLeave += new System.EventHandler(this.btnViewXe_MouseLeave);
-            this.button11.MouseHover += new System.EventHandler(this.btnViewXe_MouseHover);
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(-291, -30);
-            this.comboBox6.MaximumSize = new System.Drawing.Size(121, 0);
-            this.comboBox6.MinimumSize = new System.Drawing.Size(60, 0);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 24);
-            this.comboBox6.TabIndex = 30;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(-412, -23);
-            this.label8.MaximumSize = new System.Drawing.Size(121, 0);
-            this.label8.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 17);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "Tuyến Xe";
-            // 
-            // button10
-            // 
-            this.button10.AllowDrop = true;
-            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button10.AutoSize = true;
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.ImageIndex = 3;
-            this.button10.Location = new System.Drawing.Point(-450, 637);
-            this.button10.MaximumSize = new System.Drawing.Size(140, 35);
-            this.button10.MinimumSize = new System.Drawing.Size(140, 35);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(140, 35);
-            this.button10.TabIndex = 39;
-            this.button10.Text = "Insert";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.MouseLeave += new System.EventHandler(this.btnThemChuyenXe_MouseLeave);
-            this.button10.MouseHover += new System.EventHandler(this.btnThemChuyenXe_MouseHover);
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(-144, -30);
-            this.label9.MaximumSize = new System.Drawing.Size(121, 0);
-            this.label9.MinimumSize = new System.Drawing.Size(60, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 17);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "Từ";
-            // 
-            // button9
-            // 
-            this.button9.AllowDrop = true;
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.AutoSize = true;
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.ImageIndex = 1;
-            this.button9.Location = new System.Drawing.Point(-132, 637);
-            this.button9.MaximumSize = new System.Drawing.Size(140, 35);
-            this.button9.MinimumSize = new System.Drawing.Size(140, 35);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(140, 35);
-            this.button9.TabIndex = 40;
-            this.button9.Text = "Update";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.MouseLeave += new System.EventHandler(this.btnUpdateChuyenXe_MouseLeave);
-            this.button9.MouseHover += new System.EventHandler(this.btnUpdateChuyenXe_MouseHover);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBox3.Location = new System.Drawing.Point(-89, -30);
-            this.textBox3.MaximumSize = new System.Drawing.Size(121, 22);
-            this.textBox3.MinimumSize = new System.Drawing.Size(121, 22);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 22);
-            this.textBox3.TabIndex = 36;
-            // 
-            // button8
-            // 
-            this.button8.AllowDrop = true;
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.AutoSize = true;
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.ImageIndex = 7;
-            this.button8.Location = new System.Drawing.Point(-293, 637);
-            this.button8.MaximumSize = new System.Drawing.Size(140, 35);
-            this.button8.MinimumSize = new System.Drawing.Size(140, 35);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(140, 35);
-            this.button8.TabIndex = 42;
-            this.button8.Text = "Delete";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.MouseLeave += new System.EventHandler(this.btnXoaChuyenXe_MouseLeave);
-            this.button8.MouseHover += new System.EventHandler(this.btnXoaChuyenXe_MouseHover);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.ctr_menu1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 51);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 578);
-            this.panel2.TabIndex = 0;
-            // 
-            // ctr_menu1
-            // 
-            this.ctr_menu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
-            this.ctr_menu1.ForeColor = System.Drawing.Color.White;
-            this.ctr_menu1.Location = new System.Drawing.Point(0, 0);
-            this.ctr_menu1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ctr_menu1.Name = "ctr_menu1";
-            this.ctr_menu1.Size = new System.Drawing.Size(267, 578);
-            this.ctr_menu1.TabIndex = 0;
-            // 
-            // timer_open
-            // 
-            this.timer_open.Interval = 50;
-            this.timer_open.Tick += new System.EventHandler(this.timer_open_Tick);
-            // 
-            // timer_close
-            // 
-            this.timer_close.Interval = 50;
-            this.timer_close.Tick += new System.EventHandler(this.time_close_Tick);
-            // 
-            // btnExecl
-            // 
-            this.btnExecl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExecl.AutoSize = true;
-            this.btnExecl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btnExecl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExecl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btnExecl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExecl.ImageIndex = 0;
-            this.btnExecl.ImageList = this.imageList1;
-            this.btnExecl.Location = new System.Drawing.Point(92, 521);
-            this.btnExecl.MaximumSize = new System.Drawing.Size(140, 35);
-            this.btnExecl.MinimumSize = new System.Drawing.Size(140, 35);
-            this.btnExecl.Name = "btnExecl";
-            this.btnExecl.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExecl.Size = new System.Drawing.Size(140, 35);
-            this.btnExecl.TabIndex = 78;
-            this.btnExecl.Text = "Excel";
-            this.btnExecl.UseVisualStyleBackColor = false;
-            this.btnExecl.Click += new System.EventHandler(this.btnExecl_Click);
-            this.btnExecl.MouseLeave += new System.EventHandler(this.btnExecl_MouseLeave);
-            this.btnExecl.MouseHover += new System.EventHandler(this.btnExecl_MouseHover);
-            // 
             // btnViewXe
             // 
             this.btnViewXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
@@ -501,10 +191,11 @@
             this.btnViewXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewXe.ImageIndex = 10;
             this.btnViewXe.ImageList = this.imageList1;
-            this.btnViewXe.Location = new System.Drawing.Point(61, 52);
+            this.btnViewXe.Location = new System.Drawing.Point(46, 42);
+            this.btnViewXe.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewXe.Name = "btnViewXe";
-            this.btnViewXe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnViewXe.Size = new System.Drawing.Size(158, 34);
+            this.btnViewXe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnViewXe.Size = new System.Drawing.Size(118, 28);
             this.btnViewXe.TabIndex = 76;
             this.btnViewXe.Text = "Thông Tin Xe";
             this.btnViewXe.UseVisualStyleBackColor = false;
@@ -523,14 +214,15 @@
             this.btnThemChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemChuyenXe.ImageIndex = 3;
             this.btnThemChuyenXe.ImageList = this.imageList1;
-            this.btnThemChuyenXe.Location = new System.Drawing.Point(253, 521);
-            this.btnThemChuyenXe.MaximumSize = new System.Drawing.Size(140, 35);
-            this.btnThemChuyenXe.MinimumSize = new System.Drawing.Size(140, 35);
+            this.btnThemChuyenXe.Location = new System.Drawing.Point(190, 423);
+            this.btnThemChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemChuyenXe.MaximumSize = new System.Drawing.Size(105, 28);
+            this.btnThemChuyenXe.MinimumSize = new System.Drawing.Size(105, 28);
             this.btnThemChuyenXe.Name = "btnThemChuyenXe";
-            this.btnThemChuyenXe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnThemChuyenXe.Size = new System.Drawing.Size(140, 35);
+            this.btnThemChuyenXe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnThemChuyenXe.Size = new System.Drawing.Size(105, 28);
             this.btnThemChuyenXe.TabIndex = 68;
-            this.btnThemChuyenXe.Text = "Insert";
+            this.btnThemChuyenXe.Text = "Thêm";
             this.btnThemChuyenXe.UseVisualStyleBackColor = false;
             this.btnThemChuyenXe.Click += new System.EventHandler(this.btnThemChuyenXe_Click);
             this.btnThemChuyenXe.MouseLeave += new System.EventHandler(this.btnThemChuyenXe_MouseLeave);
@@ -547,14 +239,15 @@
             this.btnUpdateChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateChuyenXe.ImageIndex = 1;
             this.btnUpdateChuyenXe.ImageList = this.imageList1;
-            this.btnUpdateChuyenXe.Location = new System.Drawing.Point(571, 521);
-            this.btnUpdateChuyenXe.MaximumSize = new System.Drawing.Size(140, 35);
-            this.btnUpdateChuyenXe.MinimumSize = new System.Drawing.Size(140, 35);
+            this.btnUpdateChuyenXe.Location = new System.Drawing.Point(428, 423);
+            this.btnUpdateChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateChuyenXe.MaximumSize = new System.Drawing.Size(105, 28);
+            this.btnUpdateChuyenXe.MinimumSize = new System.Drawing.Size(105, 28);
             this.btnUpdateChuyenXe.Name = "btnUpdateChuyenXe";
-            this.btnUpdateChuyenXe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnUpdateChuyenXe.Size = new System.Drawing.Size(140, 35);
+            this.btnUpdateChuyenXe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnUpdateChuyenXe.Size = new System.Drawing.Size(105, 28);
             this.btnUpdateChuyenXe.TabIndex = 70;
-            this.btnUpdateChuyenXe.Text = "Update";
+            this.btnUpdateChuyenXe.Text = "Thay Đổi";
             this.btnUpdateChuyenXe.UseVisualStyleBackColor = false;
             this.btnUpdateChuyenXe.Click += new System.EventHandler(this.btnUpdateChuyenXe_Click);
             this.btnUpdateChuyenXe.MouseLeave += new System.EventHandler(this.btnUpdateChuyenXe_MouseLeave);
@@ -571,14 +264,15 @@
             this.btnXoaChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaChuyenXe.ImageIndex = 7;
             this.btnXoaChuyenXe.ImageList = this.imageList1;
-            this.btnXoaChuyenXe.Location = new System.Drawing.Point(410, 521);
-            this.btnXoaChuyenXe.MaximumSize = new System.Drawing.Size(140, 35);
-            this.btnXoaChuyenXe.MinimumSize = new System.Drawing.Size(140, 35);
+            this.btnXoaChuyenXe.Location = new System.Drawing.Point(308, 423);
+            this.btnXoaChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaChuyenXe.MaximumSize = new System.Drawing.Size(105, 28);
+            this.btnXoaChuyenXe.MinimumSize = new System.Drawing.Size(105, 28);
             this.btnXoaChuyenXe.Name = "btnXoaChuyenXe";
-            this.btnXoaChuyenXe.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnXoaChuyenXe.Size = new System.Drawing.Size(140, 35);
+            this.btnXoaChuyenXe.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnXoaChuyenXe.Size = new System.Drawing.Size(105, 28);
             this.btnXoaChuyenXe.TabIndex = 72;
-            this.btnXoaChuyenXe.Text = "Delete";
+            this.btnXoaChuyenXe.Text = "Xóa";
             this.btnXoaChuyenXe.UseVisualStyleBackColor = false;
             this.btnXoaChuyenXe.Click += new System.EventHandler(this.btnXoaChuyenXe_Click);
             this.btnXoaChuyenXe.MouseLeave += new System.EventHandler(this.btnXoaChuyenXe_MouseLeave);
@@ -595,29 +289,375 @@
             this.btnSearchChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchChuyenXe.ImageIndex = 5;
             this.btnSearchChuyenXe.ImageList = this.imageList1;
-            this.btnSearchChuyenXe.Location = new System.Drawing.Point(625, 115);
-            this.btnSearchChuyenXe.MaximumSize = new System.Drawing.Size(121, 0);
-            this.btnSearchChuyenXe.MinimumSize = new System.Drawing.Size(60, 0);
+            this.btnSearchChuyenXe.Location = new System.Drawing.Point(40, 96);
+            this.btnSearchChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchChuyenXe.MaximumSize = new System.Drawing.Size(91, 0);
+            this.btnSearchChuyenXe.MinimumSize = new System.Drawing.Size(45, 0);
             this.btnSearchChuyenXe.Name = "btnSearchChuyenXe";
-            this.btnSearchChuyenXe.Size = new System.Drawing.Size(121, 27);
+            this.btnSearchChuyenXe.Size = new System.Drawing.Size(91, 26);
             this.btnSearchChuyenXe.TabIndex = 67;
             this.btnSearchChuyenXe.Tag = "Search";
-            this.btnSearchChuyenXe.Text = "Search";
+            this.btnSearchChuyenXe.Text = "Tìm Kiếm";
             this.btnSearchChuyenXe.UseVisualStyleBackColor = false;
             this.btnSearchChuyenXe.Click += new System.EventHandler(this.btnSearchChuyenXe_Click);
             this.btnSearchChuyenXe.MouseLeave += new System.EventHandler(this.btnSearchChuyenXe_MouseLeave);
             this.btnSearchChuyenXe.MouseHover += new System.EventHandler(this.btnSearchChuyenXe_MouseHover);
             // 
+            // tbDen
+            // 
+            this.tbDen.AllowDrop = true;
+            this.tbDen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbDen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbDen.Location = new System.Drawing.Point(63, 53);
+            this.tbDen.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDen.MaximumSize = new System.Drawing.Size(92, 22);
+            this.tbDen.MinimumSize = new System.Drawing.Size(92, 22);
+            this.tbDen.Name = "tbDen";
+            this.tbDen.Size = new System.Drawing.Size(92, 22);
+            this.tbDen.TabIndex = 64;
+            // 
+            // tbTu
+            // 
+            this.tbTu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbTu.Location = new System.Drawing.Point(63, 18);
+            this.tbTu.Margin = new System.Windows.Forms.Padding(2);
+            this.tbTu.MaximumSize = new System.Drawing.Size(92, 22);
+            this.tbTu.MinimumSize = new System.Drawing.Size(92, 22);
+            this.tbTu.Name = "tbTu";
+            this.tbTu.Size = new System.Drawing.Size(92, 22);
+            this.tbTu.TabIndex = 62;
+            // 
+            // lbTimeCuoi
+            // 
+            this.lbTimeCuoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTimeCuoi.AutoSize = true;
+            this.lbTimeCuoi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.lbTimeCuoi.Location = new System.Drawing.Point(14, 58);
+            this.lbTimeCuoi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTimeCuoi.MaximumSize = new System.Drawing.Size(91, 0);
+            this.lbTimeCuoi.MinimumSize = new System.Drawing.Size(45, 0);
+            this.lbTimeCuoi.Name = "lbTimeCuoi";
+            this.lbTimeCuoi.Size = new System.Drawing.Size(45, 13);
+            this.lbTimeCuoi.TabIndex = 60;
+            this.lbTimeCuoi.Text = "Đến";
+            // 
+            // lbTimeDau
+            // 
+            this.lbTimeDau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTimeDau.AutoSize = true;
+            this.lbTimeDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.lbTimeDau.Location = new System.Drawing.Point(14, 18);
+            this.lbTimeDau.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTimeDau.MaximumSize = new System.Drawing.Size(91, 0);
+            this.lbTimeDau.MinimumSize = new System.Drawing.Size(45, 0);
+            this.lbTimeDau.Name = "lbTimeDau";
+            this.lbTimeDau.Size = new System.Drawing.Size(45, 13);
+            this.lbTimeDau.TabIndex = 58;
+            this.lbTimeDau.Text = "Từ";
+            // 
+            // lbTuyenXe
+            // 
+            this.lbTuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTuyenXe.AutoSize = true;
+            this.lbTuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.lbTuyenXe.Location = new System.Drawing.Point(206, 15);
+            this.lbTuyenXe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTuyenXe.MaximumSize = new System.Drawing.Size(91, 0);
+            this.lbTuyenXe.MinimumSize = new System.Drawing.Size(45, 0);
+            this.lbTuyenXe.Name = "lbTuyenXe";
+            this.lbTuyenXe.Size = new System.Drawing.Size(53, 13);
+            this.lbTuyenXe.TabIndex = 55;
+            this.lbTuyenXe.Text = "Tuyến Xe";
+            // 
+            // lbChuyenXe
+            // 
+            this.lbChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbChuyenXe.AutoSize = true;
+            this.lbChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.lbChuyenXe.Location = new System.Drawing.Point(206, 40);
+            this.lbChuyenXe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbChuyenXe.MaximumSize = new System.Drawing.Size(91, 0);
+            this.lbChuyenXe.MinimumSize = new System.Drawing.Size(45, 0);
+            this.lbChuyenXe.Name = "lbChuyenXe";
+            this.lbChuyenXe.Size = new System.Drawing.Size(59, 13);
+            this.lbChuyenXe.TabIndex = 56;
+            this.lbChuyenXe.Text = "Chuyến Xe";
+            // 
+            // lbLoaiXe
+            // 
+            this.lbLoaiXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLoaiXe.AutoSize = true;
+            this.lbLoaiXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.lbLoaiXe.Location = new System.Drawing.Point(206, 64);
+            this.lbLoaiXe.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbLoaiXe.MaximumSize = new System.Drawing.Size(91, 0);
+            this.lbLoaiXe.MinimumSize = new System.Drawing.Size(45, 0);
+            this.lbLoaiXe.Name = "lbLoaiXe";
+            this.lbLoaiXe.Size = new System.Drawing.Size(45, 13);
+            this.lbLoaiXe.TabIndex = 52;
+            this.lbLoaiXe.Text = "Loại Xe";
+            // 
+            // cbbTuyenXe
+            // 
+            this.cbbTuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbTuyenXe.FormattingEnabled = true;
+            this.cbbTuyenXe.Location = new System.Drawing.Point(296, 10);
+            this.cbbTuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbTuyenXe.MaximumSize = new System.Drawing.Size(92, 0);
+            this.cbbTuyenXe.MinimumSize = new System.Drawing.Size(46, 0);
+            this.cbbTuyenXe.Name = "cbbTuyenXe";
+            this.cbbTuyenXe.Size = new System.Drawing.Size(92, 21);
+            this.cbbTuyenXe.TabIndex = 50;
+            this.cbbTuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbTuyenXe_SelectedIndexChanged);
+            // 
+            // cbbChuyenXe
+            // 
+            this.cbbChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbChuyenXe.FormattingEnabled = true;
+            this.cbbChuyenXe.Location = new System.Drawing.Point(296, 34);
+            this.cbbChuyenXe.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbChuyenXe.MaximumSize = new System.Drawing.Size(92, 0);
+            this.cbbChuyenXe.MinimumSize = new System.Drawing.Size(46, 0);
+            this.cbbChuyenXe.Name = "cbbChuyenXe";
+            this.cbbChuyenXe.Size = new System.Drawing.Size(92, 21);
+            this.cbbChuyenXe.TabIndex = 49;
+            this.cbbChuyenXe.SelectedIndexChanged += new System.EventHandler(this.cbbChuyenXe_SelectedIndexChanged);
+            // 
+            // cbbLoaiXe
+            // 
+            this.cbbLoaiXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbLoaiXe.FormattingEnabled = true;
+            this.cbbLoaiXe.Items.AddRange(new object[] {
+            "All"});
+            this.cbbLoaiXe.Location = new System.Drawing.Point(296, 58);
+            this.cbbLoaiXe.Margin = new System.Windows.Forms.Padding(2);
+            this.cbbLoaiXe.MaximumSize = new System.Drawing.Size(92, 0);
+            this.cbbLoaiXe.MinimumSize = new System.Drawing.Size(46, 0);
+            this.cbbLoaiXe.Name = "cbbLoaiXe";
+            this.cbbLoaiXe.Size = new System.Drawing.Size(92, 21);
+            this.cbbLoaiXe.TabIndex = 46;
+            this.cbbLoaiXe.SelectedIndexChanged += new System.EventHandler(this.cbbLoaiXe_SelectedIndexChanged);
+            // 
+            // button12
+            // 
+            this.button12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button12.AutoSize = true;
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.ImageIndex = 0;
+            this.button12.Location = new System.Drawing.Point(-457, 388);
+            this.button12.Margin = new System.Windows.Forms.Padding(2);
+            this.button12.MaximumSize = new System.Drawing.Size(105, 28);
+            this.button12.MinimumSize = new System.Drawing.Size(105, 28);
+            this.button12.Name = "button12";
+            this.button12.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button12.Size = new System.Drawing.Size(105, 28);
+            this.button12.TabIndex = 45;
+            this.button12.Text = "Excel";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.MouseLeave += new System.EventHandler(this.btnExecl_MouseLeave);
+            this.button12.MouseHover += new System.EventHandler(this.btnExecl_MouseHover);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.button11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.ImageIndex = 10;
+            this.button11.Location = new System.Drawing.Point(-311, 3);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button11.Size = new System.Drawing.Size(118, 28);
+            this.button11.TabIndex = 44;
+            this.button11.Text = "Thông Tin Xe";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.MouseLeave += new System.EventHandler(this.btnViewXe_MouseLeave);
+            this.button11.MouseHover += new System.EventHandler(this.btnViewXe_MouseHover);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(-217, -24);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox6.MaximumSize = new System.Drawing.Size(92, 0);
+            this.comboBox6.MinimumSize = new System.Drawing.Size(46, 0);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(92, 21);
+            this.comboBox6.TabIndex = 30;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(-308, -19);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.MaximumSize = new System.Drawing.Size(91, 0);
+            this.label8.MinimumSize = new System.Drawing.Size(45, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "Tuyến Xe";
+            // 
+            // button10
+            // 
+            this.button10.AllowDrop = true;
+            this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button10.AutoSize = true;
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button10.ImageIndex = 3;
+            this.button10.Location = new System.Drawing.Point(-337, 518);
+            this.button10.Margin = new System.Windows.Forms.Padding(2);
+            this.button10.MaximumSize = new System.Drawing.Size(105, 28);
+            this.button10.MinimumSize = new System.Drawing.Size(105, 28);
+            this.button10.Name = "button10";
+            this.button10.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button10.Size = new System.Drawing.Size(105, 28);
+            this.button10.TabIndex = 39;
+            this.button10.Text = "Insert";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.MouseLeave += new System.EventHandler(this.btnThemChuyenXe_MouseLeave);
+            this.button10.MouseHover += new System.EventHandler(this.btnThemChuyenXe_MouseHover);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(-107, -24);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.MaximumSize = new System.Drawing.Size(91, 0);
+            this.label9.MinimumSize = new System.Drawing.Size(45, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(45, 13);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "Từ";
+            // 
+            // button9
+            // 
+            this.button9.AllowDrop = true;
+            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button9.AutoSize = true;
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.ImageIndex = 1;
+            this.button9.Location = new System.Drawing.Point(-98, 518);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
+            this.button9.MaximumSize = new System.Drawing.Size(105, 28);
+            this.button9.MinimumSize = new System.Drawing.Size(105, 28);
+            this.button9.Name = "button9";
+            this.button9.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button9.Size = new System.Drawing.Size(105, 28);
+            this.button9.TabIndex = 40;
+            this.button9.Text = "Update";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.MouseLeave += new System.EventHandler(this.btnUpdateChuyenXe_MouseLeave);
+            this.button9.MouseHover += new System.EventHandler(this.btnUpdateChuyenXe_MouseHover);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.textBox3.Location = new System.Drawing.Point(-66, -24);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox3.MaximumSize = new System.Drawing.Size(92, 22);
+            this.textBox3.MinimumSize = new System.Drawing.Size(92, 22);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(92, 20);
+            this.textBox3.TabIndex = 36;
+            // 
+            // button8
+            // 
+            this.button8.AllowDrop = true;
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.AutoSize = true;
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.ImageIndex = 7;
+            this.button8.Location = new System.Drawing.Point(-219, 518);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.MaximumSize = new System.Drawing.Size(105, 28);
+            this.button8.MinimumSize = new System.Drawing.Size(105, 28);
+            this.button8.Name = "button8";
+            this.button8.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.button8.Size = new System.Drawing.Size(105, 28);
+            this.button8.TabIndex = 42;
+            this.button8.Text = "Delete";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.MouseLeave += new System.EventHandler(this.btnXoaChuyenXe_MouseLeave);
+            this.button8.MouseHover += new System.EventHandler(this.btnXoaChuyenXe_MouseHover);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ctr_menu);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 41);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(203, 470);
+            this.panel2.TabIndex = 0;
+            // 
+            // ctr_menu
+            // 
+            this.ctr_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
+            this.ctr_menu.ForeColor = System.Drawing.Color.White;
+            this.ctr_menu.Location = new System.Drawing.Point(0, 0);
+            this.ctr_menu.Name = "ctr_menu";
+            this.ctr_menu.Size = new System.Drawing.Size(200, 470);
+            this.ctr_menu.TabIndex = 0;
+            // 
+            // timer_open
+            // 
+            this.timer_open.Interval = 50;
+            this.timer_open.Tick += new System.EventHandler(this.timer_open_Tick);
+            // 
+            // timer_close
+            // 
+            this.timer_close.Interval = 50;
+            this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbTu);
+            this.groupBox1.Controls.Add(this.lbTimeDau);
+            this.groupBox1.Controls.Add(this.lbTimeCuoi);
+            this.groupBox1.Controls.Add(this.tbDen);
+            this.groupBox1.Controls.Add(this.btnSearchChuyenXe);
+            this.groupBox1.Location = new System.Drawing.Point(411, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(174, 128);
+            this.groupBox1.TabIndex = 79;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tìm Kiếm";
+            // 
             // frmChuyenXe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1066, 629);
+            this.ClientSize = new System.Drawing.Size(800, 511);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmChuyenXe";
             this.Opacity = 0D;
             this.Text = "ChuyenXe";
@@ -627,6 +667,8 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuyenXe)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -665,8 +707,9 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button8;
-        private UserController.ctr_menu ctr_menu1;
-        private UserController.ctr_navbar ctr_navbar1;
+        private UserController.ctr_menu ctr_menu;
+        private UserController.ctr_navbar ctr_navbar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
