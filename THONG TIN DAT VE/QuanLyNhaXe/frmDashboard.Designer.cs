@@ -240,7 +240,7 @@
             this.cbx_report.Name = "cbx_report";
             this.cbx_report.Size = new System.Drawing.Size(397, 32);
             this.cbx_report.TabIndex = 6;
-            this.cbx_report.Text = "        Báo cáo thống kê";
+            this.cbx_report.Text = "       Báo cáo thống kê     ";
             this.cbx_report.SelectedIndexChanged += new System.EventHandler(this.cbx_report_SelectedIndexChanged);
             // 
             // groupBox_intro
