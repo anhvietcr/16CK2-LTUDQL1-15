@@ -41,12 +41,12 @@
             System.Windows.Forms.Button btnthem;
             System.Windows.Forms.GroupBox groupBox3;
             System.Windows.Forms.Label label3;
-            System.Windows.Forms.TextBox txttimkiem;
             this.txtloai = new System.Windows.Forms.TextBox();
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txtten = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtma = new System.Windows.Forms.TextBox();
+            this.txttimkiem = new System.Windows.Forms.TextBox();
             this.dgrv_kh = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ctr_navbar1 = new UserController.ctr_navbar();
@@ -67,7 +67,6 @@
             btnthem = new System.Windows.Forms.Button();
             groupBox3 = new System.Windows.Forms.GroupBox();
             label3 = new System.Windows.Forms.Label();
-            txttimkiem = new System.Windows.Forms.TextBox();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrv_kh)).BeginInit();
@@ -176,7 +175,7 @@
             // 
             groupBox3.BackColor = System.Drawing.Color.Transparent;
             groupBox3.Controls.Add(label3);
-            groupBox3.Controls.Add(txttimkiem);
+            groupBox3.Controls.Add(this.txttimkiem);
             groupBox3.Controls.Add(this.dgrv_kh);
             resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -190,8 +189,9 @@
             // 
             // txttimkiem
             // 
-            resources.ApplyResources(txttimkiem, "txttimkiem");
-            txttimkiem.Name = "txttimkiem";
+            resources.ApplyResources(this.txttimkiem, "txttimkiem");
+            this.txttimkiem.Name = "txttimkiem";
+            this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
             // 
             // dgrv_kh
             // 
@@ -286,5 +286,6 @@
         private System.Windows.Forms.TextBox txtten;
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtma;
+        private System.Windows.Forms.TextBox txttimkiem;
     }
 }

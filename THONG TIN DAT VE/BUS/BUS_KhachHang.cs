@@ -37,5 +37,9 @@ namespace BUS
         {
             return dal_kh.ListKhachHangTheoSDT(khachhang);
         }
+        public DataTable timKhachHangTheoSDTVaTen(string ma)
+        {
+            return dal_kh.timKhachHangTheoSDTVaTen(ma);
+        }
     }
 }
