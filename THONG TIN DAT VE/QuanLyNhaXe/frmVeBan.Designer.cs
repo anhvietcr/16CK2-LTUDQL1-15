@@ -32,9 +32,16 @@
             this.timer_open = new System.Windows.Forms.Timer(this.components);
             this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_navbar_title = new System.Windows.Forms.Panel();
             this.ctr_navbar_title = new UserController.ctr_navbar_title();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Ghe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Chuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TInhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayXuatVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ghiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel_navbar_title.SuspendLayout();
             this.SuspendLayout();
@@ -51,16 +58,18 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id});
+            this.id,
+            this.ID_Ghe,
+            this.ID_Chuyen,
+            this.ID_KH,
+            this.TInhTrang,
+            this.gia,
+            this.ngayXuatVe,
+            this.ghiChu});
             this.dataGridView1.Location = new System.Drawing.Point(0, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 472);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
             // 
             // panel_navbar_title
             // 
@@ -78,6 +87,47 @@
             this.ctr_navbar_title.Name = "ctr_navbar_title";
             this.ctr_navbar_title.Size = new System.Drawing.Size(800, 40);
             this.ctr_navbar_title.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Width = 50;
+            // 
+            // ID_Ghe
+            // 
+            this.ID_Ghe.HeaderText = "ID Ghế";
+            this.ID_Ghe.Name = "ID_Ghe";
+            // 
+            // ID_Chuyen
+            // 
+            this.ID_Chuyen.HeaderText = "ID Chuyến";
+            this.ID_Chuyen.Name = "ID_Chuyen";
+            // 
+            // ID_KH
+            // 
+            this.ID_KH.HeaderText = "ID Khách hàng";
+            this.ID_KH.Name = "ID_KH";
+            // 
+            // TInhTrang
+            // 
+            this.TInhTrang.HeaderText = "Tình Trạng";
+            this.TInhTrang.Name = "TInhTrang";
+            // 
+            // gia
+            // 
+            this.gia.HeaderText = "Giá tiền";
+            this.gia.Name = "gia";
+            // 
+            // ngayXuatVe
+            // 
+            this.ngayXuatVe.HeaderText = "Ngày xuất vé";
+            this.ngayXuatVe.Name = "ngayXuatVe";
+            // 
+            // ghiChu
+            // 
+            this.ghiChu.HeaderText = "Ghi chú";
+            this.ghiChu.Name = "ghiChu";
             // 
             // frmVeBan
             // 
@@ -104,7 +154,14 @@
         private System.Windows.Forms.Timer timer_close;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel_navbar_title;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private UserController.ctr_navbar_title ctr_navbar_title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Ghe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Chuyen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_KH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TInhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayXuatVe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ghiChu;
     }
 }
