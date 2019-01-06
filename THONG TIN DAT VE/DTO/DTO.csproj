@@ -43,8 +43,6 @@
     <Compile Include="DatVe.cs" />
     <Compile Include="DTO_Chuyen.cs" />
     <Compile Include="DTO_KhachHang.cs" />
-    <Compile Include="DTO_Tram.cs" />
-    <Compile Include="DTO_TuyenXe.cs" />
     <Compile Include="DTO_Xe.cs" />
     <Compile Include="Ghe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

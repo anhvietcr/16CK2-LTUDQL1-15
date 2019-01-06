@@ -44,3 +44,8 @@ as begin
 end
 go
 
+alter proc timkhachhangtheotenhoacsdt @ma nvarchar(50)
+as begin
+	select * from KhachHang where HoTen like '%'+@ma+'%' or DienThoai like '%'+@ma+'%'
+end
+go

@@ -213,5 +213,28 @@ namespace QuanLyNhaXe
             kh.XoaKhachHang(int.Parse(txtma.Text));
             loadGridKhachHangByTenKH();
         }
+
+        private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) 
+            {
+                BUS_KhachHang kh=new BUS_KhachHang();
+                DataTable dt=new DataTable();
+                dt=kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
+                
+                if (dt!=null&&dt.Rows.Count>0)
+                {
+                    dgrv_kh.DataSource = dt;
+                }
+                else
+                {
+                    if (txttimkiem.Text != "")
+                    {
+                        MessageBox.Show("không tìm thấy khách hàng!");
+                    }
+                    loadGridKhachHangByTenKH();
+                }
+            }
+        }
     }
 }

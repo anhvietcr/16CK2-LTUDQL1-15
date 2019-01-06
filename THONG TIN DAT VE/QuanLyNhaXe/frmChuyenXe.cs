@@ -288,10 +288,11 @@ namespace QuanLyNhaXe
             dto_c.ID_Chuyen = -1;
             if (cbbTuyenXe.SelectedIndex != 0)
             {
-                if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
-                {
-                    Tuyen = x;
-                }
+                //if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
+                //{
+                //    Tuyen = x;
+                //}
+
             }
             if (cbbChuyenXe.SelectedIndex != 0)
             {

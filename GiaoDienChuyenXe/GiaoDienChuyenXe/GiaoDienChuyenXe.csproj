@@ -46,7 +46,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UserController">
+<<<<<<< HEAD
       <HintPath>..\..\..\..\..\UserController.dll</HintPath>
+=======
+      <HintPath>..\..\Wiki UserController\UserController\UserController\bin\Release\UserController.dll</HintPath>
+>>>>>>> 01ed2c6395e75668bdd9e1cd1ef4828b700eef46
     </Reference>
   </ItemGroup>
   <ItemGroup>
