@@ -46,7 +46,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="UserController">
-      <HintPath>..\..\Wiki UserController\UserController\UserController\bin\Release\UserController.dll</HintPath>
+      <HintPath>..\..\..\..\..\UserController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
