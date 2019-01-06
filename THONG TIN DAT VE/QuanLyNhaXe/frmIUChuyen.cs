@@ -70,7 +70,7 @@ namespace QuanLyNhaXe
             //    dto_c.ID_Chuyen = ;
             //    btUpdate.Dispose();
             //}
-           
+
         }
 
         private void tbIDTuyen_TextChanged(object sender, EventArgs e)

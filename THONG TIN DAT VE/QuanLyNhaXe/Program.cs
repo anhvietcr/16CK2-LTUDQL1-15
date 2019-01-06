@@ -22,8 +22,8 @@ namespace QuanLyNhaXe
             GenericPrincipal genericPrincipal = new GenericPrincipal(genericIdentity, new string[] { "admin", "client", "guest" });
             Thread.CurrentPrincipal = genericPrincipal;
 
-            //Application.Run(new FrmLogin());
-            Application.Run(new frmDashboard());
+            Application.Run(new frmLogin());
+            //Application.Run(new frmDashboard());
         }
     }
 }

@@ -3,12 +3,16 @@ using System.Drawing;
 using System.Windows.Forms;
 using BUS;
 using System.Data;
+using System.Security.Principal;
+using System.Threading;
 
 namespace QuanLyNhaXe
 {
     public partial class frmVeBan : Form
     {
         public frmDashboard frmDB;
+        public GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
+
         public frmVeBan(frmDashboard frm)
         {
             InitializeComponent();
@@ -122,6 +126,12 @@ namespace QuanLyNhaXe
             switch (e.ClickedItem.Text)
             {
                 case "Xóa":
+                    if (principal.IsInRole("client  "))
+                    {
+                        MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+                        break;
+                    }
+
                     if (bus_ve.deleteVe(idVe))
                     {
                         MessageBox.Show("Xóa vé thành công");
@@ -129,7 +139,6 @@ namespace QuanLyNhaXe
                     {
                         MessageBox.Show("Thất bại, có lỗi xảy ra");
                     }
-
                     break;
                 case "Cập nhật tình trạng Vé":
                     int tinhTrang = Convert.ToInt32(dgvVe.Rows[iRow].Cells[3].Value);
