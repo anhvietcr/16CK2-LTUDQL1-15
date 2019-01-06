@@ -144,5 +144,26 @@ namespace DAL
                 throw new Exception(ex.Message);
             }
         }
+        public DataTable timKhachHangTheoSDTVaTen(string ma)
+        {
+            try
+            {
+                SqlConnection conn = DBConnect.Connect();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "timkhachhangtheotenhoacsdt";
+                cmd.Parameters.Add(new SqlParameter { ParameterName = "ma", Value = ma});
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                DBConnect.Close(conn);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

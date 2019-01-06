@@ -20,7 +20,7 @@ namespace QuanLyNhaXe
             InitializeComponent();
             frmDB = frm;
             ctr_menu.btn_menu_1.Enabled = false;
-            ctr_navbar.txt_title.Text = "Đặt Vé";
+            ctr.txt_title.Text = "Đặt Vé";
             this._khachHang = new DTO_KhachHang();
 
             // button menu clicked
@@ -31,12 +31,12 @@ namespace QuanLyNhaXe
             ctr_menu.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
 
             // button navbar clicked
-            ctr_navbar.btn_close.Click += new EventHandler(btnClose_click);
-            ctr_navbar.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
+            ctr.btn_close.Click += new EventHandler(btnClose_click);
+            ctr.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
 
             // move form
-            ctr_navbar.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
-            ctr_navbar.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
+            ctr.MouseMove += new MouseEventHandler(ctr_navbar1_MouseMove);
+            ctr.MouseDown += new MouseEventHandler(ctr_navbar1_MouseDown);
         }
 
         //button menu clicked -> show Forms
@@ -80,13 +80,13 @@ namespace QuanLyNhaXe
             {
                 ctr_menu.Width = 200;
                 panel2.Width = 200;
-                ctr_navbar.btn_toggle_menu.ImageIndex = 0;
+                ctr.btn_toggle_menu.ImageIndex = 0;
             }
             else
             {
                 ctr_menu.Width = 85;
                 panel2.Width = 85;
-                ctr_navbar.btn_toggle_menu.ImageIndex = 2;
+                ctr.btn_toggle_menu.ImageIndex = 2;
             }
         }
 
