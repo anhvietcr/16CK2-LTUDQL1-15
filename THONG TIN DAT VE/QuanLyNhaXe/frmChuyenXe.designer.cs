@@ -92,6 +92,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dgvChuyenXe);
             this.panel3.Controls.Add(this.btnExecl);
@@ -115,7 +116,7 @@
             this.panel3.Controls.Add(this.textBox3);
             this.panel3.Controls.Add(this.button8);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.panel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel3.Location = new System.Drawing.Point(203, 41);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
@@ -198,9 +199,11 @@
             this.btnSearchChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearchChuyenXe.AutoSize = true;
-            this.btnSearchChuyenXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.btnSearchChuyenXe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnSearchChuyenXe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearchChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnSearchChuyenXe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSearchChuyenXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchChuyenXe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSearchChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchChuyenXe.ImageIndex = 5;
             this.btnSearchChuyenXe.ImageList = this.imageList1;
@@ -209,7 +212,7 @@
             this.btnSearchChuyenXe.MaximumSize = new System.Drawing.Size(91, 0);
             this.btnSearchChuyenXe.MinimumSize = new System.Drawing.Size(45, 0);
             this.btnSearchChuyenXe.Name = "btnSearchChuyenXe";
-            this.btnSearchChuyenXe.Size = new System.Drawing.Size(91, 26);
+            this.btnSearchChuyenXe.Size = new System.Drawing.Size(91, 28);
             this.btnSearchChuyenXe.TabIndex = 67;
             this.btnSearchChuyenXe.Tag = "Search";
             this.btnSearchChuyenXe.Text = "Tìm Kiếm";
@@ -244,7 +247,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChuyenXe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvChuyenXe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvChuyenXe.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.dgvChuyenXe.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvChuyenXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChuyenXe.Location = new System.Drawing.Point(14, 138);
             this.dgvChuyenXe.Margin = new System.Windows.Forms.Padding(2);
@@ -261,9 +264,11 @@
             this.btnExecl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExecl.AutoSize = true;
-            this.btnExecl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.btnExecl.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnExecl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExecl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnExecl.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnExecl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExecl.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnExecl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnExecl.ImageIndex = 0;
             this.btnExecl.ImageList = this.imageList1;
@@ -283,8 +288,10 @@
             // 
             // btnViewXe
             // 
-            this.btnViewXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btnViewXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnViewXe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnViewXe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnViewXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewXe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnViewXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewXe.ImageIndex = 10;
             this.btnViewXe.ImageList = this.imageList1;
@@ -306,8 +313,10 @@
             this.btnThemChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemChuyenXe.AutoSize = true;
-            this.btnThemChuyenXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btnThemChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnThemChuyenXe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnThemChuyenXe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnThemChuyenXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemChuyenXe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnThemChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemChuyenXe.ImageIndex = 3;
             this.btnThemChuyenXe.ImageList = this.imageList1;
@@ -331,8 +340,10 @@
             this.btnUpdateChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateChuyenXe.AutoSize = true;
-            this.btnUpdateChuyenXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btnUpdateChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnUpdateChuyenXe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnUpdateChuyenXe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnUpdateChuyenXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateChuyenXe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdateChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdateChuyenXe.ImageIndex = 1;
             this.btnUpdateChuyenXe.ImageList = this.imageList1;
@@ -356,8 +367,10 @@
             this.btnXoaChuyenXe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoaChuyenXe.AutoSize = true;
-            this.btnXoaChuyenXe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btnXoaChuyenXe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnXoaChuyenXe.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnXoaChuyenXe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnXoaChuyenXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaChuyenXe.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnXoaChuyenXe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaChuyenXe.ImageIndex = 7;
             this.btnXoaChuyenXe.ImageList = this.imageList1;

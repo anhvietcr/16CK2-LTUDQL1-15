@@ -49,7 +49,7 @@
             this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.btUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.btUpdate.Location = new System.Drawing.Point(185, 262);
-            this.btUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(84, 24);
             this.btUpdate.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             this.tbID_Chuyen.Enabled = false;
             this.tbID_Chuyen.Location = new System.Drawing.Point(111, 39);
-            this.tbID_Chuyen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbID_Chuyen.Margin = new System.Windows.Forms.Padding(2);
             this.tbID_Chuyen.Name = "tbID_Chuyen";
             this.tbID_Chuyen.Size = new System.Drawing.Size(98, 20);
             this.tbID_Chuyen.TabIndex = 2;
@@ -91,7 +91,7 @@
             // tbIDXe
             // 
             this.tbIDXe.Location = new System.Drawing.Point(345, 39);
-            this.tbIDXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIDXe.Margin = new System.Windows.Forms.Padding(2);
             this.tbIDXe.Name = "tbIDXe";
             this.tbIDXe.Size = new System.Drawing.Size(98, 20);
             this.tbIDXe.TabIndex = 2;
@@ -110,7 +110,7 @@
             // tbIDTuyen
             // 
             this.tbIDTuyen.Location = new System.Drawing.Point(111, 78);
-            this.tbIDTuyen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIDTuyen.Margin = new System.Windows.Forms.Padding(2);
             this.tbIDTuyen.Name = "tbIDTuyen";
             this.tbIDTuyen.Size = new System.Drawing.Size(98, 20);
             this.tbIDTuyen.TabIndex = 2;
@@ -129,7 +129,7 @@
             // tbIDTaiXe
             // 
             this.tbIDTaiXe.Location = new System.Drawing.Point(345, 78);
-            this.tbIDTaiXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbIDTaiXe.Margin = new System.Windows.Forms.Padding(2);
             this.tbIDTaiXe.Name = "tbIDTaiXe";
             this.tbIDTaiXe.Size = new System.Drawing.Size(98, 20);
             this.tbIDTaiXe.TabIndex = 2;
@@ -158,7 +158,7 @@
             // dtpNKH
             // 
             this.dtpNKH.Location = new System.Drawing.Point(134, 119);
-            this.dtpNKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNKH.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNKH.Name = "dtpNKH";
             this.dtpNKH.Size = new System.Drawing.Size(234, 20);
             this.dtpNKH.TabIndex = 3;
@@ -167,7 +167,7 @@
             // tbGhichu
             // 
             this.tbGhichu.Location = new System.Drawing.Point(111, 154);
-            this.tbGhichu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbGhichu.Margin = new System.Windows.Forms.Padding(2);
             this.tbGhichu.Multiline = true;
             this.tbGhichu.Name = "tbGhichu";
             this.tbGhichu.Size = new System.Drawing.Size(291, 88);
@@ -176,10 +176,13 @@
             // 
             // btInsert
             // 
-            this.btInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btInsert.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btInsert.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInsert.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInsert.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btInsert.Location = new System.Drawing.Point(185, 262);
-            this.btInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btInsert.Name = "btInsert";
             this.btInsert.Size = new System.Drawing.Size(84, 24);
             this.btInsert.TabIndex = 0;
@@ -192,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(486, 295);
             this.Controls.Add(this.dtpNKH);
             this.Controls.Add(this.lbGhichu);
@@ -208,7 +211,7 @@
             this.Controls.Add(this.lbID_Chuyen);
             this.Controls.Add(this.btInsert);
             this.Controls.Add(this.btUpdate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIUChuyen";
             this.Text = "Chuyen";
             this.Load += new System.EventHandler(this.frmIUChuyen_Load);

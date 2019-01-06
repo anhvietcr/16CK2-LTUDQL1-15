@@ -48,12 +48,14 @@ namespace QuanLyNhaXe
 
         void btnMenu3_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chuyến xe clicked");
+            frmDB.openFormById(3);
+            this.Close();
         }
 
         void btnMenu4_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tuyến xe clicked");
+            frmDB.openFormById(4);
+            this.Close();
         }
 
         void btnMenu5_click(object sender, EventArgs e)
@@ -356,8 +358,7 @@ namespace QuanLyNhaXe
 
                 BUS_KhachHang bus_kh = new BUS_KhachHang();
                 this._idKH = bus_kh.ThemKhachHang(this._khachHang);
-                MessageBox.Show("new ID Khach Hang: " + this._idKH.ToString());
-
+                MessageBox.Show("Tạo mới Khách hàng ID: " + this._idKH.ToString());
             }
 
             // Tạo mới Vé xe
