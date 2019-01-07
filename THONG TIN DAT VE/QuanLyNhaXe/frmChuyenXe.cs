@@ -390,7 +390,7 @@ namespace QuanLyNhaXe
         }
         private void btnUpdateChuyenXe_Click(object sender, EventArgs e)
         {
-            frmIUChuyen frm = new frmIUChuyen(dto_c,1);
+            frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
             frm.ShowDialog();
             LoaddgvChuyen();
         }
