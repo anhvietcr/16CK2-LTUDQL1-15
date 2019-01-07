@@ -49,10 +49,12 @@ namespace QuanLyNhaXe
                 tbIDTaiXe.Text = dto_c.Tai_xe_ID_TaiXe.ToString();
                 dtpNKH.Value = DateTime.Parse(dto_c.Gio_khoi_hanh.ToString("MM/dd/yyyy"));
                 tbGhichu.Text = dto_c.Ghi_chu;
-                tbIDTuyen.Enabled = false;                
+                tbIDTuyen.Enabled = false;
+                btInsert.Dispose();
             }
             if(xet == 2)
             {
+                btUpdate.Dispose();
                 btInsert.Visible = true;
                 btInsert.Enabled = true;
             }
