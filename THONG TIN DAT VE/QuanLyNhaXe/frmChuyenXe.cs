@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 using BUS;
 using DTO;
@@ -15,6 +17,7 @@ namespace QuanLyNhaXe
     public partial class frmChuyenXe : Form
     {
         public frmDashboard frmDB;
+        public GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
         BUS_Chuyen c;
         DTO_Chuyen dto_c = new DTO_Chuyen();
         public frmChuyenXe(frmDashboard frm)
@@ -135,7 +138,7 @@ namespace QuanLyNhaXe
         // effect load form
         void fnChuyenXe_Load(object sender, EventArgs e)
         {
-            timer_open.Start();            
+            timer_open.Start();
             loadcbbChuyen();
             loadcbbLoai();
             loadcbbTuyen();
@@ -288,11 +291,10 @@ namespace QuanLyNhaXe
             dto_c.ID_Chuyen = -1;
             if (cbbTuyenXe.SelectedIndex != 0)
             {
-                //if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
-                //{
-                //    Tuyen = x;
-                //}
-
+                if (Int32.TryParse(cbbTuyenXe.Text.ToString(), out int x))
+                {
+                    Tuyen = x;
+                }
             }
             if (cbbChuyenXe.SelectedIndex != 0)
             {
@@ -349,56 +351,86 @@ namespace QuanLyNhaXe
         }
         private void dgvChuyenXe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells[0].Value.ToString(), out int x))
+
+            int iRow = dgvChuyenXe.CurrentCell.RowIndex;
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells[0].Value.ToString(), out int x))
             {
                 dto_c.ID_Chuyen = x;
             }
 
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tuyen_ID_Tuyen"].Value.ToString(), out int y))
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Tuyen_ID_Tuyen"].Value.ToString(), out int y))
             {
                 dto_c.Tuyen_ID_Tuyen = y;
             }
 
-            if (DateTime.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Gio_khoi_hanh"].Value.ToString(), out DateTime z))
+            if (DateTime.TryParse(dgvChuyenXe.Rows[iRow].Cells["Gio_khoi_hanh"].Value.ToString(), out DateTime z))
             {
                 dto_c.Gio_khoi_hanh = z;
             }
 
-            dto_c.Ghi_chu = dgvChuyenXe.SelectedRows[0].Cells["Ghi_chu"].Value.ToString();
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Xe_XeID"].Value.ToString(), out int c))
+            dto_c.Ghi_chu = dgvChuyenXe.Rows[iRow].Cells["Ghi_chu"].Value.ToString();
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Xe_XeID"].Value.ToString(), out int c))
             {
                 dto_c.Xe_XeID = c;
             }
 
-            if (Int32.TryParse(dgvChuyenXe.SelectedRows[0].Cells["Tai_xe_ID_TaiXe"].Value.ToString(), out int d))
+            if (Int32.TryParse(dgvChuyenXe.Rows[iRow].Cells["Tai_xe_ID_TaiXe"].Value.ToString(), out int d))
             {
                 dto_c.Tai_xe_ID_TaiXe = d;
             }
         }
         private void btnXoaChuyenXe_Click(object sender, EventArgs e)
         {
-            c = new BUS_Chuyen();
-            DialogResult dlr = MessageBox.Show("Are you sure you want to DLETE ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dlr == DialogResult.Yes)
+            if (principal.IsInRole("client  "))
             {
-                c.DeleteChuyen(dto_c.ID_Chuyen);
-
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
             }
-            LoaddgvChuyen();
+            if (principal.IsInRole("admin  "))
+            {
+                c = new BUS_Chuyen();
+                DialogResult dlr = MessageBox.Show("Are you sure you want to DLETE ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.Yes)
+                {
+                    c.DeleteChuyen(dto_c.ID_Chuyen);
+
+                }
+                LoaddgvChuyen();
+            }
 
         }
         private void btnUpdateChuyenXe_Click(object sender, EventArgs e)
         {
-            frmIUChuyen frm = new frmIUChuyen(dto_c,1);
-            frm.ShowDialog();
-            LoaddgvChuyen();
+            if (principal.IsInRole("client  "))
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+            }
+            if (principal.IsInRole("admin  "))
+            {
+                if (dto_c.ID_Chuyen == -1)
+                {
+                    MessageBox.Show("Bạn Chưa chọn chuyến cần thay đổi");
+                }
+                else
+                {
+                    frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
+                    frm.ShowDialog();
+                    LoaddgvChuyen();
+                }
+            }
         }
 
         private void btnThemChuyenXe_Click(object sender, EventArgs e)
         {
-            frmIUChuyen frm = new frmIUChuyen(dto_c, 2);
-            frm.ShowDialog();
-            LoaddgvChuyen();
+            if (principal.IsInRole("client  "))
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+            }
+            if (principal.IsInRole("admin  "))
+            {
+                frmIUChuyen frm = new frmIUChuyen(dto_c, 2);
+                frm.ShowDialog();
+                LoaddgvChuyen();
+            }
         }
 
         private void btnExecl_Click(object sender, EventArgs e)

@@ -35,6 +35,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ctr_menu = new UserController.ctr_menu();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_danhsach_ve = new System.Windows.Forms.Button();
             this.btn_submit_datve = new System.Windows.Forms.Button();
             this.imageList_datve = new System.Windows.Forms.ImageList(this.components);
             this.groupBox_ttKhachHang = new System.Windows.Forms.GroupBox();
@@ -120,6 +121,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_danhsach_ve);
             this.panel3.Controls.Add(this.btn_submit_datve);
             this.panel3.Controls.Add(this.groupBox_ttKhachHang);
             this.panel3.Controls.Add(this.groupBox_ttGhe);
@@ -129,6 +131,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(600, 470);
             this.panel3.TabIndex = 0;
+            // 
+            // btn_danhsach_ve
+            // 
+            this.btn_danhsach_ve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_danhsach_ve.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_danhsach_ve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_danhsach_ve.Font = new System.Drawing.Font("Dosis", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_danhsach_ve.Location = new System.Drawing.Point(522, 406);
+            this.btn_danhsach_ve.Name = "btn_danhsach_ve";
+            this.btn_danhsach_ve.Size = new System.Drawing.Size(75, 60);
+            this.btn_danhsach_ve.TabIndex = 13;
+            this.btn_danhsach_ve.Text = "Danh Sách";
+            this.btn_danhsach_ve.UseVisualStyleBackColor = false;
+            this.btn_danhsach_ve.Click += new System.EventHandler(this.btn_danhsach_ve_Click);
             // 
             // btn_submit_datve
             // 
@@ -144,7 +160,7 @@
             this.btn_submit_datve.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_submit_datve.ImageKey = "datve_hover.png";
             this.btn_submit_datve.ImageList = this.imageList_datve;
-            this.btn_submit_datve.Location = new System.Drawing.Point(117, 406);
+            this.btn_submit_datve.Location = new System.Drawing.Point(79, 406);
             this.btn_submit_datve.Name = "btn_submit_datve";
             this.btn_submit_datve.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.btn_submit_datve.Size = new System.Drawing.Size(366, 60);
@@ -712,5 +728,6 @@
         private System.Windows.Forms.Label txt_gia_tien;
         private System.Windows.Forms.ComboBox cbx_id_location_start;
         private System.Windows.Forms.ComboBox cbx_id_location_end;
+        private System.Windows.Forms.Button btn_danhsach_ve;
     }
 }

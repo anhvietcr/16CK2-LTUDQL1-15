@@ -12,7 +12,7 @@ QuanLyVeXe
 
 ** Thông tin account admin **
 tên đăng nhập: admin
-mật khẩu: admin
+mật khẩu: 123456
 
 ** Thông tin account user **
 user1 / 123456
