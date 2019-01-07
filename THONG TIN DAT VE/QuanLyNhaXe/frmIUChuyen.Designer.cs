@@ -44,6 +44,23 @@
             this.btUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+<<<<<<< HEAD
+=======
+            // btUpdate
+            // 
+            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.btUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btUpdate.Location = new System.Drawing.Point(185, 262);
+            this.btUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(84, 24);
+            this.btUpdate.TabIndex = 0;
+            this.btUpdate.Text = "Update";
+            this.btUpdate.UseVisualStyleBackColor = false;
+            this.btUpdate.Visible = false;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
+            // 
+>>>>>>> 769d62a8a72ab0fe0c50d59efa4087e059f3f2da
             // lbID_Chuyen
             // 
             this.lbID_Chuyen.AutoSize = true;
@@ -162,10 +179,19 @@
             // 
             // btInsert
             // 
+<<<<<<< HEAD
             this.btInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.btInsert.Enabled = false;
             this.btInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.btInsert.Location = new System.Drawing.Point(180, 260);
+=======
+            this.btInsert.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btInsert.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInsert.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInsert.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btInsert.Location = new System.Drawing.Point(185, 262);
+>>>>>>> 769d62a8a72ab0fe0c50d59efa4087e059f3f2da
             this.btInsert.Margin = new System.Windows.Forms.Padding(2);
             this.btInsert.Name = "btInsert";
             this.btInsert.Size = new System.Drawing.Size(84, 24);
@@ -194,7 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(245)))), ((int)(((byte)(254)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(486, 295);
             this.Controls.Add(this.dtpNKH);
             this.Controls.Add(this.lbGhichu);
@@ -209,7 +235,10 @@
             this.Controls.Add(this.tbID_Chuyen);
             this.Controls.Add(this.lbID_Chuyen);
             this.Controls.Add(this.btUpdate);
+<<<<<<< HEAD
             this.Controls.Add(this.btInsert);
+=======
+>>>>>>> 769d62a8a72ab0fe0c50d59efa4087e059f3f2da
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIUChuyen";
             this.Text = "Chuyen";

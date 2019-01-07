@@ -15,19 +15,19 @@ namespace QuanLyNhaXe
     public partial class frmKhachhang : Form
     {
         public frmDashboard frmDB;
-        public frmKhachhang(frmDashboard frm)
+        public frmKhachhang(frmDashboard frmDB)
         {
             InitializeComponent();
-            this.frmDB = frm;
+            this.frmDB = frmDB;
             ctr_navbar1.txt_title.Text = "Quản lí khách hàng";
+            ctr_menu1.btn_menu_2.Enabled = false;
             // button menu clicked
-            /*ctr_menu1.btn_menu_1.Click += new EventHandler(btnMenu1_click);
-            ctr_menu1.btn_menu_2.Click += new EventHandler(btnMenu2_click);
+            ctr_menu1.btn_menu_1.Click += new EventHandler(btnMenu1_click);
             ctr_menu1.btn_menu_3.Click += new EventHandler(btnMenu3_click);
             ctr_menu1.btn_menu_4.Click += new EventHandler(btnMenu4_click);
             ctr_menu1.btn_menu_5.Click += new EventHandler(btnMenu5_click);
             ctr_menu1.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
-            */
+            
             // button navbar clicked
             ctr_navbar1.btn_close.Click += new EventHandler(btnClose_click);
             ctr_navbar1.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
@@ -67,46 +67,49 @@ namespace QuanLyNhaXe
 
             bus_kh = new BUS_KhachHang();
             dt = bus_kh.ListKhachHang();
-            dgrv_kh.DataSource = dt;
+
+            for (int i = 0; i < dgrv_kh.ColumnCount; i++)
+            {
+                dgrv_kh.Columns[i].DataPropertyName = dgrv_kh.Columns[i].Name;
+            }
+
+                dgrv_kh.DataSource = dt;
         }
         //button menu clicked -> show Forms
-        //void btnMenu1_click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Đặt vé clicked");
-        //}
+        void btnMenu1_click(object sender, EventArgs e)
+        {
+            frmDB.openFormById(1);
+            this.Close();
+        }
 
-        //void btnMenu2_click(object sender, EventArgs e)
-        //{
-        //    //MessageBox.Show("Khách hàng clicked");
-        //}
+        void btnMenu3_click(object sender, EventArgs e)
+        {
+            frmDB.openFormById(3);
+            this.Close();
+        }
 
-        //void btnMenu3_click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Chuyến xe clicked");
-        //}
+        void btnMenu4_click(object sender, EventArgs e)
+        {
+            frmDB.openFormById(4);
+            this.Close();
+        }
 
-        //void btnMenu4_click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("Tuyến xe clicked");
-        //}
+        void btnMenu5_click(object sender, EventArgs e)
+        {
+            timer_close.Start();
+        }
 
-        //void btnMenu5_click(object sender, EventArgs e)
-        //{
-        //    //MessageBox.Show("Vé bán clicked");
-        //    this.Close();
-        //    frmDB.openFormById(0);
-
-        //}
-
-        //void btnMenuInfo_click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("button info team clicked");
-        //}
+        void btnMenuInfo_click(object sender, EventArgs e)
+        {
+            frmDB.Show();
+            frmDB.openFormById(5);
+            this.Close();
+        }
 
         //button navbar clicked
         void btnClose_click(object sender, EventArgs e)
         {
-            timer2.Start();
+            timer_close.Start();
         }
 
         void btnToggleMenu_click(object sender, EventArgs e)
@@ -144,7 +147,7 @@ namespace QuanLyNhaXe
         // effect load form
         void frmDatVe_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            timer_open.Start();
         }
 
         private void timer_open_Tick(object sender, EventArgs e)
@@ -155,7 +158,7 @@ namespace QuanLyNhaXe
             }
             else
             {
-                timer1.Stop();
+                timer_open.Stop();
             }
         }
 
@@ -167,14 +170,14 @@ namespace QuanLyNhaXe
             }
             else
             {
-                timer2.Stop();
+                timer_close.Stop();
 
                 //close this form and show dashboard form
                 frmDB.Show();
                 this.Close();
             }
         }
-       
+
 
         private void btnsua_Click(object sender, EventArgs e)
         {
@@ -216,13 +219,13 @@ namespace QuanLyNhaXe
 
         private void txttimkiem_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter) 
+            if (e.KeyData == Keys.Enter)
             {
-                BUS_KhachHang kh=new BUS_KhachHang();
-                DataTable dt=new DataTable();
-                dt=kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
-                
-                if (dt!=null&&dt.Rows.Count>0)
+                BUS_KhachHang kh = new BUS_KhachHang();
+                DataTable dt = new DataTable();
+                dt = kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
+
+                if (dt != null && dt.Rows.Count > 0)
                 {
                     dgrv_kh.DataSource = dt;
                 }
@@ -236,5 +239,30 @@ namespace QuanLyNhaXe
                 }
             }
         }
+
+        private void txttimkiem_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                BUS_KhachHang kh = new BUS_KhachHang();
+                DataTable dt = new DataTable();
+                dt = kh.timKhachHangTheoSDTVaTen(txttimkiem.Text);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    dgrv_kh.DataSource = dt;
+                }
+                else
+                {
+                    if (txttimkiem.Text != "")
+                    {
+                        MessageBox.Show("không tìm thấy khách hàng!");
+                    }
+                    loadGridKhachHangByTenKH();
+                }
+            }
+        }
+
+       
     }
 }

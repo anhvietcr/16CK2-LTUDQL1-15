@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.GroupBox groupBox1;
-            System.Windows.Forms.Label label8;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachhang));
+            System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
@@ -48,13 +48,18 @@
             this.txtma = new System.Windows.Forms.TextBox();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.dgrv_kh = new System.Windows.Forms.DataGridView();
+            this.ID_KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ctr_navbar1 = new UserController.ctr_navbar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ctr_menu1 = new UserController.ctr_menu();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer_open = new System.Windows.Forms.Timer(this.components);
+            this.timer_close = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             groupBox1 = new System.Windows.Forms.GroupBox();
             label8 = new System.Windows.Forms.Label();
@@ -77,6 +82,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.BackColor = System.Drawing.Color.Transparent;
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(this.txtloai);
@@ -91,7 +97,6 @@
             groupBox1.Controls.Add(btnsua);
             groupBox1.Controls.Add(btnxoa);
             groupBox1.Controls.Add(btnthem);
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
@@ -148,16 +153,16 @@
             // 
             // btnsua
             // 
-            btnsua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             resources.ApplyResources(btnsua, "btnsua");
+            btnsua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             btnsua.Name = "btnsua";
             btnsua.UseVisualStyleBackColor = false;
             btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnxoa
             // 
-            btnxoa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             resources.ApplyResources(btnxoa, "btnxoa");
+            btnxoa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             btnxoa.ForeColor = System.Drawing.Color.Black;
             btnxoa.Name = "btnxoa";
             btnxoa.UseVisualStyleBackColor = false;
@@ -165,19 +170,19 @@
             // 
             // btnthem
             // 
-            btnthem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             resources.ApplyResources(btnthem, "btnthem");
+            btnthem.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             btnthem.Name = "btnthem";
             btnthem.UseVisualStyleBackColor = false;
             btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
             // 
             // groupBox3
             // 
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.BackColor = System.Drawing.Color.Transparent;
             groupBox3.Controls.Add(label3);
             groupBox3.Controls.Add(this.txttimkiem);
             groupBox3.Controls.Add(this.dgrv_kh);
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
@@ -191,13 +196,55 @@
             // 
             resources.ApplyResources(this.txttimkiem, "txttimkiem");
             this.txttimkiem.Name = "txttimkiem";
-            this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown);
+            this.txttimkiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txttimkiem_KeyDown_1);
             // 
             // dgrv_kh
             // 
-            this.dgrv_kh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             resources.ApplyResources(this.dgrv_kh, "dgrv_kh");
+            this.dgrv_kh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrv_kh.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgrv_kh.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgrv_kh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrv_kh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_KhachHang,
+            this.HoTen,
+            this.DienThoai,
+            this.Email,
+            this.Loai});
             this.dgrv_kh.Name = "dgrv_kh";
+            // 
+            // ID_KhachHang
+            // 
+            this.ID_KhachHang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID_KhachHang.FillWeight = 139.5939F;
+            resources.ApplyResources(this.ID_KhachHang, "ID_KhachHang");
+            this.ID_KhachHang.Name = "ID_KhachHang";
+            this.ID_KhachHang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // HoTen
+            // 
+            this.HoTen.FillWeight = 11.90103F;
+            resources.ApplyResources(this.HoTen, "HoTen");
+            this.HoTen.Name = "HoTen";
+            // 
+            // DienThoai
+            // 
+            this.DienThoai.FillWeight = 48.66545F;
+            resources.ApplyResources(this.DienThoai, "DienThoai");
+            this.DienThoai.Name = "DienThoai";
+            // 
+            // Email
+            // 
+            this.Email.FillWeight = 198.9476F;
+            resources.ApplyResources(this.Email, "Email");
+            this.Email.Name = "Email";
+            // 
+            // Loai
+            // 
+            this.Loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Loai.FillWeight = 100.8921F;
+            resources.ApplyResources(this.Loai, "Loai");
+            this.Loai.Name = "Loai";
             // 
             // panel1
             // 
@@ -231,13 +278,13 @@
             resources.ApplyResources(this.ctr_menu1, "ctr_menu1");
             this.ctr_menu1.Name = "ctr_menu1";
             // 
-            // timer1
+            // timer_open
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer_open_Tick);
+            this.timer_open.Tick += new System.EventHandler(this.timer_open_Tick);
             // 
-            // timer2
+            // timer_close
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer_close_Tick);
+            this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
             // 
             // panel3
             // 
@@ -274,8 +321,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer_open;
+        private System.Windows.Forms.Timer timer_close;
         private UserController.ctr_menu ctr_menu1;
         private UserController.ctr_navbar ctr_navbar1;
         private System.Windows.Forms.Panel panel3;
@@ -287,5 +334,10 @@
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtma;
         private System.Windows.Forms.TextBox txttimkiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_KhachHang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
     }
 }

@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using System.Data;
+using System.Security.Principal;
+using System.Threading;
 
 namespace QuanLyNhaXe
 {
     public partial class frmVeBan : Form
     {
         public frmDashboard frmDB;
+        public GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
+
         public frmVeBan(frmDashboard frm)
         {
             InitializeComponent();
@@ -30,6 +30,9 @@ namespace QuanLyNhaXe
 
             // button navbar clicked
             ctr_navbar_title.btn_close.Click += new EventHandler(btnClose_click);
+
+            //load GridView vé bán
+            loadGridViewVeBan();
 
         }
 
@@ -90,12 +93,72 @@ namespace QuanLyNhaXe
                 this.Close();
             }
         }
-
-        //open form
-        private void btn_menu_1_Click(object sender, EventArgs e)
+        
+        private void loadGridViewVeBan()
         {
-            frmDB.openFormById(1);
-            this.Close();
+            BUS_DatVe bus_datve = new BUS_DatVe();
+            DataTable dt = bus_datve.listVe();
+
+            for (int i = 0; i < dgvVe.ColumnCount; ++i)
+            {
+                dgvVe.Columns[i].DataPropertyName = dgvVe.Columns[i].Name;
+            }
+
+            dgvVe.DataSource = dt;
+        }
+
+        private void dgvVe_CellContextMenuStripNeeded(object sender, DataGridViewCellContextMenuStripNeededEventArgs e)
+        {
+            if (e.RowIndex > -1 && e.ColumnIndex > -1)
+            {
+                dgvVe.CurrentCell = dgvVe.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                e.ContextMenuStrip = menu_danhSachVe;
+            }
+        }
+
+        private void menu_danhSachVe_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+            int iRow = dgvVe.CurrentCell.RowIndex;
+            int idVe = Convert.ToInt32(dgvVe.Rows[iRow].Cells[0].Value);
+            BUS_DatVe bus_ve = new BUS_DatVe();
+
+            switch (e.ClickedItem.Text)
+            {
+                case "Xóa":
+                    if (principal.IsInRole("client  "))
+                    {
+                        MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+                        break;
+                    }
+
+                    if (bus_ve.deleteVe(idVe))
+                    {
+                        MessageBox.Show("Xóa vé thành công");
+                    } else
+                    {
+                        MessageBox.Show("Thất bại, có lỗi xảy ra");
+                    }
+                    break;
+                case "Cập nhật tình trạng Vé":
+                    int tinhTrang = Convert.ToInt32(dgvVe.Rows[iRow].Cells[3].Value);
+                    tinhTrang = tinhTrang == 1 ? 0 : 1;
+
+                    if (bus_ve.updateTinhtrangVe(idVe, tinhTrang))
+                    {
+                        MessageBox.Show("Cập nhật tình trạng thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại, có lỗi xảy ra");
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            //re-load gridview
+            loadGridViewVeBan();
         }
     }
 }
