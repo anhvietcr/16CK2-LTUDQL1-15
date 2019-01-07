@@ -22,9 +22,5 @@ namespace BUS
         {
             return dal_tram.listTenTram();
         }
-
-
-
-
     }
 }

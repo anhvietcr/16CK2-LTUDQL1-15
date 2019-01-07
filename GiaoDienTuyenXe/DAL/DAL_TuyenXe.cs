@@ -82,6 +82,25 @@ namespace DAL
             DBConnect.Close(conn);
             return dt;
         }
+     
+        public DataTable updateTramDen(DTO_TuyenXe tx)
+        {
+            SqlConnection conn = DBConnect.Connect();
+            SqlCommand cmd = conn.CreateCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "updateTramDen";
+            SqlParameter prm1 = new SqlParameter("@id_Tuyen", tx.ID_Tuyen);
+            SqlParameter prm2 = new SqlParameter("@id_TramDen", tx.Tram_ID_Tram);
+
+            cmd.Parameters.Add(prm1);
+            cmd.Parameters.Add(prm2);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);//thuc thi tra ve table
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            DBConnect.Close(conn);
+            return dt;
+        }
 
         public bool Insert(DTO_TuyenXe tx)
         {
@@ -139,16 +158,13 @@ namespace DAL
            
             try
             {
-                //tạo kết nối mới
                 SqlConnection conn = DBConnect.Connect();
-                //tạo command(select *....)
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "UpdateTuyenXe";
 
 
                 SqlParameter Param1 = new SqlParameter("@idTuyen", tx.ID_Tuyen);
-
                 SqlParameter Param2 = new SqlParameter("@khoangCach",tx.KhoangCach);
                 SqlParameter Param3 = new SqlParameter("@thoiGianChay", tx.ThoiGianChay);
                 SqlParameter Param4 = new SqlParameter("@tram_id_Tram1", tx.Tram_ID_Tram1);
@@ -170,7 +186,5 @@ namespace DAL
                 return false;
             }        
         }
-
-
     }
 }

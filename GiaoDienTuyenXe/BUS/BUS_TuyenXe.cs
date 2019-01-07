@@ -27,6 +27,11 @@ namespace BUS
         {
             return dal_tuyenxe.GetTuyenById(tx);
         }
+        public DataTable updateTramDen(DTO_TuyenXe tx)
+        {
+            return dal_tuyenxe.updateTramDen(tx);
+        }
+      
         public bool Insert(DTO_TuyenXe tx)
         {
             return dal_tuyenxe.Insert(tx);
@@ -35,11 +40,9 @@ namespace BUS
         {
             return dal_tuyenxe.Delete(tx);
         }
-        
-        
-
-
-
-
+        public bool Update(DTO_TuyenXe tx)
+        {
+            return dal_tuyenxe.Update(tx);
+        }
     }
 }

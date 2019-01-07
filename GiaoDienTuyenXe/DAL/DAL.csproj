@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Tram.cs" />
+    <Compile Include="DAL_TramTrungGian.cs" />
     <Compile Include="DAL_TuyenXe.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
