@@ -44,20 +44,6 @@
             this.btUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btUpdate
-            // 
-            this.btUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btUpdate.Location = new System.Drawing.Point(185, 262);
-            this.btUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btUpdate.Name = "btUpdate";
-            this.btUpdate.Size = new System.Drawing.Size(84, 24);
-            this.btUpdate.TabIndex = 0;
-            this.btUpdate.Text = "Update";
-            this.btUpdate.UseVisualStyleBackColor = false;
-            this.btUpdate.Visible = false;
-            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
-            // 
             // lbID_Chuyen
             // 
             this.lbID_Chuyen.AutoSize = true;
