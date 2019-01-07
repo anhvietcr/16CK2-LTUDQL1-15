@@ -41,6 +41,7 @@ namespace QuanLyNhaXe
         {
             if (xet == 1)
             {
+               
                 btUpdate.Visible = true;
                 btUpdate.Enabled = true;
                 tbID_Chuyen.Text = dto_c.ID_Chuyen.ToString();
@@ -48,7 +49,7 @@ namespace QuanLyNhaXe
                 tbIDXe.Text = dto_c.Xe_XeID.ToString();
                 tbIDTaiXe.Text = dto_c.Tai_xe_ID_TaiXe.ToString();
                 dtpNKH.Value = DateTime.Parse(dto_c.Gio_khoi_hanh.ToString("MM/dd/yyyy"));
-                tbGhichu.Text = dto_c.Ghi_chu;
+                tbGhichu.Text = dto_c.Ghi_chu;            
                 tbIDTuyen.Enabled = false;
                 btInsert.Dispose();
             }

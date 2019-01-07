@@ -138,7 +138,7 @@ namespace QuanLyNhaXe
         // effect load form
         void fnChuyenXe_Load(object sender, EventArgs e)
         {
-            timer_open.Start();            
+            timer_open.Start();
             loadcbbChuyen();
             loadcbbLoai();
             loadcbbTuyen();
@@ -406,9 +406,16 @@ namespace QuanLyNhaXe
             }
             if (principal.IsInRole("admin  "))
             {
-                frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
-                frm.ShowDialog();
-                LoaddgvChuyen();
+                if (dto_c.ID_Chuyen == -1)
+                {
+                    MessageBox.Show("Bạn Chưa chọn chuyến cần thay đổi");
+                }
+                else
+                {
+                    frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
+                    frm.ShowDialog();
+                    LoaddgvChuyen();
+                }
             }
         }
 
