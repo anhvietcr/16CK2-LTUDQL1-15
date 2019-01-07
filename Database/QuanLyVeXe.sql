@@ -1220,6 +1220,7 @@ as begin
 
 	select * from Ve
 end
+go
 
 create proc [dbo].[deleteVe]
 	@id int
@@ -1228,6 +1229,7 @@ as begin
 	DELETE Ve where ID_Ve = @id
 
 end
+go
 
 create proc [dbo].[updateTinhtrangVe]
 	@id int,
@@ -1235,3 +1237,4 @@ create proc [dbo].[updateTinhtrangVe]
 as begin
 	Update Ve set TinhTrang = @tinhTrang where ID_Ve = @id 
 end
+go
