@@ -1,5 +1,12 @@
 USE [QuanLyVeXe]
 GO
+DROP PROCEDURE [dbo].[getTuyenIDTuyenbyTuyen]
+DROP PROCEDURE [dbo].[updateTramDen]
+DROP PROCEDURE [dbo].[updateTuyen]
+DROP PROCEDURE [dbo].[InsertTramTrungGian]
+DROP PROCEDURE [dbo].[checkExistsTenTramInTuyen]
+DROP PROCEDURE [dbo].[getIDTramIDTuyen]
+
 /****** Object:  StoredProcedure [dbo].[timkhachhangtheotenhoacsdt]    Script Date: 04-Jan-19 01:39:05 ******/
 DROP PROCEDURE [dbo].[timkhachhangtheotenhoacsdt]
 GO
@@ -1203,10 +1210,6 @@ as begin
 	delete from KhachHang where ID_KhachHang=@makh
 end
 GO
-USE [master]
-GO
-ALTER DATABASE [QuanLyVeXe] SET  READ_WRITE 
-GO
 
 create proc [dbo].[timkhachhangtheotenhoacsdt]
 @ma nvarchar(50)
@@ -1238,3 +1241,85 @@ as begin
 	Update Ve set TinhTrang = @tinhTrang where ID_Ve = @id 
 end
 go
+
+
+/****** Object:  StoredProcedure [dbo].[getTuyenIDTuyenbyTuyen]    Script Date: 01/07/2019 21:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[getTuyenIDTuyenbyTuyen]
+as
+begin
+	select t.ID_Tuyen
+	from  Tuyen t 
+end
+GO
+create proc [dbo].[updateTramDen]
+@id_Tuyen int,
+@id_TramDen int
+as
+begin
+	update Tuyen set Tram_ID_Tram=@id_TramDen
+	where @id_Tuyen=ID_Tuyen
+end
+GO
+create proc [dbo].[updateTuyen]
+@id_Tuyen int
+--@id_TramDen int
+as
+begin
+	select top 1 Tram_ID_Tram
+	from Tram_trung_gian 
+	where @id_Tuyen=Tuyen_ID_Tuyen 
+	order by Thu_tu desc
+end
+GO
+/****** Object:  StoredProcedure [dbo].[InsertTramTrungGian]    Script Date: 01/07/2019 21:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[InsertTramTrungGian]
+@id_Tuyen int,
+@id_Tram int
+as
+begin
+	declare @stt int
+	select @stt=COUNT(Thu_tu) from Tram_trung_gian ttg
+	where @id_Tuyen=ttg.Tuyen_ID_Tuyen
+	set @stt+=1
+	insert into Tram_trung_gian values(@id_Tuyen,@id_Tram,@stt)
+end
+GO
+/****** Object:  StoredProcedure [dbo].[checkExistsTenTramInTuyen]    Script Date: 01/07/2019 21:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create proc [dbo].[checkExistsTenTramInTuyen]
+@id_Tram int,
+@id_Tuyen int
+as
+begin
+	select * from Tram_trung_gian t
+	where @id_Tram=t.Tram_ID_Tram and t.Tuyen_ID_Tuyen=@id_Tuyen
+end
+GO
+/****** Object:  StoredProcedure [dbo].[getIDTramIDTuyen]    Script Date: 01/07/2019 21:44:57 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[getIDTramIDTuyen]
+as
+begin
+	select distinct(tr_tg.Tuyen_ID_Tuyen),tr_tg.Tram_ID_Tram
+	from Tram_trung_gian tr_tg join Tram tr on tr_tg.Tram_ID_Tram=tr.ID_Tram
+								join Tuyen t on tr_tg.Tuyen_ID_Tuyen=t.ID_Tuyen
+end
+GO
+USE [master]
+GO
+ALTER DATABASE [QuanLyVeXe] SET  READ_WRITE 
+GO
