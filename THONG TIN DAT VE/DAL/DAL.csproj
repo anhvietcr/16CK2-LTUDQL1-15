@@ -50,6 +50,9 @@
     <Compile Include="DAL_ExportToExcel.cs" />
     <Compile Include="DAL_Ghe.cs" />
     <Compile Include="DAL_KhachHang.cs" />
+    <Compile Include="DAL_Tram.cs" />
+    <Compile Include="DAL_TramTrungGian.cs" />
+    <Compile Include="DAL_TuyenXe.cs" />
     <Compile Include="DAL_Xe.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

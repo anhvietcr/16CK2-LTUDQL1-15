@@ -113,7 +113,7 @@
             this.MinimumSize = new System.Drawing.Size(345, 205);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hệ Thống Quản Lý Vé Xe";
+            this.Text = "Hệ Thống Quản Lý Nhà Xe";
             this.ResumeLayout(false);
             this.PerformLayout();
 

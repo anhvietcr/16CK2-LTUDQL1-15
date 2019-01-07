@@ -8,13 +8,13 @@ Account
 QuanLyVeXe
 
 2/ Chạy 2 script tương ứng cùng tên để có CSDL.
+
 3/ Chỉnh sửa chuỗi kết nối trong file App.config của project tên QuanLyNhaXe.
 
 ** Thông tin account admin **
-tên đăng nhập: admin
-mật khẩu: 123456
+admin / 123456
 
-** Thông tin account user **
+** Thông tin account nhân viên **
 user1 / 123456
 user2 / 123456
 user3 / 123456

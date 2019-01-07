@@ -162,11 +162,8 @@
             // 
             // btInsert
             // 
-            this.btInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.btInsert.Enabled = false;
-            this.btInsert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btInsert.Location = new System.Drawing.Point(180, 260);
             this.btInsert.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btInsert.Enabled = false;
             this.btInsert.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInsert.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,6 +215,7 @@
             this.Controls.Add(this.btInsert);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmIUChuyen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chuyen";
             this.Load += new System.EventHandler(this.frmIUChuyen_Load);
             this.ResumeLayout(false);

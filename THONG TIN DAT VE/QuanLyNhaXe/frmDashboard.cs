@@ -112,9 +112,9 @@ namespace QuanLyNhaXe
                     break;
                 case 4:
                     {
-                        //frmVeBan frm = new frmVeBan(this);
-                        //frm.Show();
-                        //this.Hide();
+                        frmTuyenXe frm = new frmTuyenXe(this);
+                        frm.Show();
+                        this.Hide();
                     }
                     break;
                 case 5:

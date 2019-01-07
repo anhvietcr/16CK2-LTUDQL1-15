@@ -674,6 +674,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmChuyenXe";
             this.Opacity = 0D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChuyenXe";
             this.Load += new System.EventHandler(this.fnChuyenXe_Load);
             this.panel1.ResumeLayout(false);
