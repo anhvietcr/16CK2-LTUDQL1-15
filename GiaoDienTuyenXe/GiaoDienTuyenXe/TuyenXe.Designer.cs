@@ -61,8 +61,8 @@
             this.ID_Tuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KhoangCach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianChay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTramDi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTramDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tram_ID_Tram1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tram_ID_Tram = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlFill.SuspendLayout();
@@ -187,20 +187,18 @@
             // cbIDTramDen
             // 
             this.cbIDTramDen.FormattingEnabled = true;
-            this.cbIDTramDen.Location = new System.Drawing.Point(383, 127);
+            this.cbIDTramDen.Location = new System.Drawing.Point(383, 178);
             this.cbIDTramDen.Name = "cbIDTramDen";
             this.cbIDTramDen.Size = new System.Drawing.Size(49, 26);
             this.cbIDTramDen.TabIndex = 67;
-            this.cbIDTramDen.Visible = false;
             // 
             // cbIDTramDi
             // 
             this.cbIDTramDi.FormattingEnabled = true;
-            this.cbIDTramDi.Location = new System.Drawing.Point(383, 80);
+            this.cbIDTramDi.Location = new System.Drawing.Point(383, 127);
             this.cbIDTramDi.Name = "cbIDTramDi";
             this.cbIDTramDi.Size = new System.Drawing.Size(49, 26);
             this.cbIDTramDi.TabIndex = 66;
-            this.cbIDTramDi.Visible = false;
             // 
             // cbIdTuyen
             // 
@@ -209,7 +207,6 @@
             this.cbIdTuyen.Name = "cbIdTuyen";
             this.cbIdTuyen.Size = new System.Drawing.Size(49, 26);
             this.cbIdTuyen.TabIndex = 65;
-            this.cbIdTuyen.Visible = false;
             // 
             // cbTramDi
             // 
@@ -232,8 +229,8 @@
             this.ID_Tuyen,
             this.KhoangCach,
             this.ThoiGianChay,
-            this.TenTramDi,
-            this.TenTramDen});
+            this.Tram_ID_Tram1,
+            this.Tram_ID_Tram});
             this.dgrv_TuyenXe.GridColor = System.Drawing.Color.White;
             this.dgrv_TuyenXe.Location = new System.Drawing.Point(0, 225);
             this.dgrv_TuyenXe.MultiSelect = false;
@@ -241,6 +238,7 @@
             this.dgrv_TuyenXe.Size = new System.Drawing.Size(588, 137);
             this.dgrv_TuyenXe.TabIndex = 64;
             this.dgrv_TuyenXe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrv_TuyenXe_CellClick);
+            this.dgrv_TuyenXe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrv_TuyenXe_CellContentClick);
             // 
             // label7
             // 
@@ -417,17 +415,17 @@
             this.ThoiGianChay.HeaderText = "Thời Gian";
             this.ThoiGianChay.Name = "ThoiGianChay";
             // 
-            // TenTramDi
+            // Tram_ID_Tram1
             // 
-            this.TenTramDi.HeaderText = "Trạm Đi";
-            this.TenTramDi.Name = "TenTramDi";
-            this.TenTramDi.Width = 135;
+            this.Tram_ID_Tram1.HeaderText = "Trạm Đi";
+            this.Tram_ID_Tram1.Name = "Tram_ID_Tram1";
+            this.Tram_ID_Tram1.Width = 135;
             // 
-            // TenTramDen
+            // Tram_ID_Tram
             // 
-            this.TenTramDen.HeaderText = "Trạm Đến";
-            this.TenTramDen.Name = "TenTramDen";
-            this.TenTramDen.Width = 135;
+            this.Tram_ID_Tram.HeaderText = "Trạm Đến";
+            this.Tram_ID_Tram.Name = "Tram_ID_Tram";
+            this.Tram_ID_Tram.Width = 135;
             // 
             // frmTuyenXe
             // 
@@ -490,7 +488,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Tuyen;
         private System.Windows.Forms.DataGridViewTextBoxColumn KhoangCach;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianChay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTramDi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTramDen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tram_ID_Tram1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tram_ID_Tram;
     }
 }
