@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Principal;
+using System.Threading;
 using System.Windows.Forms;
 using BUS;
 using DTO;
@@ -15,6 +17,7 @@ namespace QuanLyNhaXe
     public partial class frmChuyenXe : Form
     {
         public frmDashboard frmDB;
+        public GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
         BUS_Chuyen c;
         DTO_Chuyen dto_c = new DTO_Chuyen();
         public frmChuyenXe(frmDashboard frm)
@@ -378,28 +381,49 @@ namespace QuanLyNhaXe
         }
         private void btnXoaChuyenXe_Click(object sender, EventArgs e)
         {
-            c = new BUS_Chuyen();
-            DialogResult dlr = MessageBox.Show("Are you sure you want to DLETE ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dlr == DialogResult.Yes)
+            if (principal.IsInRole("client  "))
             {
-                c.DeleteChuyen(dto_c.ID_Chuyen);
-
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
             }
-            LoaddgvChuyen();
+            if (principal.IsInRole("admin  "))
+            {
+                c = new BUS_Chuyen();
+                DialogResult dlr = MessageBox.Show("Are you sure you want to DLETE ?", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dlr == DialogResult.Yes)
+                {
+                    c.DeleteChuyen(dto_c.ID_Chuyen);
+
+                }
+                LoaddgvChuyen();
+            }
 
         }
         private void btnUpdateChuyenXe_Click(object sender, EventArgs e)
         {
-            frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
-            frm.ShowDialog();
-            LoaddgvChuyen();
+            if (principal.IsInRole("client  "))
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+            }
+            if (principal.IsInRole("admin  "))
+            {
+                frmIUChuyen frm = new frmIUChuyen(dto_c, 1);
+                frm.ShowDialog();
+                LoaddgvChuyen();
+            }
         }
 
         private void btnThemChuyenXe_Click(object sender, EventArgs e)
         {
-            frmIUChuyen frm = new frmIUChuyen(dto_c, 2);
-            frm.ShowDialog();
-            LoaddgvChuyen();
+            if (principal.IsInRole("client  "))
+            {
+                MessageBox.Show("Bạn không có quyền thực hiện chức năng này");
+            }
+            if (principal.IsInRole("admin  "))
+            {
+                frmIUChuyen frm = new frmIUChuyen(dto_c, 2);
+                frm.ShowDialog();
+                LoaddgvChuyen();
+            }
         }
 
         private void btnExecl_Click(object sender, EventArgs e)
