@@ -82,25 +82,49 @@ namespace DAL
             DBConnect.Close(conn);
             return dt;
         }
-     
-        public DataTable updateTramDen(DTO_TuyenXe tx)
+         
+        public bool kiemTraTenTramInTuyen(DTO_TuyenXe tx)
         {
             SqlConnection conn = DBConnect.Connect();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "updateTramDen";
-            SqlParameter prm1 = new SqlParameter("@id_Tuyen", tx.ID_Tuyen);
+            cmd.CommandText = "kiemTraTenTramInTuyen";
+
+            SqlParameter prm1 = new SqlParameter("@id_TramDi", tx.Tram_ID_Tram1);
             SqlParameter prm2 = new SqlParameter("@id_TramDen", tx.Tram_ID_Tram);
 
             cmd.Parameters.Add(prm1);
             cmd.Parameters.Add(prm2);
 
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);//thuc thi tra ve table
             DataTable dt = new DataTable();
             da.Fill(dt);
             DBConnect.Close(conn);
-            return dt;
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
         }
+        //public DataTable updateTramDen(DTO_TuyenXe tx)
+        //{
+        //    SqlConnection conn = DBConnect.Connect();
+        //    SqlCommand cmd = conn.CreateCommand();
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.CommandText = "updateTramDen";
+        //    SqlParameter prm1 = new SqlParameter("@id_Tuyen", tx.ID_Tuyen);
+        //    SqlParameter prm2 = new SqlParameter("@id_TramDen", tx.Tram_ID_Tram);
+
+        //    cmd.Parameters.Add(prm1);
+        //    cmd.Parameters.Add(prm2);
+
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);//thuc thi tra ve table
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    DBConnect.Close(conn);
+        //    return dt;
+        //}
 
         public bool Insert(DTO_TuyenXe tx)
         {

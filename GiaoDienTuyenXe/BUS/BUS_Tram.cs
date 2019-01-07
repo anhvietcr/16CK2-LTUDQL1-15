@@ -18,9 +18,21 @@ namespace BUS
         {
             return dal_tram.Insert(tram);
         }
-        public DataTable listTenTram()
+        public DataTable listTram()
         {
-            return dal_tram.listTenTram();
+            return dal_tram.listTram();
+        }
+        public bool xoaTram(DTO_Tram tram)
+        {
+            return dal_tram.xoaTram(tram);
+        }
+        public bool suaTram(DTO_Tram tram)
+        {
+            return dal_tram.suaTram(tram);
+        }
+        public bool checkExistsTenTramInTram(DTO_Tram tram)
+        {
+            return dal_tram.checkExistsTenTramInTram(tram);
         }
     }
 }

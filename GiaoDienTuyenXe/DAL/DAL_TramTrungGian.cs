@@ -40,47 +40,8 @@ namespace DAL
             return dt;
         }
 
-        public bool checkExistsTenTramInTuyen(DTO_TramTrungGian ttg)
-        {
-            SqlConnection conn = DBConnect.Connect();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "checkExistsTenTramInTuyen";
-
-            SqlParameter prm1 = new SqlParameter("@id_Tram",ttg.TramIDTram);
-            SqlParameter prm2 = new SqlParameter("@id_Tuyen", ttg.TuyenIDTuyen);
-
-            cmd.Parameters.Add(prm1);
-            cmd.Parameters.Add(prm2);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);//thuc thi tra ve table
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            DBConnect.Close(conn);
-            if (dt.Rows.Count > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-        public int updateTuyen(DTO_TramTrungGian tr)
-        {
-
-            SqlConnection conn = DBConnect.Connect();
-            SqlCommand cmd = conn.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "updateTuyen";
-            SqlParameter prm1 = new SqlParameter("@id_Tuyen", tr.TuyenIDTuyen);
-            //SqlParameter prm2 = new SqlParameter("@id_TramDen", tr.TramIDTram);
-
-            cmd.Parameters.Add(prm1);
-            //cmd.Parameters.Add(prm2);
-
-            SqlDataReader rdr = cmd.ExecuteReader();
-            int topTram = -1;
-            while (rdr.Read()) { topTram = Convert.ToInt32(rdr["Tram_ID_Tram"]); }
-            DBConnect.Close(conn);
-            return topTram;
-        }
+      
+     
         
         public bool InsertTramTG(DTO_TramTrungGian tramTG)
         {

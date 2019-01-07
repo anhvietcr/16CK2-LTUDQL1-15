@@ -27,11 +27,15 @@ namespace BUS
         {
             return dal_tuyenxe.GetTuyenById(tx);
         }
-        public DataTable updateTramDen(DTO_TuyenXe tx)
+        //public DataTable updateTramDen(DTO_TuyenXe tx)
+        //{
+        //    return dal_tuyenxe.updateTramDen(tx);
+        //}
+        public bool kiemTraTenTramInTuyen(DTO_TuyenXe tx)
         {
-            return dal_tuyenxe.updateTramDen(tx);
+            return dal_tuyenxe.kiemTraTenTramInTuyen(tx);
         }
-      
+        
         public bool Insert(DTO_TuyenXe tx)
         {
             return dal_tuyenxe.Insert(tx);

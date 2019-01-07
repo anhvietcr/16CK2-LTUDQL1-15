@@ -13,11 +13,11 @@ namespace GiaoDienTuyenXe
         {
             InitializeComponent();
             // button menu clicked
+            ctr_menu1.btn_menu_4.Enabled = false;
 
             ctr_menu1.btn_menu_1.Click += new EventHandler(btnMenu1_click);
             ctr_menu1.btn_menu_2.Click += new EventHandler(btnMenu2_click);
             ctr_menu1.btn_menu_3.Click += new EventHandler(btnMenu3_click);
-            ctr_menu1.btn_menu_4.Click += new EventHandler(btnMenu4_click);
             ctr_menu1.btn_menu_5.Click += new EventHandler(btnMenu5_click);
             ctr_menu1.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
 
@@ -46,11 +46,6 @@ namespace GiaoDienTuyenXe
             MessageBox.Show("Chuyến xe clicked");
         }
 
-        void btnMenu4_click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Tuyến xe clicked");
-        }
-
         void btnMenu5_click(object sender, EventArgs e)
         {
             MessageBox.Show("Vé bán clicked");
@@ -72,12 +67,13 @@ namespace GiaoDienTuyenXe
             if (ctr_menu1.Width <= 85)
             {
                 ctr_menu1.Width = 200;
-                pnlTop.Width = 200;
+                pnlLeft.Width = 200;
+                
             }
             else
             {
                 ctr_menu1.Width = 85;
-                pnlTop.Width = 85;
+                pnlLeft.Width = 85;
             }
         }
 
@@ -134,15 +130,17 @@ namespace GiaoDienTuyenXe
 
 
         }
-        void listTenTram()
+       public void listTenTram()
         {
+            cbTramDi.Items.Clear();
+            cbTramDen.Items.Clear();
+            cbIDTramDi.Items.Clear();
+            cbIDTramDen.Items.Clear();
+
 
             BUS_Tram bus = new BUS_Tram();
-
             DataTable dt = new DataTable();
-
-            dt = bus.listTenTram();
-
+            dt = bus.listTram();
             foreach (DataRow r in dt.Rows)
             {
                 cbTramDi.Items.Add(r["TenTram"]);
@@ -158,6 +156,7 @@ namespace GiaoDienTuyenXe
                 cbIDTramDi.SelectedIndex = 1;
                 cbIDTramDen.SelectedIndex = 0;
             }
+
         }
 
         public void loadGridTuyenXe()
@@ -169,7 +168,7 @@ namespace GiaoDienTuyenXe
             //dt sẽ hứng dữ liệu đổ vào từ bus_tuyenxe.ListTuyenXe()
             dt = bus_tuyenxe.ListTuyenXe();
             //gán dữ liệu vào datagridview
-            for(int i=0;i< dgrv_TuyenXe.ColumnCount;i++)
+            for (int i = 0; i < dgrv_TuyenXe.ColumnCount; i++)
             {
                 dgrv_TuyenXe.Columns[i].DataPropertyName = dgrv_TuyenXe.Columns[i].Name;
             }
@@ -177,7 +176,7 @@ namespace GiaoDienTuyenXe
 
         }
 
-        void getTenTrambyTuyen()
+      public  void getTenTrambyTuyen()
         {
             DataTable dt = new DataTable();
             BUS_TuyenXe bus = new BUS_TuyenXe();
@@ -214,58 +213,18 @@ namespace GiaoDienTuyenXe
 
             DataRow r = dt.Rows[0];
 
-            cbTramDi.Text = r["TramBatDau"].ToString();
             cbTramDen.Text = r["TramKetThuc"].ToString();
-            //int i = 0;
-            //foreach (var id in cbIDTramDen.Items)
-            //{
-            //    if (dt.Rows[0]["IDTramKetThuc"].ToString() == id.ToString())
-            //    {
-            //        //cbIdTuyen.SelectedIndex = i;
-            //        break;
-            //    }
-            //    i++;
-            //}
-
+            cbTramDi.Text = r["TramBatDau"].ToString();
+           
         }
-        void LoadComboboxTenTram()
-        {
-            //trước khi load thì reset lại cb
-            
-            cbTramDi.Items.Clear();
-            cbTramDen.Items.Clear();
-            cbIDTramDi.Items.Clear();
-            cbIDTramDen.Items.Clear();
-            DataTable dt = new DataTable();
-
-            BUS_Tram bus = new BUS_Tram();
-            dt = bus.listTenTram();
-
-            foreach (DataRow r in dt.Rows)
-            {
-                cbTramDi.Items.Add(r["TenTram"]);
-                cbTramDen.Items.Add(r["TenTram"]);
-                cbIDTramDi.Items.Add(r["ID_Tram"]);
-                cbIDTramDen.Items.Add(r["ID_Tram"]);
-            }
-            //hiển thị index=0 tức là vị trí đầu tiền trong cbox
-            if (cbIDTramDi.Items.Count > 0)
-            {
-                cbTramDi.SelectedIndex = 1;
-                cbTramDen.SelectedIndex = 0;
-                cbIDTramDi.SelectedIndex = 1;
-                cbIDTramDen.SelectedIndex = 0;
-            }
-        }
-
-
+      
 
         private void dgrv_TuyenXe_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
             int iRow = dgrv_TuyenXe.CurrentCell.RowIndex;
             //dòng click vào=dòng cuối thì return
-            //if (dgrv_TuyenXe.Rows.Count - 1 == iRow) return;
+            if (dgrv_TuyenXe.Rows.Count - 1 == iRow) return;
 
             cbIdTuyen.Text = dgrv_TuyenXe.Rows[iRow].Cells[0].Value.ToString();
             txtKhoangCach.Text = dgrv_TuyenXe.Rows[iRow].Cells[1].Value.ToString();
@@ -280,27 +239,81 @@ namespace GiaoDienTuyenXe
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //khi mở form mới thì truyền vào form hiện tại
-            ThemTuyenXe frm = new ThemTuyenXe(this);
 
-            frm.ShowDialog();
+            if (string.IsNullOrEmpty(txtKhoangCach.Text)) return;
+            if (string.IsNullOrEmpty(txtThoiGianChay.Text)) return;
+            if (string.IsNullOrEmpty(cbIDTramDen.Text)) return;
+            if (string.IsNullOrEmpty(cbIDTramDi.Text)) return;
+
+            double khoangCach;
+            if (!double.TryParse(txtKhoangCach.Text, out khoangCach))
+            {
+                MessageBox.Show("Khoảng cách phải là giá trị thực", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int gio;
+            if (!int.TryParse(txtThoiGianChay.Text, out gio))
+            {
+                MessageBox.Show("Thời gian phải là số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            BUS_TuyenXe bus = new BUS_TuyenXe();
+            DTO_TuyenXe dto_tx = new DTO_TuyenXe();
+
+            dto_tx.KhoangCach = Convert.ToDouble(txtKhoangCach.Text);
+            dto_tx.ThoiGianChay = Convert.ToInt32(txtThoiGianChay.Text);
+            dto_tx.Tram_ID_Tram1 = Convert.ToInt32(cbIDTramDi.Text);
+            dto_tx.Tram_ID_Tram = Convert.ToInt32(cbIDTramDen.Text);
+
+            if (!bus.kiemTraTenTramInTuyen(dto_tx))
+            {
+                if (bus.Insert(dto_tx))
+                {
+                    MessageBox.Show("Thêm thành công!");
+                    loadGridTuyenXe();
+                }
+                else
+                {
+                    MessageBox.Show("Thêm không thành công!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tuyến xe đã tồn tại");
+            }
         }
+     
+
         private void cbTramDi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //IndexTramChange(sender);
-
             int index = (sender as ComboBox).SelectedIndex;
             if (cbTramDi.Items.Count > 0)
             {
-                cbIDTramDi.SelectedIndex = index;
+                if (index == cbTramDen.SelectedIndex)
+                {
+                    MessageBox.Show("Điểm đến và điểm đi không được trùng nhau");
+                    cbTramDi.SelectedIndex = cbIDTramDi.SelectedIndex;
+                    return;
+                }
+                    //cbTramDi.SelectedIndex = index;
+                    cbIDTramDi.SelectedIndex=index;
+                
             }
         }
-
         private void cbTramDen_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = (sender as ComboBox).SelectedIndex;
             if (cbTramDen.Items.Count > 0)
             {
+                if (index == cbTramDi.SelectedIndex)
+                {
+                    MessageBox.Show("Điểm đến và điểm đi không được trùng nhau");
+                    cbTramDen.SelectedIndex = cbIDTramDen.SelectedIndex;
+                    return;
+                }
+                
                 cbIDTramDen.SelectedIndex = index;
             }
         }
@@ -372,9 +385,12 @@ namespace GiaoDienTuyenXe
             
         }
 
-        private void dgrv_TuyenXe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnTram_Click(object sender, EventArgs e)
         {
+            //khi mở form mới thì truyền vào form hiện tại
+            Tram frm = new Tram(this);
 
+            frm.ShowDialog();
         }
 
     }

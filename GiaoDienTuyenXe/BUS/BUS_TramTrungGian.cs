@@ -27,14 +27,11 @@ namespace BUS
         {
             return dal_ttg.InsertTramTG(ttg);
         }
-        public bool checkExistsTenTramInTuyen(DTO_TramTrungGian ttg)
-        {
-            return dal_ttg.checkExistsTenTramInTuyen(ttg);
-        }
-        public int updateTuyen(DTO_TramTrungGian ttg)
-        {
-            return dal_ttg.updateTuyen(ttg);
-        }
+      
+        //public int updateTuyen(DTO_TramTrungGian ttg)
+        //{
+        //    return dal_ttg.updateTuyen(ttg);
+        //}
        
     }
 }
