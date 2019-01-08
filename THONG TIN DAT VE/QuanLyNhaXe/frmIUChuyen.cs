@@ -64,50 +64,49 @@ namespace QuanLyNhaXe
         private void tbID_Chuyen_TextChanged(object sender, EventArgs e)
         {
 
-            dto_c.ID_Chuyen= Convert.ToInt32(tbID_Chuyen.Text);
+            //dto_c.ID_Chuyen= Convert.ToInt32(tbID_Chuyen.Text);
 
-            //if (int.Parse(tbID_Chuyen.Text)
-            //{
-            //    dto_c.ID_Chuyen = ;
-            //    btUpdate.Dispose();
-            //}
+            if (Int32.TryParse(tbID_Chuyen.Text.ToString(),out int x))
+            {
+                dto_c.ID_Chuyen = x;
+            }
 
         }
 
         private void tbIDTuyen_TextChanged(object sender, EventArgs e)
         {
-            //if (Int.TryParse(tbIDTuyen.Text, out int x))
-            //{
-            //    dto_c.Tuyen_ID_Tuyen = x;
-            //}
-            dto_c.Tuyen_ID_Tuyen = int.Parse(tbIDTuyen.Text);
+            if (Int32.TryParse(tbIDTuyen.Text, out int x))
+            {
+                dto_c.Tuyen_ID_Tuyen = x;
+            }
+            // dto_c.Tuyen_ID_Tuyen = int.Parse(tbIDTuyen.Text);
         }
 
         private void tbIDXe_TextChanged(object sender, EventArgs e)
         {
-            //if (Int32.TryParse(tbIDXe.Text, out int x))
-            //{
-            //    dto_c.Xe_XeID = x;
-            //}
-            dto_c.Xe_XeID = int.Parse(tbIDXe.Text);
+            if (Int32.TryParse(tbIDXe.Text, out int x))
+            {
+                dto_c.Xe_XeID = x;
+            }
+            //dto_c.Xe_XeID = int.Parse(tbIDXe.Text);
         }
 
         private void tbIDTaiXe_TextChanged(object sender, EventArgs e)
         {
-            //if (Int32.TryParse(tbIDTaiXe.Text, out int x))
-            //{
-            //    dto_c.Tai_xe_ID_TaiXe = x;
-            //}
-            dto_c.Tai_xe_ID_TaiXe = int.Parse(tbIDTaiXe.Text);
+            if (Int32.TryParse(tbIDTaiXe.Text, out int x))
+            {
+                dto_c.Tai_xe_ID_TaiXe = x;
+            }
+           // dto_c.Tai_xe_ID_TaiXe = int.Parse(tbIDTaiXe.Text);
         }
 
         private void dtpNKH_ValueChanged(object sender, EventArgs e)
         {
-            //if (DateTime.TryParse(dtpNKH.Value.ToString("yyyy/MM/dd"), out DateTime x))
-            //{
-            //    dto_c.Gio_khoi_hanh = x;
-            //}
-            dto_c.Gio_khoi_hanh = Convert.ToDateTime(dtpNKH.Value.ToString("yyyy/MM/dd"));
+            if (DateTime.TryParse(dtpNKH.Value.ToString("yyyy/MM/dd"), out DateTime x))
+            {
+                dto_c.Gio_khoi_hanh = x;
+            }
+            //dto_c.Gio_khoi_hanh = Convert.ToDateTime(dtpNKH.Value.ToString("yyyy/MM/dd"));
         }
 
         private void tbGhichu_TextChanged(object sender, EventArgs e)
