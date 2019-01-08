@@ -42,7 +42,7 @@
             this.dgvXe.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dgvXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvXe.Location = new System.Drawing.Point(1, 88);
-            this.dgvXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvXe.Margin = new System.Windows.Forms.Padding(2);
             this.dgvXe.Name = "dgvXe";
             this.dgvXe.RowTemplate.Height = 24;
             this.dgvXe.Size = new System.Drawing.Size(585, 284);
@@ -53,9 +53,9 @@
             this.grXe.BackColor = System.Drawing.SystemColors.Control;
             this.grXe.Controls.Add(this.label1);
             this.grXe.Location = new System.Drawing.Point(1, 1);
-            this.grXe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grXe.Margin = new System.Windows.Forms.Padding(2);
             this.grXe.Name = "grXe";
-            this.grXe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grXe.Padding = new System.Windows.Forms.Padding(2);
             this.grXe.Size = new System.Drawing.Size(585, 81);
             this.grXe.TabIndex = 1;
             this.grXe.TabStop = false;
@@ -81,8 +81,9 @@
             this.ClientSize = new System.Drawing.Size(586, 368);
             this.Controls.Add(this.grXe);
             this.Controls.Add(this.dgvXe);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmXe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xe";
             this.Load += new System.EventHandler(this.frmXe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvXe)).EndInit();

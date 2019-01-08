@@ -58,7 +58,8 @@ namespace QuanLyNhaXe
 
         void btnMenu4_click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tuyến xe clicked");
+            frmDB.openFormById(4);
+            this.Close();
         }
 
         void btnMenu5_click(object sender, EventArgs e)

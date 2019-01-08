@@ -44,6 +44,9 @@
     <Compile Include="BUS_DatVe.cs" />
     <Compile Include="BUS_Ghe.cs" />
     <Compile Include="BUS_KhachHang.cs" />
+    <Compile Include="BUS_Tram.cs" />
+    <Compile Include="BUS_TramTrungGian.cs" />
+    <Compile Include="BUS_TuyenXe.cs" />
     <Compile Include="BUS_Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

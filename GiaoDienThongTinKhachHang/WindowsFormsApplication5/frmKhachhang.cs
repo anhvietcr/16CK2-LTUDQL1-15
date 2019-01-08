@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -39,6 +41,15 @@ namespace QuanLyNhaXe
             //load gridview
             loadGridKhachHangByTenKH();
             dgrv_kh.Click += new EventHandler(loadData);
+            //divide 
+            GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
+            if (principal.IsInRole("client  ") || principal.IsInRole("guest  "))
+            {
+                //tbnxoa.Enabled = false;
+                //btnxoa.Enabled = false;
+                //btnxoa.e
+                btnxoa.Enabled = false;
+            }
         }
         void loadData(object sender, EventArgs e)
         {
@@ -185,33 +196,52 @@ namespace QuanLyNhaXe
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            DTO_KhachHang kh = new DTO_KhachHang();
-            kh.HOTEN = txtten.Text;
-            kh.DIENTHOAI = txtsdt.Text;
-            kh.EMAIL = txtemail.Text;
-            if (txtloai.Text == "Vip")
-                kh.LOAI = 1;
+            int n;
+            var num = int.TryParse(txtsdt.Text, out n);
+            if (txtten.Text == "" || txtemail.Text == "" || txtsdt.Text == "" || txtloai.Text != "Vip" || txtloai.Text != "Thường" || num == false)
+            {
+                MessageBox.Show("bạn chưa nhập 1 thông tin nào hoặc sai định dạng sdt");
+            }
             else
-                kh.LOAI = 0;
-            kh.ID_KHACHHANG = int.Parse(txtma.Text);
-            BUS_KhachHang k = new BUS_KhachHang();
-            k.SuaKhachHang(kh);
-            loadGridKhachHangByTenKH();
+            {
+                DTO_KhachHang kh = new DTO_KhachHang();
+                kh.HOTEN = txtten.Text;
+                kh.DIENTHOAI = txtsdt.Text;
+                kh.EMAIL = txtemail.Text;
+                if (txtloai.Text == "Vip")
+                    kh.LOAI = 1;
+                else
+                    kh.LOAI = 0;
+                kh.ID_KHACHHANG = int.Parse(txtma.Text);
+                BUS_KhachHang k = new BUS_KhachHang();
+                k.SuaKhachHang(kh);
+                loadGridKhachHangByTenKH();
+            }
         }
 
         private void btnthem_Click_1(object sender, EventArgs e)
         {
-            DTO_KhachHang kh = new DTO_KhachHang();
-            kh.HOTEN = txtten.Text;
-            kh.DIENTHOAI = txtsdt.Text;
-            kh.EMAIL = txtemail.Text;
-            if (txtloai.Text == "Vip")
-                kh.LOAI = 1;
+            int n;
+            var num=int.TryParse(txtsdt.Text,out n);
+            if (txtten.Text == "" || txtemail.Text == "" || txtsdt.Text == "" || txtloai.Text != "Vip" || txtloai.Text != "Thường" || num == false)
+            {
+                MessageBox.Show("bạn chưa nhập 1 thông tin nào hoặc sai định dạng sdt");
+            }
             else
-                kh.LOAI = 0;
-            BUS_KhachHang k = new BUS_KhachHang();
-            int ID = k.ThemKhachHang(kh);
-            loadGridKhachHangByTenKH();
+            {
+                
+                DTO_KhachHang kh = new DTO_KhachHang();
+                kh.HOTEN = txtten.Text;
+                kh.DIENTHOAI = txtsdt.Text;
+                kh.EMAIL = txtemail.Text;
+                if (txtloai.Text == "Vip")
+                    kh.LOAI = 1;
+                else
+                    kh.LOAI = 0;
+                BUS_KhachHang k = new BUS_KhachHang();
+                int ID = k.ThemKhachHang(kh);
+                loadGridKhachHangByTenKH();
+            }
         }
 
         private void btnxoa_Click_1(object sender, EventArgs e)

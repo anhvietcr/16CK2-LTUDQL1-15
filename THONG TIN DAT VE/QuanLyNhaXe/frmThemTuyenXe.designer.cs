@@ -1,6 +1,6 @@
-﻿namespace GiaoDienTuyenXe
+﻿namespace QuanLyNhaXe
 {
-    partial class ThemTuyenXe
+    partial class frmThemTuyenXe
     {
         /// <summary>
         /// Required designer variable.
@@ -106,13 +106,14 @@
             this.ID_Tuyen.TabIndex = 0;
             this.ID_Tuyen.Text = "ID_Tuyen";
             // 
-            // ThemTuyenXe
+            // frmThemTuyenXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 465);
             this.Controls.Add(this.groupBox3);
-            this.Name = "ThemTuyenXe";
+            this.Name = "frmThemTuyenXe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemTuyenXe";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ThemTuyenXe_FormClosed);
             this.groupBox3.ResumeLayout(false);

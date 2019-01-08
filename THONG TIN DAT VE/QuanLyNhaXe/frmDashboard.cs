@@ -15,14 +15,6 @@ namespace QuanLyNhaXe
 
             GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
             MessageBox.Show("Chào mừng đến với " + principal.Identity.Name + ".");
-            string role = "";
-            if (principal.IsInRole("client  "))
-            {
-                MessageBox.Show("Bạn là nhân vên");
-                //tbnxoa.Enabled = false;
-                //btnxoa.Enabled = false;
-                //btnxoa.e
-            }
         }
 
         private void settingControlerNavbarTitle()
@@ -120,9 +112,9 @@ namespace QuanLyNhaXe
                     break;
                 case 4:
                     {
-                        //frmVeBan frm = new frmVeBan(this);
-                        //frm.Show();
-                        //this.Hide();
+                        frmTuyenXe frm = new frmTuyenXe(this);
+                        frm.Show();
+                        this.Hide();
                     }
                     break;
                 case 5:

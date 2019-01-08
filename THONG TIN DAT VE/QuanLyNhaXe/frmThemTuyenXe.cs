@@ -10,18 +10,18 @@ using System.Windows.Forms;
 using BUS;
 using DTO;
 
-namespace GiaoDienTuyenXe
+namespace QuanLyNhaXe
 {
-    public partial class ThemTuyenXe : Form
+    public partial class frmThemTuyenXe : Form
     {
         protected frmTuyenXe _frmParent;
-        public ThemTuyenXe()
+        public frmThemTuyenXe()
         {
             InitializeComponent();
 
         }
 
-        public ThemTuyenXe(frmTuyenXe frmParent)
+        public frmThemTuyenXe(frmTuyenXe frmParent)
         {
             InitializeComponent();
             this._frmParent = frmParent;

@@ -30,6 +30,8 @@ namespace QuanLyNhaXe
                 return;
             }
             InitializeComponent();
+
+            txtPassword.PasswordChar = '*';
             
         }
 
