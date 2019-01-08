@@ -6,7 +6,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,10 +17,10 @@ namespace QuanLyNhaXe
     public partial class frmKhachhang : Form
     {
         public frmDashboard frmDB;
-        public frmKhachhang(frmDashboard frmDB)
+        public frmKhachhang(frmDashboard frm)
         {
             InitializeComponent();
-            this.frmDB = frmDB;
+            this.frmDB = frm;
             ctr_navbar1.txt_title.Text = "Quản lí khách hàng";
             ctr_menu1.btn_menu_2.Enabled = false;
             // button menu clicked
@@ -27,7 +29,7 @@ namespace QuanLyNhaXe
             ctr_menu1.btn_menu_4.Click += new EventHandler(btnMenu4_click);
             ctr_menu1.btn_menu_5.Click += new EventHandler(btnMenu5_click);
             ctr_menu1.btn_menu_info.Click += new EventHandler(btnMenuInfo_click);
-            
+
             // button navbar clicked
             ctr_navbar1.btn_close.Click += new EventHandler(btnClose_click);
             ctr_navbar1.btn_toggle_menu.Click += new EventHandler(btnToggleMenu_click);
@@ -38,6 +40,15 @@ namespace QuanLyNhaXe
             //load gridview
             loadGridKhachHangByTenKH();
             dgrv_kh.Click += new EventHandler(loadData);
+            //divide 
+            GenericPrincipal principal = Thread.CurrentPrincipal as GenericPrincipal;
+            if (principal.IsInRole("client  ") || principal.IsInRole("guest  "))
+            {
+                //tbnxoa.Enabled = false;
+                //btnxoa.Enabled = false;
+                //btnxoa.e
+                btnxoa.Enabled = false;
+            }
         }
         void loadData(object sender, EventArgs e)
         {
@@ -96,7 +107,7 @@ namespace QuanLyNhaXe
 
         void btnMenu5_click(object sender, EventArgs e)
         {
-            timer_close.Start();
+            timer2.Start();
         }
 
         void btnMenuInfo_click(object sender, EventArgs e)
@@ -109,7 +120,7 @@ namespace QuanLyNhaXe
         //button navbar clicked
         void btnClose_click(object sender, EventArgs e)
         {
-            timer_close.Start();
+            timer2.Start();
         }
 
         void btnToggleMenu_click(object sender, EventArgs e)
@@ -147,7 +158,7 @@ namespace QuanLyNhaXe
         // effect load form
         void frmDatVe_Load(object sender, EventArgs e)
         {
-            timer_open.Start();
+            timer1.Start();
         }
 
         private void timer_open_Tick(object sender, EventArgs e)
@@ -158,7 +169,7 @@ namespace QuanLyNhaXe
             }
             else
             {
-                timer_open.Stop();
+                timer1.Stop();
             }
         }
 
@@ -170,10 +181,10 @@ namespace QuanLyNhaXe
             }
             else
             {
-                timer_close.Stop();
+                timer2.Stop();
 
                 //close this form and show dashboard form
-                frmDB.Show();
+                //frmDB.Show();
                 this.Close();
             }
         }
@@ -181,33 +192,52 @@ namespace QuanLyNhaXe
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            DTO_KhachHang kh = new DTO_KhachHang();
-            kh.HOTEN = txtten.Text;
-            kh.DIENTHOAI = txtsdt.Text;
-            kh.EMAIL = txtemail.Text;
-            if (txtloai.Text == "Vip")
-                kh.LOAI = 1;
+            int n;
+            var num = int.TryParse(txtsdt.Text, out n);
+            if (txtten.Text == "" || txtemail.Text == "" || txtsdt.Text == "" || txtloai.Text != "Vip" || txtloai.Text != "Thường" || num == false)
+            {
+                MessageBox.Show("bạn chưa nhập 1 thông tin nào hoặc sai định dạng sdt");
+            }
             else
-                kh.LOAI = 0;
-            kh.ID_KHACHHANG = int.Parse(txtma.Text);
-            BUS_KhachHang k = new BUS_KhachHang();
-            k.SuaKhachHang(kh);
-            loadGridKhachHangByTenKH();
+            {
+                DTO_KhachHang kh = new DTO_KhachHang();
+                kh.HOTEN = txtten.Text;
+                kh.DIENTHOAI = txtsdt.Text;
+                kh.EMAIL = txtemail.Text;
+                if (txtloai.Text == "Vip")
+                    kh.LOAI = 1;
+                else
+                    kh.LOAI = 0;
+                kh.ID_KHACHHANG = int.Parse(txtma.Text);
+                BUS_KhachHang k = new BUS_KhachHang();
+                k.SuaKhachHang(kh);
+                loadGridKhachHangByTenKH();
+            }
         }
 
         private void btnthem_Click_1(object sender, EventArgs e)
         {
-            DTO_KhachHang kh = new DTO_KhachHang();
-            kh.HOTEN = txtten.Text;
-            kh.DIENTHOAI = txtsdt.Text;
-            kh.EMAIL = txtemail.Text;
-            if (txtloai.Text == "Vip")
-                kh.LOAI = 1;
+            int n;
+            var num=int.TryParse(txtsdt.Text,out n);
+            if (txtten.Text == "" || txtemail.Text == "" || txtsdt.Text == "" || txtloai.Text != "Vip" || txtloai.Text != "Thường" || num == false)
+            {
+                MessageBox.Show("bạn chưa nhập 1 thông tin nào hoặc sai định dạng sdt");
+            }
             else
-                kh.LOAI = 0;
-            BUS_KhachHang k = new BUS_KhachHang();
-            int ID = k.ThemKhachHang(kh);
-            loadGridKhachHangByTenKH();
+            {
+                
+                DTO_KhachHang kh = new DTO_KhachHang();
+                kh.HOTEN = txtten.Text;
+                kh.DIENTHOAI = txtsdt.Text;
+                kh.EMAIL = txtemail.Text;
+                if (txtloai.Text == "Vip")
+                    kh.LOAI = 1;
+                else
+                    kh.LOAI = 0;
+                BUS_KhachHang k = new BUS_KhachHang();
+                int ID = k.ThemKhachHang(kh);
+                loadGridKhachHangByTenKH();
+            }
         }
 
         private void btnxoa_Click_1(object sender, EventArgs e)

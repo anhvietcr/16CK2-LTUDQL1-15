@@ -37,7 +37,6 @@
             System.Windows.Forms.Label label6;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Button btnsua;
-            System.Windows.Forms.Button btnxoa;
             System.Windows.Forms.Button btnthem;
             System.Windows.Forms.GroupBox groupBox3;
             System.Windows.Forms.Label label3;
@@ -46,6 +45,7 @@
             this.txtten = new System.Windows.Forms.TextBox();
             this.txtemail = new System.Windows.Forms.TextBox();
             this.txtma = new System.Windows.Forms.TextBox();
+            this.btnxoa = new System.Windows.Forms.Button();
             this.txttimkiem = new System.Windows.Forms.TextBox();
             this.dgrv_kh = new System.Windows.Forms.DataGridView();
             this.ID_KhachHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +58,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ctr_menu1 = new UserController.ctr_menu();
-            this.timer_open = new System.Windows.Forms.Timer(this.components);
-            this.timer_close = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             groupBox1 = new System.Windows.Forms.GroupBox();
             label8 = new System.Windows.Forms.Label();
@@ -68,7 +68,6 @@
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             btnsua = new System.Windows.Forms.Button();
-            btnxoa = new System.Windows.Forms.Button();
             btnthem = new System.Windows.Forms.Button();
             groupBox3 = new System.Windows.Forms.GroupBox();
             label3 = new System.Windows.Forms.Label();
@@ -95,7 +94,7 @@
             groupBox1.Controls.Add(this.txtma);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(btnsua);
-            groupBox1.Controls.Add(btnxoa);
+            groupBox1.Controls.Add(this.btnxoa);
             groupBox1.Controls.Add(btnthem);
             groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             groupBox1.Name = "groupBox1";
@@ -161,12 +160,12 @@
             // 
             // btnxoa
             // 
-            resources.ApplyResources(btnxoa, "btnxoa");
-            btnxoa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            btnxoa.ForeColor = System.Drawing.Color.Black;
-            btnxoa.Name = "btnxoa";
-            btnxoa.UseVisualStyleBackColor = false;
-            btnxoa.Click += new System.EventHandler(this.btnxoa_Click_1);
+            resources.ApplyResources(this.btnxoa, "btnxoa");
+            this.btnxoa.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnxoa.ForeColor = System.Drawing.Color.Black;
+            this.btnxoa.Name = "btnxoa";
+            this.btnxoa.UseVisualStyleBackColor = false;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click_1);
             // 
             // btnthem
             // 
@@ -278,13 +277,13 @@
             resources.ApplyResources(this.ctr_menu1, "ctr_menu1");
             this.ctr_menu1.Name = "ctr_menu1";
             // 
-            // timer_open
+            // timer1
             // 
-            this.timer_open.Tick += new System.EventHandler(this.timer_open_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer_open_Tick);
             // 
-            // timer_close
+            // timer2
             // 
-            this.timer_close.Tick += new System.EventHandler(this.timer_close_Tick);
+            this.timer2.Tick += new System.EventHandler(this.timer_close_Tick);
             // 
             // panel3
             // 
@@ -321,8 +320,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Timer timer_open;
-        private System.Windows.Forms.Timer timer_close;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
         private UserController.ctr_menu ctr_menu1;
         private UserController.ctr_navbar ctr_navbar1;
         private System.Windows.Forms.Panel panel3;
@@ -339,5 +338,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Loai;
+        private System.Windows.Forms.Button btnxoa;
     }
 }
